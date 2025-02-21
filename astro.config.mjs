@@ -6,9 +6,8 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://aboodmidani.github.io/",
-  base: "/",
-  outDir: "dist",
+  site: 'https://aboodmidani.github.io',  // Replace with your actual domain
+  base: '/', // Important for GitHub Pages
   integrations: [tailwind(), react()],
   vite: {
     resolve: {
