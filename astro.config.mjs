@@ -6,6 +6,9 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://aboodmidani.github.io/",
+  base: "/",
+  outDir: "dist",
   integrations: [tailwind(), react()],
   vite: {
     resolve: {
@@ -23,7 +26,4 @@ export default defineConfig({
     host: true,
     port: 4321,
   },
-  site: "https://aboodmidani.github.io/",
-  base: "/",
-  outDir: "dist",
 });
