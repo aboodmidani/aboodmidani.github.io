@@ -4,8 +4,8 @@ import codiay from "../../public/codiay.png";
 import tonb from "../../public/tonb.png";
 import pdf from "../../public/pdf.jpeg";
 import eptico from "../../public/eptico.png";
-import metadata from "../../public/metadata.png";
 import phishing from "../../public/phishing.png";
+import webscan from "../../public/webscan.png";
 
 interface Project {
   title: string;
@@ -37,19 +37,18 @@ const projects: Project[] = [
     preview: "http://www.eptico.com/",
     status: "Integrated innovation company",
   },
-
+  {
+    title: "Web Vulnerability Scanner",
+    image: webscan as ImageMetadata,
+    link: "https://github.com/aboodmidani/web-vulnerability-scanner-",
+    preview: "https://web-vulnerability-scan.streamlit.app/",
+    status: "Cybersecurity tool",
+  },
   {
     title: "Phishing Email Analyzer",
     image: phishing as ImageMetadata,
     link: "https://github.com/aboodmidani/phishing-email-analyzer",
     preview: "https://phishing-email-analyzer.streamlit.app/",
-    status: "Cybersecurity tool",
-  },
-  {
-    title: "Metadata Remover",
-    image: metadata as ImageMetadata,
-    link: "https://github.com/aboodmidani/metadata-remover/",
-    preview: "https://metadata-rm.streamlit.app/",
     status: "Cybersecurity tool",
   },
   {
