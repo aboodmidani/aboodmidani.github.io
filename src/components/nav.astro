@@ -12,9 +12,19 @@ const navItems: NavItem[] = [
     icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M21 20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V9.48907C3 9.18048 3.14247 8.88917 3.38606 8.69972L11.3861 2.47749C11.7472 2.19663 12.2528 2.19663 12.6139 2.47749L20.6139 8.69972C20.8575 8.88917 21 9.18048 21 9.48907V20ZM19 19V9.97815L12 4.53371L5 9.97815V19H19Z"></path></svg>`,
   },
   {
+    label: "Skills",
+    href: "#skills",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>`,
+  },
+  {
     label: "Projects",
     href: "#projects",
     icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M4 5V19H20V7H11.5858L9.58579 5H4ZM12.4142 5H21C21.5523 5 22 5.44772 22 6V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H10.4142L12.4142 5Z"></path></svg>`,
+  },
+  {
+    label: "Background",
+    href: "#background",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>`,
   },
   {
     label: "Contact",
@@ -24,84 +34,111 @@ const navItems: NavItem[] = [
 ];
 ---
 
-<div class="flex justify-center w-full">
-  <nav
-    class="fixed flex left-0 right-0 z-[100] bg-[#1414149c] border border-1 border-[var(--white-icon-tr)] backdrop-blur-xl transition-all md:top-0 md:bottom-auto bottom-0 md:w-[33rem] rounded-t-2xl md:rounded-full md:mt-6 md:justify-self-center"
-  >
-    <div class="container mx-auto flex justify-center items-center p-3">
-      <ul
-        class="flex w-full justify-between md:space-x-6 md:justify-center md:gap-12 gap-6"
-      >
-        {
-          navItems.map((item) => (
-            <li class="flex-1 md:flex-none">
-              <a
-                href={item.href}
-                class="flex flex-col items-center gap-1 text-[var(--white-icon)] transition-colors text-xs md:text-base"
-              >
-                <span class="md:hidden flex items-center justify-center w-6 h-6">
-                  <fragment set:html={item.icon} />
-                </span>
-                <span class="hidden md:inline-block">{item.label}</span>
-                <span class="md:hidden">{item.label}</span>
-              </a>
-            </li>
-          ))
+<nav
+  id="main-nav"
+  class="sticky top-4 z-[100] bg-[#1414149c] border border border-[var(--white-icon-tr)] backdrop-blur-xl w-fit mx-auto rounded-full"
+>
+  <ul class="flex items-center gap-1 sm:gap-2 md:gap-3 lg:gap-5 py-3 px-4">
+    {
+      navItems.map((item) => (
+        <li>
+          <a
+            id={`nav-${item.href.replace("#", "")}`}
+            href={item.href}
+            class="nav-link flex flex-col md:flex-row items-center gap-0 md:gap-2 text-[var(--white-icon)] hover:text-[var(--sec)] transition-colors text-xs sm:text-sm md:text-base px-2 sm:px-3 py-1 whitespace-nowrap"
+          >
+            <span class="md:hidden flex items-center justify-center w-5 h-5">
+              <fragment set:html={item.icon} />
+            </span>
+            <span>{item.label}</span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+
+<script is:inline>
+  (function() {
+    var sectionIds = ['home', 'skills', 'projects', 'background', 'contact'];
+    var navHeight = 120;
+
+    function getActiveSection() {
+      var scrollTop = window.scrollY;
+      var sections = [];
+
+      for (var i = 0; i < sectionIds.length; i++) {
+        var el = document.getElementById(sectionIds[i]);
+        if (el) {
+          sections.push({
+            id: sectionIds[i],
+            top: el.offsetTop,
+            bottom: el.offsetTop + el.offsetHeight
+          });
         }
-      </ul>
-    </div>
-  </nav>
-</div>
-
-<script>
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault();
-      const target = e.currentTarget as HTMLAnchorElement;
-      const targetId = target.getAttribute("href")?.substring(1) || "";
-      const targetElement = document.getElementById(targetId);
-      if (targetElement) {
-        targetElement.scrollIntoView({
-          behavior: "smooth",
-        });
       }
-    });
-  });
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const sections = document.querySelectorAll("section[id]");
-    const navLinks = document.querySelectorAll("nav a[href^='#']");
-    const observerOptions = { threshold: 0.6 };
+      var viewportMiddle = scrollTop + navHeight + 50;
 
-    const observerCallback = (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          navLinks.forEach((link) => link.classList.remove("active"));
-          const id = entry.target.getAttribute("id");
-          const activeLink = document.querySelector(`nav a[href="#${id}"]`);
-          if (activeLink) {
-            activeLink.classList.add("active");
-          }
+      for (var j = sections.length - 1; j >= 0; j--) {
+        if (viewportMiddle >= sections[j].top) {
+          return sections[j].id;
+        }
+      }
+
+      return 'home';
+    }
+
+    function setActive(id) {
+      var links = document.querySelectorAll('.nav-link');
+      for (var i = 0; i < links.length; i++) {
+        links[i].classList.remove('active');
+      }
+      var active = document.getElementById('nav-' + id);
+      if (active) {
+        active.classList.add('active');
+      }
+    }
+
+    function updateNav() {
+      var activeId = getActiveSection();
+      setActive(activeId);
+    }
+
+    var links = document.querySelectorAll('.nav-link');
+    for (var i = 0; i < links.length; i++) {
+      links[i].addEventListener('click', function(e) {
+        e.preventDefault();
+        var href = this.getAttribute('href');
+        var id = href.replace('#', '');
+        var target = document.getElementById(id);
+        if (target) {
+          var targetPos = target.offsetTop - navHeight;
+          window.scrollTo({ top: targetPos, behavior: 'smooth' });
+          setTimeout(function() { setActive(id); }, 350);
         }
       });
-    };
+    }
 
-    const observer = new IntersectionObserver(
-      observerCallback,
-      observerOptions
-    );
-    sections.forEach((section) => observer.observe(section));
-  });
+    window.addEventListener('scroll', updateNav, { passive: true });
+    
+    setTimeout(function() {
+      updateNav();
+    }, 100);
+  })();
 </script>
 
 <style>
-  @media (max-width: 767px) {
-    body {
-      padding-bottom: 70px;
-    }
+  .nav-link.active {
+    color: var(--sec) !important;
   }
 
-  nav a.active {
-    color: var(--sec) !important;
+  #main-nav ul {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  #main-nav ul::-webkit-scrollbar {
+    display: none;
   }
 </style>

@@ -17,18 +17,32 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "Matrix Web Audit",
+    image: webscan as ImageMetadata,
+    link: "https://github.com/aboodmidani/matrix",
+    preview: "https://matrix-audit.netlify.app",
+    status: "Web security audit tool with vulnerability detection",
+  },
+  {
+    title: "Phishing Email Analyzer",
+    image: phishing as ImageMetadata,
+    link: "https://github.com/aboodmidani/phishing-email-analyzer",
+    preview: "https://phishing-email-analyzer-jyjj.onrender.com",
+    status: "Email header and content analysis",
+  },
+  {
     title: "Tonb",
     image: tonb as ImageMetadata,
     link: "https://gitlab.com/abdmidani",
     preview: "https://tonb.io/",
-    status: "Blockchain banking",
+    status: "Blockchain banking (Technical Lead)",
   },
   {
     title: "Codiay",
     image: codiay as ImageMetadata,
     link: "https://gitlab.com/abdmidani",
     preview: "https://codiay.com/",
-    status: "Digital agency",
+    status: "Digital agency (Technical Lead)",
   },
   {
     title: "Eptico",
@@ -38,25 +52,11 @@ const projects: Project[] = [
     status: "Integrated innovation company",
   },
   {
-    title: "Web Vulnerability Scanner",
-    image: webscan as ImageMetadata,
-    link: "https://github.com/aboodmidani/web-vulnerability-scanner-",
-    preview: "https://abdm.pythonanywhere.com/",
-    status: "Cybersecurity tool",
-  },
-  {
-    title: "Phishing Email Analyzer",
-    image: phishing as ImageMetadata,
-    link: "https://github.com/aboodmidani/phishing-email-analyzer",
-    preview: "https://phishing-email-analyzer.streamlit.app/",
-    status: "Cybersecurity tool",
-  },
-  {
-    title: "Redacted pdf",
+    title: "Redacted PDF",
     image: pdf as ImageMetadata,
     link: "https://gitlab.com/abdmidani/redacted-pdf.git",
     preview: "https://redacted-pdf.netlify.app/",
-    status: "Redacted pdf project",
+    status: "PDF redaction tool",
   },
 ];
 ---
@@ -134,7 +134,7 @@ const projects: Project[] = [
     <a
       target="_blank"
       href="https://gitlab.com/abdmidani"
-      aria-label="GitHub"
+      aria-label="GitLab"
       class="w-full flex items-center justify-center gap-2 mt-9 text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-[var(--white-icon-tr)] p-3 rounded-full bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
     >
       <span class="md:text-lg text-md">More projects on</span>

@@ -1,0 +1,51 @@
+---
+interface Award {
+  name: string;
+  issuer: string;
+  period: string;
+  description: string;
+}
+
+const awards: Award[] = [
+  {
+    name: "Aoc-2025 Certificate",
+    issuer: "TryHackMe",
+    period: "12/2025",
+    description: "Participated in TryHackMe's annual 25-day cybersecurity event, completing daily hands-on challenges covering Network Security, Web Penetration Testing, Malware Analysis, and SOC Operations.",
+  },
+];
+---
+
+<section id="awards" class="py-12 border-t border-[#ffffff10] text-[var(--white)]">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-lg text-[var(--sec)] mb-2 shiny-sec">Achievements</h2>
+    <h3 class="text-4xl md:text-5xl font-medium mb-8">Awards</h3>
+
+    <div class="space-y-6">
+      {
+        awards.map((award) => (
+          <div class="bg-[#1414149c] rounded-2xl p-6 border border-[var(--white-icon-tr)] hover:border-[var(--sec)] transition-colors">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-3">
+              <div>
+                <h4 class="text-xl font-semibold text-[var(--white)] flex items-center gap-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="w-6 h-6 text-[var(--sec)]"
+                  >
+                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                  </svg>
+                  {award.name}
+                </h4>
+                <p class="text-[var(--white-icon)]">{award.issuer}</p>
+              </div>
+              <span class="text-sm text-[var(--sec)]">{award.period}</span>
+            </div>
+            <p class="text-[var(--white-icon)] leading-relaxed">{award.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

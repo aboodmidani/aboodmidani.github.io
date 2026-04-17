@@ -11,9 +11,15 @@
         </p>
         <div class="flex items-center gap-2">
           <span>Location:</span>
-          <span class="text-[var(--white)]"
-            >North Rhine-Westphalia, Deutschland</span
-          >
+          <span class="text-[var(--white)]">Ochtrup, Germany</span>
+        </div>
+        <div class="flex items-center gap-2 mt-2">
+          <span>Phone:</span>
+          <a href="tel:+4915771454456" class="text-[var(--white)] hover:text-[var(--sec)] transition-colors">+49 15771454456</a>
+        </div>
+        <div class="flex items-center gap-2 mt-2">
+          <span>TryHackMe:</span>
+          <a href="https://tryhackme.com/p/Jbril" target="_blank" class="text-[var(--white)] hover:text-[var(--sec)] transition-colors">@Jbril</a>
         </div>
       </div>
 
@@ -52,12 +58,6 @@
             Submit
           </button>
         </form>
-        <div
-          id="form-message"
-          class="hidden justify-center items-center mt-4 text-[var(--white)] text-lg"
-        >
-          ✅ Thank you for your message!
-        </div>
       </div>
     </div>
   </div>
@@ -65,11 +65,14 @@
 
 <script type="module" is:inline>
   const form = document.getElementById("contact-form");
-  const formMessage = document.getElementById("form-message");
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     const formData = new FormData(form);
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = "Sending...";
+    submitBtn.disabled = true;
 
     try {
       const response = await fetch(form.action, {
@@ -78,17 +81,19 @@
         headers: { Accept: "application/json" },
       });
       if (response.ok) {
-        form.reset();
-        form.style.display = "none";
-        formMessage.classList.remove("hidden");
+        window.location.href = "/thanks";
       } else {
         const data = await response.json();
         console.error("Error response:", data);
-        alert("There was a problem sending your message.");
+        alert("There was a problem sending your message. Please try again.");
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
       }
     } catch (error) {
       console.error("Error:", error);
-      alert("There was a problem sending your message.");
+      alert("There was a problem sending your message. Please try again.");
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
     }
   });
 </script>

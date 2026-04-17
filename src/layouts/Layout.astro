@@ -1,50 +1,118 @@
 ---
+import PageLoader from "@/components/PageLoader.astro";
 interface Props {
   title: string;
+  description?: string;
 }
 
-const { title } = Astro.props;
+const { title, description = "Junior Cybersecurity Specialist & Senior Front-end Developer. Experienced in vulnerability analysis, secure web applications, and Linux-based systems. Strong knowledge of OWASP Top 10." } = Astro.props;
+
+const siteUrl = "https://aboodmidani.github.io";
+const imageUrl = "https://aboodmidani.github.io/og-image.svg";
+const currentUrl = new URL(Astro.url.pathname, siteUrl);
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="description"
-      content="Software Engineer & Web Developer specializing in modern web applications, landing pages, and SEO-optimized websites. Build high-performance, responsive, and scalable digital solutions."
-    />
-    <meta
-      name="keywords"
-      content="Software Engineer, Web Developer, Landing Page Developer, SEO Optimization, Frontend Developer, Full Stack Developer, Astro.js, Vue.js, React.js, JavaScript, Tailwind CSS, Web Design, Performance Optimization, Mobile-Friendly Websites, Digital Solutions, Freelance Web Developer"
-    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="author" content="Abdalrahman Midani" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <link rel="canonical" href={currentUrl} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={currentUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Abdalrahman Midani" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={currentUrl} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+    <meta name="twitter:creator" content="@aboodmidani" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+
+    <!-- Performance: Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+
+    <!-- Fonts: Non-render-blocking -->
     <link
       rel="preload"
       as="style"
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      media="print"
-      onload="this.media='all'"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
     <noscript>
       <link
         rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
       />
     </noscript>
 
-    <title>{title}</title>
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Abdalrahman Midani",
+      "url": siteUrl,
+      "sameAs": [
+        "https://gitlab.com/abdmidani",
+        "https://github.com/aboodmidani",
+        "https://www.linkedin.com/in/abdalrahman-midani/",
+        "https://tryhackme.com/p/Jbril"
+      ],
+      "jobTitle": "Junior Cybersecurity Specialist & Senior Front-end Developer",
+      "email": "aboodmidani0@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ochtrup",
+        "addressCountry": "DE"
+      },
+      "knowsAbout": ["Cybersecurity", "Web Security", "OWASP Top 10", "Vue.js", "JavaScript"],
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Üsküdar Üniversitesi",
+          "sameAs": "https://uskudar.edu.tr"
+        }
+      ]
+    })} />
   </head>
   <body class="bg-[--background] md:px-48 lg:px-20 px-9">
-    <slot />
+    <!-- Skip to main content for accessibility -->
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-[var(--sec)] focus:text-[var(--background)] focus:rounded-lg focus:font-medium"
+    >
+      Skip to main content
+    </a>
+
+    <PageLoader />
+
+    <main id="main-content" class="page-content" tabindex="-1">
+      <slot />
+    </main>
   </body>
 </html>
 
@@ -53,16 +121,16 @@ const { title } = Astro.props;
     --background: #101010;
     --sec: #8fff9f;
     --white: #dfdfdf;
-    --white-icon: #f3f3f398;
-    --white-icon-tr: #f3f3f310;
+    --white-icon: #b3b3b3;
+    --white-icon-tr: rgba(243, 243, 243, 0.06);
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   * {
-    font-family:
-      "montserrat",
-      -apple-system,
-      system-ui,
-      sans-serif;
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     box-sizing: border-box;
     padding: 0;
     margin: 0;
@@ -73,29 +141,135 @@ const { title } = Astro.props;
     color: var(--background);
   }
 
-  /* Scrollbar styles */
+  /* Improved focus styles for accessibility */
+  :focus-visible {
+    outline: 2px solid var(--sec);
+    outline-offset: 2px;
+  }
 
+  /* Scrollbar styles */
   ::-webkit-scrollbar {
-    width: 15px;
+    width: 10px;
   }
 
   ::-webkit-scrollbar-track {
-    background: var(--container);
-    border-radius: 30px;
+    background: var(--background);
   }
 
   ::-webkit-scrollbar-thumb {
-    background: var(--background);
-    border-radius: 10px;
+    background: #333;
+    border-radius: 5px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--pink);
+    background: #444;
   }
 
-  /* Scrollbar styles for Firefox */
   * {
     scrollbar-width: thin;
-    scrollbar-color: var(--line) var(--container);
+    scrollbar-color: #333 var(--background);
+  }
+
+  /* Page transitions */
+  .page-content {
+    animation: pageIn 0.6s ease-out forwards;
+  }
+
+  @keyframes pageIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Fade in up animation for sections */
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Make first section visible immediately */
+  section:first-of-type {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Screen reader only class */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* Reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 </style>
+
+<script>
+  // Intersection Observer for fade-in animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px"
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && !entry.target.dataset.animated) {
+        entry.target.classList.add("visible");
+        entry.target.dataset.animated = "true";
+      }
+    });
+  }, observerOptions);
+
+  function isInViewport(element: Element) {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top < window.innerHeight * 0.85 &&
+      rect.bottom > 0
+    );
+  }
+
+  document.querySelectorAll("section").forEach((section) => {
+    if (!isInViewport(section)) {
+      section.classList.add("fade-in-up");
+      observer.observe(section);
+    } else {
+      section.classList.add("visible");
+      section.dataset.animated = "true";
+    }
+  });
+
+  if (window.location.hash) {
+    const target = document.querySelector(window.location.hash);
+    if (target) {
+      setTimeout(() => {
+        target.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+  }
+</script>

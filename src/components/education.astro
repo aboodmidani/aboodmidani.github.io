@@ -1,0 +1,68 @@
+---
+interface Education {
+  degree: string;
+  institution: string;
+  location: string;
+  period: string;
+  grade?: string;
+}
+
+const education: Education[] = [
+  {
+    degree: "Cyber Security Master's degree",
+    institution: "Üsküdar Üniversitesi",
+    location: "Istanbul, Turkey",
+    period: "10/2022 – 01/2024",
+    grade: "GPA 3.20/4.00",
+  },
+  {
+    degree: "Software Engineering Bachelor's degree",
+    institution: "Üsküdar Üniversitesi",
+    location: "Istanbul, Turkey",
+    period: "01/2018 – 07/2022",
+    grade: "GPA 3.03/4.00",
+  },
+  {
+    degree: "Integration Course (German Language A1-B1)",
+    institution: "Volkshochschule Ochtrup",
+    location: "Ochtrup, Germany",
+    period: "10/2024 – 07/2025",
+    grade: "Total Grade: 93%",
+  },
+  {
+    degree: "Berufssprachkurs (German Language B2)",
+    institution: "Inlingua",
+    location: "Ochtrup, Germany",
+    period: "10/2025 – 04/2026",
+  },
+];
+---
+
+<section id="education" class="py-12 border-t border-[#ffffff10] text-[var(--white)]">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-lg text-[var(--sec)] mb-2 shiny-sec">My background</h2>
+    <h3 class="text-4xl md:text-5xl font-medium mb-8">Education</h3>
+
+    <div class="space-y-6">
+      {
+        education.map((edu) => (
+          <div class="bg-[#1414149c] rounded-2xl p-6 border border-[var(--white-icon-tr)] hover:border-[var(--sec)] transition-colors">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-2">
+              <div class="flex-grow">
+                <h4 class="text-xl font-semibold text-[var(--white)]">{edu.degree}</h4>
+                <p class="text-[var(--white-icon)]">{edu.institution}</p>
+                <p class="text-sm text-[var(--white-icon)] opacity-70">{edu.location}</p>
+              </div>
+              <div class="text-right">
+                <span class="text-sm text-[var(--sec)]">{edu.period}</span>
+                {edu.grade && (
+                  <p class="text-sm text-[var(--white-icon)]">{edu.grade}</p>
+                )}
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
