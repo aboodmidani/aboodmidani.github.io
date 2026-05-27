@@ -1,0 +1,41 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Nav from "@/components/nav.astro";
+import Footer from "@/components/footer.astro";
+import ProjectDetail from "@/components/ProjectDetail.astro";
+import phishing from "../../../public/phishing.png";
+---
+
+<Layout title="Phishing Email Analyzer | Abdalrahman Midani" description="A phishing detection tool that analyzes email headers and content for security indicators. Built by Abdalrahman Midani.">
+  <Nav />
+
+  <section class="text-[var(--white)] py-16">
+    <div class="max-w-5xl mx-auto">
+      <p class="text-sm text-[var(--sec)] mb-4">
+        <a href="/" class="hover:underline">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/projects" class="hover:underline">Projects</a>
+        <span class="mx-2">/</span>
+        Phishing Email Analyzer
+      </p>
+      <h1 class="text-3xl md:text-5xl font-medium mb-8">Phishing Email Analyzer</h1>
+    </div>
+
+    <ProjectDetail
+      title="Phishing Email Analyzer"
+      image={phishing as import("astro").ImageMetadata}
+      description="A phishing detection tool that analyzes email headers and content for suspicious indicators. It helps security teams and individuals identify phishing attempts by examining SPF, DKIM, and DMARC records, analyzing link destinations, and detecting social engineering patterns. Deployed on Render and available for public use."
+      responsibilities={[
+        "Designed and built the email parsing and analysis engine",
+        "Implemented header analysis for SPF, DKIM, and DMARC validation",
+        "Built URL extraction and reputation checking functionality",
+        "Created an intuitive results dashboard for non-technical users",
+      ]}
+      techStack={["JavaScript", "Node.js", "HTML/CSS", "Email Security", "Render"]}
+      liveUrl="https://phishing-email-analyzer-jyjj.onrender.com"
+      sourceUrl="https://github.com/aboodmidani/phishing-email-analyzer"
+    />
+  </section>
+
+  <Footer />
+</Layout>

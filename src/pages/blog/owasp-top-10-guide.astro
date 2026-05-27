@@ -1,0 +1,63 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Nav from "@/components/nav.astro";
+import Footer from "@/components/footer.astro";
+---
+
+<Layout title="OWASP Top 10 Guide for Developers | Abdalrahman Midani" description="A practical walkthrough of the OWASP Top 10 web security vulnerabilities. Learn about XSS, SQL injection, CSRF, and how to prevent them.">
+  <Nav />
+
+  <article class="text-[var(--white)] py-16">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-sm text-[var(--sec)] mb-4">
+        <a href="/" class="hover:underline">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/blog" class="hover:underline">Blog</a>
+        <span class="mx-2">/</span>
+        Understanding OWASP Top 10
+      </p>
+      <p class="text-sm text-[var(--sec)] mb-2">May 10, 2025 · <span class="reading-time"></span> min read</p>
+      <h1 class="text-3xl md:text-5xl font-medium mb-6">Understanding OWASP Top 10 – A Developer's Guide to Web Security</h1>
+
+      <div class="prose prose-invert max-w-none text-[var(--white-icon)] leading-relaxed space-y-4">
+        <p>The OWASP Top 10 is the industry-standard awareness document for web application security. As a <strong>cybersecurity specialist and front-end developer based in North Rhine-Westphalia</strong>, I use these categories as a framework for every security audit I perform.</p>
+
+        <p>Here's what every developer needs to know about the most critical web application security risks.</p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8">1. Broken Access Control</h2>
+        <p>Users accessing resources they shouldn't. Fix: implement proper authorization checks on every request, not just in the UI.</p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8">2. Cryptographic Failures</h2>
+        <p>Weak encryption or exposed sensitive data. Fix: use HTTPS, encrypt data at rest, never store passwords in plain text.</p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8">3. Injection</h2>
+        <p>SQL, NoSQL, OS, and LDAP injection. Fix: use parameterized queries, ORM frameworks, and input validation.</p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8">4. Insecure Design</h2>
+        <p>Architecture-level flaws. Fix: threat modeling during design phase, security requirements from day one.</p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8">5. Security Misconfiguration</h2>
+        <p>Default credentials, unnecessary features enabled, improper error handling. Fix: harden your server configuration, disable debug mode in production.</p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8">6. Vulnerable and Outdated Components</h2>
+        <p>Using libraries with known CVEs. Fix: regularly update dependencies, use software composition analysis tools.</p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8">7. Identification and Authentication Failures</h2>
+        <p>Weak passwords, no MFA, session fixation. Fix: implement strong password policies, multi-factor authentication, secure session management.</p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8">8. Software and Data Integrity Failures</h2>
+        <p>Using untrusted third-party code or CDNs. Fix: use Subresource Integrity (SRI), verify software signatures.</p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8">9. Security Logging and Monitoring Failures</h2>
+        <p>Not detecting breaches in time. Fix: implement comprehensive logging, set up alerts for suspicious activity.</p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8">10. Server-Side Request Forgery (SSRF)</h2>
+        <p>Attacker making the server fetch internal resources. Fix: validate and sanitize all URLs, restrict outbound network access.</p>
+
+        <p class="mt-8">Need a <strong>web security audit</strong> for your application? I offer comprehensive OWASP-based assessments for businesses in Germany. <a href="/services" class="text-[var(--sec)] hover:underline">Learn more about my services</a>.</p>
+      </div>
+    </div>
+  </article>
+
+  <Footer />
+</Layout>

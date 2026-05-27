@@ -1,0 +1,39 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Nav from "@/components/nav.astro";
+import Footer from "@/components/footer.astro";
+import ProjectDetail from "@/components/ProjectDetail.astro";
+import codiay from "../../../public/codiay.png";
+---
+
+<Layout title="Codiay — Digital Agency Website | Abdalrahman Midani" description="A digital agency website built by Abdalrahman Midani as Technical Lead. Modern Vue.js front-end with responsive design.">
+  <Nav />
+
+  <section class="text-[var(--white)] py-16">
+    <div class="max-w-5xl mx-auto">
+      <p class="text-sm text-[var(--sec)] mb-4">
+        <a href="/" class="hover:underline">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/projects" class="hover:underline">Projects</a>
+        <span class="mx-2">/</span>
+        Codiay
+      </p>
+      <h1 class="text-3xl md:text-5xl font-medium mb-8">Codiay – Digital Agency Website</h1>
+    </div>
+
+    <ProjectDetail
+      title="Codiay"
+      image={codiay as import("astro").ImageMetadata}
+      description="A digital agency platform where I served as Technical Lead. Codiay showcases agency services, portfolio, and client work. I built the front-end architecture, implemented responsive design, and ensured the site met security best practices."
+      responsibilities={[
+        "Technical Lead for the digital agency platform",
+        "Built responsive front-end with Vue.js and modern tooling",
+        "Implemented SEO best practices and performance optimization",
+        "Integrated analytics, contact forms, and CMS backend",
+      ]}
+      techStack={["Vue.js", "JavaScript", "Responsive Design", "SEO", "Quasar"]}
+    />
+  </section>
+
+  <Footer />
+</Layout>

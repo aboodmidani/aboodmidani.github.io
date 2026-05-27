@@ -1,0 +1,60 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Nav from "@/components/nav.astro";
+import Footer from "@/components/footer.astro";
+import BlogCard from "@/components/BlogCard.astro";
+---
+
+<Layout title="Blog | Abdalrahman Midani — Web Developer & Cybersecurity Specialist" description="Articles on web development, cybersecurity, and secure application design by Abdalrahman Midani, a front-end developer in Ochtrup, North Rhine-Westphalia.">
+  <Nav />
+
+  <section class="text-[var(--white)] py-16">
+    <div class="max-w-5xl mx-auto">
+      <p class="text-md text-[var(--sec)] shiny-sec mb-2">Articles</p>
+      <h1 class="text-4xl md:text-6xl font-medium mb-4">Blog</h1>
+      <p class="text-lg text-[var(--white-icon)] max-w-2xl mb-12">
+        Insights on web development, cybersecurity, and building secure applications. Written from Ochtrup, North Rhine-Westphalia — by a developer who codes and secures.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <BlogCard
+          title="Web Development Services in North Rhine-Westphalia – What to Expect"
+          excerpt="Looking for a web developer in NRW? Here's what a professional front-end development engagement looks like, from requirements to deployment."
+          slug="web-development-services-nrw"
+          date="2025-06-01"
+          readingTime="2 min read"
+        />
+        <BlogCard
+          title="Top 10 Cybersecurity Tips for Small Businesses in Germany"
+          excerpt="Protect your business from common cyber threats. Practical security advice for German中小型企业 based on OWASP guidelines and real-world experience."
+          slug="cybersecurity-tips-germany"
+          date="2025-05-25"
+          readingTime="2 min read"
+        />
+        <BlogCard
+          title="How to Hire the Best Front-End Developer in NRW"
+          excerpt="What to look for when hiring a front-end developer in North Rhine-Westphalia. Skills, portfolio, security awareness, and cultural fit."
+          slug="hire-frontend-developer-nrw"
+          date="2025-05-18"
+          readingTime="2 min read"
+        />
+        <BlogCard
+          title="Understanding OWASP Top 10 – A Developer's Guide to Web Security"
+          excerpt="Every developer should know these vulnerabilities. A practical walkthrough of the OWASP Top 10 with code examples and mitigations."
+          slug="owasp-top-10-guide"
+          date="2025-05-10"
+          readingTime="2 min read"
+        />
+        <BlogCard
+          title="Freelance Web Developer in Germany – Rates, Contracts, and Tips"
+          excerpt="Thinking of hiring a freelance web developer in Germany? Here's what you need to know about rates, contracts, and finding the right fit."
+          slug="freelance-web-developer-germany"
+          date="2025-05-03"
+          readingTime="2 min read"
+        />
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

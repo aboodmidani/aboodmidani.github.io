@@ -1,0 +1,39 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Nav from "@/components/nav.astro";
+import Footer from "@/components/footer.astro";
+import ProjectDetail from "@/components/ProjectDetail.astro";
+import pdf from "../../../public/pdf.jpeg";
+---
+
+<Layout title="Redacted PDF — Privacy Tool | Abdalrahman Midani" description="A privacy-focused PDF redaction tool built by Abdalrahman Midani. Remove sensitive information from PDFs securely in the browser.">
+  <Nav />
+
+  <section class="text-[var(--white)] py-16">
+    <div class="max-w-5xl mx-auto">
+      <p class="text-sm text-[var(--sec)] mb-4">
+        <a href="/" class="hover:underline">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/projects" class="hover:underline">Projects</a>
+        <span class="mx-2">/</span>
+        Redacted PDF
+      </p>
+      <h1 class="text-3xl md:text-5xl font-medium mb-8">Redacted PDF – Privacy Tool</h1>
+    </div>
+
+    <ProjectDetail
+      title="Redacted PDF"
+      image={pdf as import("astro").ImageMetadata}
+      description="A privacy-focused PDF redaction tool that allows users to securely remove sensitive information from PDF documents. Built with a focus on data privacy — all processing happens client-side, ensuring no data is ever uploaded to a server. This tool is especially relevant for businesses in Germany that need GDPR-compliant document handling."
+      responsibilities={[
+        "Built client-side PDF processing engine for maximum privacy",
+        "Implemented text selection and redaction overlay system",
+        "Ensured zero data leaves the browser (GDPR compliant)",
+        "Designed an intuitive UI for non-technical users",
+      ]}
+      techStack={["JavaScript", "PDF.js", "HTML/CSS", "Client-side Processing", "Netlify"]}
+    />
+  </section>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aboodmidani.github.io/sitemap.xml

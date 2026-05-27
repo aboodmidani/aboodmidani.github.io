@@ -12,6 +12,7 @@ interface Project {
   image: ImageMetadata;
   link: string;
   preview: string;
+  slug: string;
   status: string;
 }
 
@@ -21,42 +22,48 @@ const projects: Project[] = [
     image: webscan as ImageMetadata,
     link: "https://github.com/aboodmidani/matrix",
     preview: "https://matrix-audit.netlify.app",
-    status: "Web security audit tool with vulnerability detection",
+    slug: "matrix-web-audit",
+    status: "Web security audit & vulnerability detection tool by a cybersecurity specialist",
   },
   {
     title: "Phishing Email Analyzer",
     image: phishing as ImageMetadata,
     link: "https://github.com/aboodmidani/phishing-email-analyzer",
     preview: "https://phishing-email-analyzer-jyjj.onrender.com",
-    status: "Email header and content analysis",
+    slug: "phishing-email-analyzer",
+    status: "Phishing detection tool — email header & content analysis for security teams",
   },
   {
     title: "Tonb",
     image: tonb as ImageMetadata,
     link: "https://gitlab.com/abdmidani",
     preview: "https://tonb.io/",
-    status: "Blockchain banking (Technical Lead)",
+    slug: "tonb-blockchain",
+    status: "Blockchain banking platform (Technical Lead) — built by a senior front-end developer",
   },
   {
     title: "Codiay",
     image: codiay as ImageMetadata,
     link: "https://gitlab.com/abdmidani",
     preview: "https://codiay.com/",
-    status: "Digital agency (Technical Lead)",
+    slug: "codiay-agency",
+    status: "Digital agency website (Technical Lead) — full front-end development from NRW",
   },
   {
     title: "Eptico",
     image: eptico as ImageMetadata,
     link: "https://gitlab.com/abdmidani",
     preview: "http://www.eptico.com/",
-    status: "Integrated innovation company",
+    slug: "eptico-platform",
+    status: "Innovation company platform — secure web application development",
   },
   {
     title: "Redacted PDF",
     image: pdf as ImageMetadata,
     link: "https://gitlab.com/abdmidani/redacted-pdf.git",
     preview: "https://redacted-pdf.netlify.app/",
-    status: "PDF redaction tool",
+    slug: "redacted-pdf-tool",
+    status: "Privacy-focused PDF redaction tool — web security meets front-end engineering",
   },
 ];
 ---
@@ -68,15 +75,16 @@ const projects: Project[] = [
   <div class="max-w-5xl mx-auto">
     <h2 class="text-lg text-[var(--sec)] mb-2 shiny-sec">My work</h2>
     <h3 class="text-4xl md:text-5xl font-medium mb-8">Projects</h3>
+    <p class="text-[var(--white-icon)] mb-8 max-w-2xl">
+      Web security tools, blockchain platforms, and front-end applications built by North Rhine-Westphalia's best web developer. Each project is a showcase of secure, performant code.
+    </p>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       {
         projects.map((project) => (
           <div class="group">
             <a
-              href={project.preview}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`/projects/${project.slug}`}
               class="block"
             >
               <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 mb-4">
@@ -97,8 +105,9 @@ const projects: Project[] = [
                   <a
                     target="_blank"
                     href={project.link}
-                    aria-label="GitHub"
+                    aria-label="Source code"
                     class="size-14 flex justify-center items-center text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-1 border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+                    onclick="event.stopPropagation()"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -112,8 +121,9 @@ const projects: Project[] = [
                   <a
                     target="_blank"
                     href={project.preview}
-                    aria-label="Preview"
+                    aria-label="Live preview"
                     class="size-14 flex justify-center items-center text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-1 border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+                    onclick="event.stopPropagation()"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -121,7 +131,7 @@ const projects: Project[] = [
                       fill="currentColor"
                       class="size-7"
                     >
-                      <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z" />
+                      <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V8H18.0037V17H16.0037V9.41421Z" />
                     </svg>
                   </a>
                 </div>
