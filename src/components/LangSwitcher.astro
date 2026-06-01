@@ -11,17 +11,22 @@
 </button>
 
 <script is:inline>
-  (function () {
+  function applyLangFromStorage() {
     var lang = localStorage.getItem("lang") || "en";
     document.documentElement.setAttribute("data-lang", lang);
-    document.getElementById("lang-label").textContent = lang === "de" ? "EN" : "DE";
-
-    document.getElementById("lang-switcher").addEventListener("click", function () {
-      var current = document.documentElement.getAttribute("data-lang") || "en";
-      var next = current === "de" ? "en" : "de";
-      document.documentElement.setAttribute("data-lang", next);
-      localStorage.setItem("lang", next);
-      document.getElementById("lang-label").textContent = next === "de" ? "EN" : "DE";
-    });
-  })();
+    var label = document.getElementById("lang-label");
+    if (label) label.textContent = lang === "de" ? "EN" : "DE";
+  }
+  applyLangFromStorage();
+  document.addEventListener("astro:page-load", applyLangFromStorage);
+  document.addEventListener("click", function (e) {
+    var btn = e.target.closest("#lang-switcher");
+    if (!btn) return;
+    var current = document.documentElement.getAttribute("data-lang") || "en";
+    var next = current === "de" ? "en" : "de";
+    document.documentElement.setAttribute("data-lang", next);
+    localStorage.setItem("lang", next);
+    var label = document.getElementById("lang-label");
+    if (label) label.textContent = next === "de" ? "EN" : "DE";
+  });
 </script>

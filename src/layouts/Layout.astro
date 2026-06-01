@@ -78,11 +78,18 @@ const keywords = "web developer north rhine westphalia, cybersecurity specialist
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-833KX5000V"></script>
-    <script>
+    <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-833KX5000V');
+      gtag('config', 'G-833KX5000V', { send_page_view: false });
+      document.addEventListener('astro:page-load', function() {
+        gtag('event', 'page_view', {
+          page_location: window.location.href,
+          page_path: window.location.pathname,
+          page_title: document.title
+        });
+      });
     </script>
 
     <!-- Fonts: Non-render-blocking -->
