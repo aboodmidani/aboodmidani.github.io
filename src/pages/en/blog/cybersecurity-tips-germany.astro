@@ -1,0 +1,82 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Nav from "@/components/nav.astro";
+import Footer from "@/components/footer.astro";
+import T from "@/components/T.astro";
+
+const locale = Astro.currentLocale === "de" ? "de" : "en";
+const base = `/${locale}`;
+---
+
+<Layout title="Cybersecurity Tips for Small Businesses in Germany | Abdalrahman Midani" description="Practical, no-jargon security advice for small business owners in Germany — from phishing protection to secure passwords.">
+  <Nav />
+
+  <article class="text-[var(--white)] py-16">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-sm text-[var(--sec)] mb-4">
+        <a href={`${base}/`} class="hover:underline"><T key="nav.home" /></a>
+        <span class="mx-2">/</span>
+        <a href={`${base}/blog`} class="hover:underline"><T key="nav.blog" /></a>
+        <span class="mx-2">/</span>
+        Cybersecurity Tips for Small Businesses
+      </p>
+      <h1 class="text-3xl md:text-5xl font-medium mb-4">Cybersecurity Tips for Small Businesses in Germany</h1>
+      <p class="text-sm text-[var(--white-icon)] mb-12">October 28, 2025 · 6 min read</p>
+
+      <div class="prose prose-invert max-w-none text-[var(--white-icon)] space-y-6">
+        <p class="text-lg">
+          Cyberattacks don't just target big corporations. In fact, small businesses are often easier targets — they have valuable data but fewer defenses. Here are practical, no-jargon security tips for small business owners in Germany.
+        </p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">1. Use a Password Manager</h2>
+        <p>
+          Stop reusing passwords. Stop storing them in Excel. Stop using your dog's name followed by the year. A password manager (Bitwarden, 1Password, KeePass) generates and stores unique passwords for every account. One master password to remember — everything else is locked away safely.
+        </p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">2. Turn On Two-Factor Authentication (2FA)</h2>
+        <p>
+          2FA adds a second step to login — usually a code from your phone. Even if someone steals your password, they can't get in. Enable 2FA on email, banking, cloud storage, and any business-critical accounts. Use an authenticator app (Aegis, Google Authenticator), not SMS — SMS-based 2FA can be intercepted.
+        </p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">3. Watch Out for Phishing</h2>
+        <p>
+          Phishing emails are getting scarily realistic. They might look like invoices from your real suppliers, or messages from "your bank." Red flags:
+        </p>
+        <ul class="list-disc list-inside space-y-2 ml-4">
+          <li>Urgency ("Your account will be closed in 24 hours")</li>
+          <li>Mismatched sender address (the display name says "PayPal" but the email is random@somewhere.com)</li>
+          <li>Links that go to weird URLs — hover before you click</li>
+          <li>Unexpected attachments, especially .zip or .exe</li>
+        </ul>
+        <p>When in doubt, call the sender on a known number — don't reply to the email.</p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">4. Keep Software Updated</h2>
+        <p>
+          Those Windows update notifications? Don't ignore them forever. Most security breaches exploit known vulnerabilities that were patched months or years ago. Enable automatic updates for your operating system, browser, and key software. For your website, keep the CMS and plugins current.
+        </p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">5. Back Up Everything (3-2-1 Rule)</h2>
+        <p>
+          Ransomware is real. If your files get encrypted, a recent backup is the difference between a bad day and a business-ending disaster. The 3-2-1 rule: 3 copies of your data, on 2 different media types, with 1 offsite (cloud backup). Test your backups regularly — backups that don't restore are worthless.
+        </p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">6. Train Your Employees</h2>
+        <p>
+          Your team is your first line of defense — and your biggest vulnerability. Hold a short security training once a year. Cover phishing, password hygiene, and what to do if something goes wrong. Make it okay to report mistakes; the worst breaches happen when someone stays quiet because they're afraid of getting in trouble.
+        </p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">7. GDPR Is Not Optional</h2>
+        <p>
+          As a German business, you handle personal data under GDPR. That means you need a privacy policy, data processing agreements with vendors, and a process for handling data subject requests. The BSI (Bundesamt für Sicherheit in der Informationstechnik) has free resources to help small businesses get started.
+        </p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">Need a Security Audit?</h2>
+        <p>
+          If your business handles customer data, an annual security review is worth the investment. I offer vulnerability assessments and security audits for small businesses in NRW. <a href={`${base}/contact`} class="text-[var(--sec)] hover:underline">Get in touch</a> to discuss.
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <Footer />
+</Layout>

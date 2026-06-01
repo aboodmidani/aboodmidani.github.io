@@ -66,6 +66,7 @@
   },
   "contactPage": {
     "title": "Lass uns reden",
+    "tagline": "Kontakt aufnehmen",
     "heading": "Kontakt",
     "subtitle": "Hast du ein Projekt oder eine Frage? Schick mir eine Nachricht und ich melde mich bei dir.",
     "formName": "Name",
@@ -77,21 +78,26 @@
   "thanksPage": {
     "title": "Vielen Dank!",
     "heading": "Nachricht gesendet!",
+    "message": "Danke für deine Nachricht. Ich melde mich so schnell wie möglich bei dir.",
     "subtitle": "Danke für deine Nachricht. Ich melde mich so schnell wie möglich bei dir.",
     "backHome": "Zurück zur Startseite",
+    "reachDirectly": "Oder erreiche mich direkt:",
     "or": "oder",
     "sendEmail": "Eine weitere E-Mail senden"
   },
   "blogPage": {
     "title": "Artikel",
     "heading": "Blog",
-    "subtitle": "Einblicke in Webentwicklung, Cybersicherheit und sichere Anwendungen. Geschrieben in Ochtrup, Nordrhein-Westfalen — von einem Entwickler, der programmiert und schützt."
+    "subtitle": "Einblicke in Webentwicklung, Cybersicherheit und sichere Anwendungen. Geschrieben in Ochtrup, Nordrhein-Westfalen — von einem Entwickler, der programmiert und schützt.",
+    "readMore": "Weiterlesen"
   },
   "projectsPage": {
     "title": "Meine Arbeit",
+    "tagline": "Meine Arbeit",
     "heading": "Projekte",
     "subtitle": "Web-Sicherheitstools, Blockchain-Plattformen und Front-End-Anwendungen von einem Entwickler aus Nordrhein-Westfalen.",
-    "moreOn": "Mehr Projekte auf"
+    "moreOn": "Mehr Projekte auf",
+    "moreProjects": "Mehr Projekte auf GitLab"
   },
   "projectDetail": {
     "responsibilities": "Hauptaufgaben",

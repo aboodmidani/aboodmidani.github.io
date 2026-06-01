@@ -1,0 +1,110 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Nav from "@/components/nav.astro";
+import Footer from "@/components/footer.astro";
+import { Image } from "astro:assets";
+import T from "@/components/T.astro";
+import codiay from "../../../../public/codiay.png";
+import tonb from "../../../../public/tonb.png";
+import pdf from "../../../../public/pdf.jpeg";
+import eptico from "../../../../public/eptico.png";
+import phishing from "../../../../public/phishing.png";
+import webscan from "../../../../public/webscan.png";
+
+const locale = Astro.currentLocale === "de" ? "de" : "en";
+const base = `/${locale}`;
+
+const projects = [
+  { title: "Matrix Web Audit", image: webscan, link: "https://github.com/aboodmidani/matrix", preview: "https://matrix-audit.netlify.app", slug: "matrix-web-audit", status: "Web security audit & vulnerability detection tool by a cybersecurity specialist" },
+  { title: "Phishing Email Analyzer", image: phishing, link: "https://github.com/aboodmidani/phishing-email-analyzer", preview: "https://phishing-email-analyzer-jyjj.onrender.com", slug: "phishing-email-analyzer", status: "Phishing detection tool — email header & content analysis for security teams" },
+  { title: "Tonb", image: tonb, link: "https://gitlab.com/abdmidani", preview: "https://tonb.io/", slug: "tonb-blockchain", status: "Blockchain banking platform (Technical Lead) — built by a senior front-end developer" },
+  { title: "Codiay", image: codiay, link: "https://gitlab.com/abdmidani", preview: "https://codiay.com/", slug: "codiay-agency", status: "Digital agency website (Technical Lead) — full front-end development from NRW" },
+  { title: "Eptico", image: eptico, link: "https://gitlab.com/abdmidani", preview: "http://www.eptico.com/", slug: "eptico-platform", status: "Innovation company platform — secure web application development" },
+  { title: "Redacted PDF", image: pdf, link: "https://gitlab.com/abdmidani/redacted-pdf.git", preview: "https://redacted-pdf.netlify.app/", slug: "redacted-pdf-tool", status: "Privacy-focused PDF redaction tool — web security meets front-end engineering" },
+];
+---
+
+<Layout title="Projects | Abdalrahman Midani — Web Developer & Cybersecurity Specialist" description="Explore web security tools, blockchain platforms, and front-end applications built by Abdalrahman Midani in Ochtrup, North Rhine-Westphalia.">
+  <Nav />
+
+  <section class="text-[var(--white)] py-16">
+    <div class="max-w-5xl mx-auto">
+      <p class="text-xs text-[var(--sec)] uppercase tracking-[0.3em] mb-3 font-medium"><T key="projectsPage.tagline" /></p>
+      <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-4"><T key="projectsPage.heading" /></h1>
+      <p class="text-[var(--white-icon)] mb-12 max-w-2xl">
+        <T key="projectsPage.subtitle" />
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {projects.map((project) => (
+          <div class="group">
+            <a href={`${base}/projects/${project.slug}`} class="block">
+              <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 mb-4">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  class="w-full h-48 md:h-72 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div class="flex items-center px-3">
+                <div class="flex-grow">
+                  <h2 class="text-2xl font-semibold">{project.title}</h2>
+                  <span class="py-1 text-sm text-[var(--white-icon)]">{project.status}</span>
+                </div>
+                {project.slug === 'matrix-web-audit' || project.slug === 'phishing-email-analyzer' ? (
+                  <div class="flex gap-2 ml-auto">
+                    <a
+                      target="_blank"
+                      href={project.link}
+                      aria-label="Source code"
+                      class="size-14 flex justify-center items-center text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+                      onclick="event.stopPropagation()"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-7"><path d="M24 12L18.3431 17.6569L16.9289 16.2426L21.1716 12L16.9289 7.75736L18.3431 6.34315L24 12ZM2.82843 12L7.07107 16.2426L5.65685 17.6569L0 12L5.65685 6.34315L7.07107 7.75736L2.82843 12ZM9.78845 21H7.66009L14.2116 3H16.3399L9.78845 21Z" /></svg>
+                    </a>
+                    <a
+                      target="_blank"
+                      href={project.preview}
+                      aria-label="Live preview"
+                      class="size-14 flex justify-center items-center text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+                      onclick="event.stopPropagation()"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-7"><path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V8H18.0037V17H16.0037V9.41421Z" /></svg>
+                    </a>
+                  </div>
+                ) : null}
+              </div>
+            </a>
+          </div>
+        ))}
+      </div>
+
+      <a
+        target="_blank"
+        href="https://gitlab.com/abdmidani"
+        class="w-full flex items-center justify-center gap-2 mt-9 text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-[var(--white-icon-tr)] p-3 rounded-full bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+      >
+        <span class="md:text-lg text-md"><T key="projectsPage.moreProjects" /></span>
+        <svg width="800px" height="800px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="size-6"><path fill="#FC6D26" d="M14.975 8.904L14.19 6.55l-1.552-4.67a.268.268 0 00-.255-.18.268.268 0 00-.254.18l-1.552 4.667H5.422L3.87 1.879a.268.268 0 00-.254-.179.267.267 0 00-.254.18l-1.55 4.667-.784 2.357a.515.515 0 00.193.583L8 14.3 1.81 6.55z"></path><path fill="#E24329" d="M8 14.296l2.578-7.75H5.423L8 14.296z"></path><path fill="#FC6D26" d="M8 14.296l-2.579-7.75H1.813L8 14.296z"></path><path fill="#FCA326" d="M1.81 6.549l-.784 2.354a.515.515 0 00.193.583L8 14.3 1.81 6.55z"></path><path fill="#E24329" d="M1.812 6.549h3.612L3.87 1.882a.268.268 0 00-.254-.18.268.268 0 00-.255.18L1.812 6.549z"></path><path fill="#FC6D26" d="M8 14.296l2.578-7.75h3.614L8 14.296z"></path><path fill="#FCA326" d="M14.19 6.549l.783 2.354a.514.514 0 01-.193.583L8 14.296l6.188-7.747h.001z"></path><path fill="#E24329" d="M14.19 6.549H10.58l1.551-4.667a.267.267 0 01.255-.18c.115 0 .217.073.254.18l1.552 4.667z"></path></svg>
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style is:global>
+  .shiny-sec {
+    background: linear-gradient(135deg, #8fff9f 25%, #eee5ff 50%, #8fff9f 75%);
+    background-size: 400% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shine 3s linear infinite;
+  }
+
+  @keyframes shine {
+    0% { background-position: 100% 50%; }
+    30%, 70% { background-position: 0% 50%; }
+  }
+</style>

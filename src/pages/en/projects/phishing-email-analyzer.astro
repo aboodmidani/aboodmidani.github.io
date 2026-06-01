@@ -1,0 +1,44 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Nav from "@/components/nav.astro";
+import Footer from "@/components/footer.astro";
+import ProjectDetail from "@/components/ProjectDetail.astro";
+import phishing from "../../../../public/phishing.png";
+import T from "@/components/T.astro";
+const locale = Astro.currentLocale === "de" ? "de" : "en";
+const base = `/${locale}`;
+---
+
+<Layout title="Phishing Email Analyzer — Email Security Tool | Abdalrahman Midani" description="A security tool that helps users identify phishing emails by analyzing headers, links, and content. Built for awareness training in the German market.">
+  <Nav />
+
+  <section class="text-[var(--white)] py-16">
+    <div class="max-w-5xl mx-auto">
+      <p class="text-sm text-[var(--sec)] mb-4">
+        <a href={`${base}/`} class="hover:underline"><T key="nav.home" /></a>
+        <span class="mx-2">/</span>
+        <a href={`${base}/projects`} class="hover:underline"><T key="nav.projects" /></a>
+        <span class="mx-2">/</span>
+        Phishing Email Analyzer
+      </p>
+      <h1 class="text-3xl md:text-5xl font-medium mb-8">Phishing Email Analyzer</h1>
+    </div>
+
+    <ProjectDetail
+      title="Phishing Email Analyzer"
+      image={phishing as import("astro").ImageMetadata}
+      description="A security tool that helps users identify phishing attempts by analyzing email headers, embedded links, and suspicious content patterns. The analyzer checks for common red flags like spoofed senders, mismatched URLs, and known phishing indicators. Useful for security awareness training and for individuals and small businesses in Germany who want an extra layer of protection against email-based attacks."
+      responsibilities={[
+        "Designed the rule-based detection engine for phishing patterns",
+        "Implemented email header parsing and SPF/DKIM/DMARC validation",
+        "Built a risk scoring system that grades emails on a 0-100 scale",
+        "Created an educational interface that explains *why* an email is suspicious",
+      ]}
+      techStack={["JavaScript", "Node.js", "Email Parsing", "Security Analysis", "HTML/CSS"]}
+      liveUrl="https://phishing-email-analyzer.netlify.app"
+      projectSlug="phishing-email-analyzer"
+    />
+  </section>
+
+  <Footer />
+</Layout>

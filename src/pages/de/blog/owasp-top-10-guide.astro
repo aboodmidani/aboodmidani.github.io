@@ -1,0 +1,106 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Nav from "@/components/nav.astro";
+import Footer from "@/components/footer.astro";
+import T from "@/components/T.astro";
+
+const locale = Astro.currentLocale === "de" ? "de" : "en";
+const base = `/${locale}`;
+---
+
+<Layout title="OWASP Top 10 erklärt: Ein Leitfaden in einfacher Sprache für Nicht-Entwickler | Abdalrahman Midani" description="Die OWASP Top 10 sind der Industriestandard für Web-Sicherheit. Hier erfahren Sie, was sie tatsächlich bedeuten — erklärt für Gründer und Produktmanager.">
+  <Nav />
+
+  <article class="text-[var(--white)] py-16">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-sm text-[var(--sec)] mb-4">
+        <a href={`${base}/`} class="hover:underline"><T key="nav.home" /></a>
+        <span class="mx-2">/</span>
+        <a href={`${base}/blog`} class="hover:underline"><T key="nav.blog" /></a>
+        <span class="mx-2">/</span>
+        OWASP Top 10 erklärt
+      </p>
+      <h1 class="text-3xl md:text-5xl font-medium mb-4">OWASP Top 10 erklärt: Ein Leitfaden in einfacher Sprache für Nicht-Entwickler</h1>
+      <p class="text-sm text-[var(--white-icon)] mb-12">22. September 2025 · 10 Min. Lesedauer</p>
+
+      <div class="prose prose-invert max-w-none text-[var(--white-icon)] space-y-6">
+        <p class="text-lg">
+          Wenn Sie jemals einen Entwickler beauftragt haben, ist Ihnen vielleicht der Begriff „OWASP Top 10" begegnet. Es ist der am weitesten anerkannte Sicherheitsstandard für Webanwendungen — aber die meisten Nicht-Entwickler wissen nicht, was er tatsächlich bedeutet. Hier ist eine Erklärung in einfacher Sprache.
+        </p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">Was ist OWASP?</h2>
+        <p>
+          OWASP steht für Open Worldwide Application Security Project. Es ist eine gemeinnützige Stiftung, die frei verfügbare Artikel, Werkzeuge und Standards für Web-Sicherheit veröffentlicht. Die OWASP Top 10 sind eine regelmäßig aktualisierte Liste der kritischsten Sicherheitsrisiken für Webanwendungen — im Grunde die „größten Dinge, die im Web schiefgehen".
+        </p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">Die OWASP Top 10 (2021, aktuelle Version)</h2>
+
+        <h3 class="text-xl font-semibold text-[var(--white)] mt-6 mb-3">1. Fehlerhafte Zugriffskontrolle</h3>
+        <p>
+          Wenn eine Website nicht ordnungsgemäß prüft, wer was tun darf. Beispiel: Ein Nutzer kann durch Änderung einer Zahl in der URL auf das Konto eines anderen Nutzers zugreifen. <strong class="text-[var(--white)]">Was das für Sie bedeutet:</strong> Stellen Sie sicher, dass Ihre Entwickler testen, dass Nutzer nur ihre eigenen Daten sehen können.
+        </p>
+
+        <h3 class="text-xl font-semibold text-[var(--white)] mt-6 mb-3">2. Kryptografische Fehler</h3>
+        <p>
+          Wenn sensible Daten nicht richtig verschlüsselt werden. Beispiel: Passwörter im Klartext gespeichert oder Kreditkartennummern über unverschlüsselte Verbindungen gesendet. <strong class="text-[var(--white)]">Was das für Sie bedeutet:</strong> Ihre Website muss HTTPS nutzen (das Schloss in der Browserleiste) und Passwörter müssen gehasht, nicht im Klartext gespeichert werden.
+        </p>
+
+        <h3 class="text-xl font-semibold text-[var(--white)] mt-6 mb-3">3. Injection (SQL, NoSQL, OS-Befehle)</h3>
+        <p>
+          Wenn ein Angreifer bösartigen Code als normale Eingabe an Ihre Website sendet. Beispiel: SQL-Code in ein Login-Formular eingeben, um die Authentifizierung zu umgehen. <strong class="text-[var(--white)]">Was das für Sie bedeutet:</strong> Eine der ältesten und gefährlichsten Schwachstellen. Jede Website, die Nutzereingaben entgegennimmt, braucht eine korrekte Validierung.
+        </p>
+
+        <h3 class="text-xl font-semibold text-[var(--white)] mt-6 mb-3">4. Unsicheres Design</h3>
+        <p>
+          Eine relativ neue Kategorie — über Fehler im Design selbst, nicht im Code. Beispiel: Ein Passwort-Reset-Flow, der unbegrenzte Versuche erlaubt, ohne Rate-Limit. <strong class="text-[var(--white)]">Was das für Sie bedeutet:</strong> Sicherheit muss von Anfang an mitgedacht werden, nicht am Ende angeflanscht.
+        </p>
+
+        <h3 class="text-xl font-semibold text-[var(--white)] mt-6 mb-3">5. Sicherheits-Fehlkonfiguration</h3>
+        <p>
+          Wenn Server, Datenbank oder Anwendung unsicher konfiguriert sind. Beispiel: Standard-Passwörter noch im Einsatz oder Admin-Panels offen für das Internet. <strong class="text-[var(--white)]">Was das für Sie bedeutet:</strong> Nach dem Launch sollte jemand die Konfiguration prüfen — nicht nur den Code.
+        </p>
+
+        <h3 class="text-xl font-semibold text-[var(--white)] mt-6 mb-3">6. Verwundbare und veraltete Komponenten</h3>
+        <p>
+          Wenn die Website Bibliotheken oder Frameworks mit bekannten Sicherheitslücken verwendet. Beispiel: Eine alte WordPress-Version mit öffentlichem Exploit. <strong class="text-[var(--white)]">Was das für Sie bedeutet:</strong> Halten Sie alles aktuell. Abonnieren Sie Security-Advisories für Ihren Tech-Stack.
+        </p>
+
+        <h3 class="text-xl font-semibold text-[var(--white)] mt-6 mb-3">7. Fehler bei Identifikation und Authentifizierung</h3>
+        <p>
+          Wenn Login-Systeme schwach sind. Beispiel: Einfache Passwörter erlaubt, keine 2FA, Session-Tokens in URLs offengelegt. <strong class="text-[var(--white)]">Was das für Sie bedeutet:</strong> Starke Passwort-Richtlinien, 2FA und sauberes Session-Management sind nicht verhandelbar.
+        </p>
+
+        <h3 class="text-xl font-semibold text-[var(--white)] mt-6 mb-3">8. Fehler bei Software- und Datenintegrität</h3>
+        <p>
+          Wenn Code oder Daten ohne ordnungsgemäße Verifizierung aktualisiert werden. Beispiel: Auto-Update-Software, die keine Signaturen prüft. <strong class="text-[var(--white)]">Was das für Sie bedeutet:</strong> Verwenden Sie signierte Pakete, verifizieren Sie Updates und nutzen Sie CI/CD-Pipelines mit sauberen Zugriffskontrollen.
+        </p>
+
+        <h3 class="text-xl font-semibold text-[var(--white)] mt-6 mb-3">9. Fehler bei Security-Logging und Monitoring</h3>
+        <p>
+          Wenn Angriffe passieren, aber niemand es merkt. Beispiel: Keine Logs, keine Alerts, kein Incident-Response-Plan. <strong class="text-[var(--white)]">Was das für Sie bedeutet:</strong> Haben Sie einen Plan, was passiert, wenn (nicht falls) etwas schiefgeht.
+        </p>
+
+        <h3 class="text-xl font-semibold text-[var(--white)] mt-6 mb-3">10. Server-Side Request Forgery (SSRF)</h3>
+        <p>
+          Wenn ein Angreifer Ihren Server dazu bringt, Anfragen an interne Systeme zu stellen. Beispiel: Ein Feature, das eine URL abruft, die ein Angreifer auf interne Dienste lenkt. <strong class="text-[var(--white)]">Was das für Sie bedeutet:</strong> Seien Sie vorsichtig mit Features, die externe URLs abrufen.
+        </p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">Was Sie mit diesen Informationen tun sollten</h2>
+        <p>
+          Sie müssen kein Security-Experte sein. Aber Sie sollten:
+        </p>
+        <ol class="list-decimal list-inside space-y-2 ml-4">
+          <li>Ihren Entwickler fragen, wie er jede dieser Kategorien behandelt.</li>
+          <li>Sicherstellen, dass Sicherheit von Anfang an Teil des Projektumfangs ist, nicht ein nachträglicher Gedanke.</li>
+          <li>Mindestens einmal pro Jahr einen Security-Review einplanen, besonders wenn Sie Nutzerdaten verarbeiten.</li>
+          <li>Einen Incident-Response-Plan haben — wissen, wen Sie anrufen, was Sie tun, wie Sie kommunizieren.</li>
+        </ol>
+        <p>
+          Ich helfe kleinen Unternehmen in NRW, sichere Webanwendungen von Grund auf zu bauen und bestehende zu auditieren. <a href={`${base}/contact`} class="text-[var(--sec)] hover:underline">Melden Sie sich gerne</a>, wenn Sie über einen Security-Review sprechen möchten.
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <Footer />
+</Layout>

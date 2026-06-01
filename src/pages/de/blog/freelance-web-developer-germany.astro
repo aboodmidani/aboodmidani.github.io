@@ -1,0 +1,90 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Nav from "@/components/nav.astro";
+import Footer from "@/components/footer.astro";
+import T from "@/components/T.astro";
+
+const locale = Astro.currentLocale === "de" ? "de" : "en";
+const base = `/${locale}`;
+---
+
+<Layout title="Freelance Webentwickler vs. Agentur in Deutschland: Der ehrliche Vergleich | Abdalrahman Midani" description="Wann lohnt es sich, einen freiberuflichen Webentwickler in Deutschland zu beauftragen, und wann sollten Sie eine Agentur wählen? Eine ehrliche Gegenüberstellung.">
+  <Nav />
+
+  <article class="text-[var(--white)] py-16">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-sm text-[var(--sec)] mb-4">
+        <a href={`${base}/`} class="hover:underline"><T key="nav.home" /></a>
+        <span class="mx-2">/</span>
+        <a href={`${base}/blog`} class="hover:underline"><T key="nav.blog" /></a>
+        <span class="mx-2">/</span>
+        Freelancer vs. Agentur
+      </p>
+      <h1 class="text-3xl md:text-5xl font-medium mb-4">Freelance Webentwickler vs. Agentur in Deutschland: Der ehrliche Vergleich</h1>
+      <p class="text-sm text-[var(--white-icon)] mb-12">5. September 2025 · 6 Min. Lesedauer</p>
+
+      <div class="prose prose-invert max-w-none text-[var(--white-icon)] space-y-6">
+        <p class="text-lg">
+          Eine der ersten Entscheidungen, die Sie bei einem Webprojekt treffen: einen freiberuflichen Entwickler beauftragen oder mit einer Agentur arbeiten? Beides hat seine Berechtigung. Hier ist ein ehrlicher Vergleich — inklusive der versteckten Kosten und Risiken.
+        </p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">Die Kurzfassung</h2>
+        <ul class="list-disc list-inside space-y-2 ml-4">
+          <li><strong class="text-[var(--white)]">Freelancer:</strong> Geringere Kosten, direkte Kommunikation, flexibler Umfang. Am besten für kleine bis mittlere Projekte.</li>
+          <li><strong class="text-[var(--white)]">Agentur:</strong> Höhere Kosten, komplettes Team, etablierter Prozess. Am besten für große, komplexe Projekte.</li>
+        </ul>
+        <p>Das ist die einfache Version. Jetzt die Nuancen.</p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">Wann Sie einen freiberuflichen Webentwickler in Deutschland beauftragen sollten</h2>
+        <p>Freelancer glänzen, wenn:</p>
+        <ul class="list-disc list-inside space-y-2 ml-4">
+          <li>Sie einen klaren Umfang haben (Marketing-Website, kleine Web-App, spezifisches Feature)</li>
+          <li>Ihr Budget unter 20.000 € liegt</li>
+          <li>Sie direkte Kommunikation mit der Person wünschen, die den Code schreibt</li>
+          <li>Das Projekt zeitkritisch ist und Flexibilität braucht</li>
+          <li>Sie eine persönliche Beziehung und laufende Unterstützung schätzen</li>
+        </ul>
+        <p>Für ein typisches NRW-Kleinunternehmen — Restaurant-Website, Website für Dienstleister, kleiner Online-Shop, internes Tool — ist ein Freelancer meistens die richtige Wahl. Das Preis-Leistungs-Verhältnis ist kaum zu schlagen.</p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">Wann Sie eine Agentur beauftragen sollten</h2>
+        <p>Agenturen sind sinnvoll, wenn:</p>
+        <ul class="list-disc list-inside space-y-2 ml-4">
+          <li>Sie ein komplettes Team brauchen: Design, Frontend, Backend, DevOps, QA, Projektmanagement</li>
+          <li>Ihr Projekt komplex ist (individuelles ERP, Multi-Plattform-Integration, große Plattform)</li>
+          <li>Sie 24/7-Support oder garantierte SLAs benötigen</li>
+          <li>Ihr Budget über 50.000 € liegt und die Timeline 6+ Monate beträgt</li>
+          <li>Sie vertragliche Garantien brauchen, die eine Einzelperson nicht bieten kann</li>
+        </ul>
+        <p>Wenn Sie ein Mittelstandsunternehmen sind, das ein großes digitales Produkt launcht, oder ein Startup, das eine komplexe Plattform baut, gibt Ihnen eine Agentur die Team-Tiefe, die kein einzelner Freelancer bieten kann.</p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">Die versteckten Kosten von Agenturen</h2>
+        <p>Was Agenturen nicht immer offen kommunizieren:</p>
+        <ul class="list-disc list-inside space-y-2 ml-4">
+          <li><strong class="text-[var(--white)]">Account-Management-Overhead.</strong> Sie zahlen für einen Projektmanager zwischen Ihnen und den Entwicklern.</li>
+          <li><strong class="text-[var(--white)]">Langsamere Iteration.</strong> Entscheidungen gehen durch Schichten, nicht direkt zur bauenden Person.</li>
+          <li><strong class="text-[var(--white)]">Junior-Personal.</strong> Agenturen setzen oft Junior-Entwickler auf kleine Projekte an, um abrechenbare Stunden zu maximieren.</li>
+          <li><strong class="text-[var(--white)]">Lock-in.</strong> Ihre CMS-Wahl und Tech-Stack-Auswahl ist möglicherweise schwer zu warten, wenn Sie sich trennen.</li>
+        </ul>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">Die versteckten Risiken von Freelancern</h2>
+        <p>Auf der anderen Seite können Freelancer riskant sein, wenn:</p>
+        <ul class="list-disc list-inside space-y-2 ml-4">
+          <li><strong class="text-[var(--white)]">Kapazität.</strong> Eine Person kann nur so viel. Wenn sie krank wird, stockt das Projekt.</li>
+          <li><strong class="text-[var(--white)]">Skill-Lücken.</strong> Ein freiberuflicher Frontend-Entwickler kennt vielleicht Backend oder Security nicht tief.</li>
+          <li><strong class="text-[var(--white)]">Kein Sicherheitsnetz.</strong> Kein Team, das einspringt, wenn sie mitten im Projekt gehen.</li>
+          <li><strong class="text-[var(--white)]">Variable Qualität.</strong> Die Spanne ist breit — von Weltklasse bis „ich habe JavaScript letzten Monat gelernt".</li>
+        </ul>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">Ein Mittelweg: Hybrid</h2>
+        <p>
+          Einige der besten Projekte, die ich sehe, nutzen einen Hybrid-Ansatz: ein freiberuflicher Entwickler (oder kleines Team) für den Build, mit periodischer Unterstützung von Spezialisten (Security-Audit, Performance-Review, Design-Feedback). Sie bekommen die Kostenvorteile und direkte Kommunikation des Freelancings, mit dem Sicherheitsnetz einer Expertenprüfung, wenn es darauf ankommt.
+        </p>
+        <p>
+          Für Unternehmen in NRW und ganz Deutschland ist das oft das Beste aus beiden Welten. Wenn Sie über Ihr Projekt sprechen möchten, <a href={`${base}/contact`} class="text-[var(--sec)] hover:underline">lassen Sie uns chatten</a>.
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <Footer />
+</Layout>

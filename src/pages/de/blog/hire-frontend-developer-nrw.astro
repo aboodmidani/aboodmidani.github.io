@@ -1,0 +1,83 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Nav from "@/components/nav.astro";
+import Footer from "@/components/footer.astro";
+import T from "@/components/T.astro";
+
+const locale = Astro.currentLocale === "de" ? "de" : "en";
+const base = `/${locale}`;
+---
+
+<Layout title="Wie Sie einen Frontend-Entwickler in NRW beauftragen (ohne Reinfall) | Abdalrahman Midani" description="Worauf Sie achten sollten, welche Fragen Sie stellen und wie Sie Frontend-Entwickler für Ihr nächstes Projekt in Nordrhein-Westfalen bewerten.">
+  <Nav />
+
+  <article class="text-[var(--white)] py-16">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-sm text-[var(--sec)] mb-4">
+        <a href={`${base}/`} class="hover:underline"><T key="nav.home" /></a>
+        <span class="mx-2">/</span>
+        <a href={`${base}/blog`} class="hover:underline"><T key="nav.blog" /></a>
+        <span class="mx-2">/</span>
+        Frontend-Entwickler in NRW beauftragen
+      </p>
+      <h1 class="text-3xl md:text-5xl font-medium mb-4">Wie Sie einen Frontend-Entwickler in NRW beauftragen (ohne Reinfall)</h1>
+      <p class="text-sm text-[var(--white-icon)] mb-12">10. Oktober 2025 · 7 Min. Lesedauer</p>
+
+      <div class="prose prose-invert max-w-none text-[var(--white-icon)] space-y-6">
+        <p class="text-lg">
+          Einen Frontend-Entwickler zu finden ist schwieriger, als es aussieht. Der Markt ist voller Leute, die Code schreiben können — aber weit weniger, die ein Produkt bauen, das tatsächlich für Ihr Unternehmen funktioniert. Ein praktischer Leitfaden für nicht-technische Gründer in Nordrhein-Westfalen.
+        </p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">Was „Frontend-Entwickler" eigentlich bedeutet</h2>
+        <p>
+          Das Frontend ist das, was Ihre Nutzer sehen und womit sie interagieren — Buttons, Formulare, Animationen, das responsive Layout. Ein Frontend-Entwickler arbeitet mit HTML, CSS, JavaScript und modernen Frameworks wie React, Vue oder Astro. Er verwandelt ein Design (oder eine vage Idee) in etwas, das im Browser funktioniert.
+        </p>
+        <p>Es ist etwas anderes als ein „Webentwickler" (was oft Full-Stack bedeutet, inklusive Backend) und etwas anderes als ein „Webdesigner" (was meistens visuelles Design in Figma bedeutet, nicht Programmierung).</p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">Die 5-Minuten-Bewertung</h2>
+        <p>Sie müssen nicht technisch sein, um Kandidaten zu filtern. Fragen Sie nach:</p>
+        <ol class="list-decimal list-inside space-y-2 ml-4">
+          <li><strong class="text-[var(--white)]">Drei relevante Portfolio-Stücke.</strong> Suchen Sie Projekte, die aussehen wie das, was Sie brauchen.</li>
+          <li><strong class="text-[var(--white)]">Ein klares Code-Repository (GitHub/GitLab).</strong> Öffnen Sie eine Datei. Ist sie organisiert? Lesbar?</li>
+          <li><strong class="text-[var(--white)]">Eine Live-Demo-URL.</strong> Laden Sie sie auf Ihrem Smartphone. Funktioniert sie? Sieht sie gut aus?</li>
+          <li><strong class="text-[var(--white)]">Einen Referenzkunden.</strong> Schreiben Sie ihm eine E-Mail. Fragen Sie, ob das Projekt pünktlich und im Budget war und wie die Zusammenarbeit war.</li>
+        </ol>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">Fragen, die echte Kompetenz zeigen</h2>
+        <p>Stellen Sie diese im Gespräch:</p>
+        <ul class="list-disc list-inside space-y-2 ml-4">
+          <li>„Beschreiben Sie mir ein Projekt, auf das Sie stolz sind. Was war schwierig daran?"</li>
+          <li>„Wie entscheiden Sie, welches Framework oder Tool Sie für ein neues Projekt verwenden?"</li>
+          <li>„Wenn das Design nicht pixel-perfekt ist, was machen Sie?"</li>
+          <li>„Wie gehen Sie mit Browser-Kompatibilitätsproblemen um?"</li>
+          <li>„Erzählen Sie mir von einer Situation, in der Sie ein Problem nicht lösen konnten. Was ist passiert?"</li>
+        </ul>
+        <p>Die Antworten müssen nicht perfekt sein — was Sie sehen wollen, ist Ehrlichkeit, Struktur und Neugier.</p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">Wo Sie Frontend-Entwickler in NRW finden</h2>
+        <ul class="list-disc list-inside space-y-2 ml-4">
+          <li><strong class="text-[var(--white)]">Lokale Meetups und Tech-Events</strong> — Düsseldorf, Köln und Münster haben aktive Frontend-Communities.</li>
+          <li><strong class="text-[var(--white)]">Empfehlungen</strong> — Fragen Sie andere Unternehmer in Ihrem Netzwerk. Die besten Entwickler kommen durch Mundpropaganda.</li>
+          <li><strong class="text-[var(--white)]">Freelancer-Plattformen mit Deutschland-Filter</strong> — Twago, Freelancermap, Gulp.</li>
+          <li><strong class="text-[var(--white)]">GitHub</strong> — Suchen Sie nach Entwicklern in Ihrer Region, die zu Open-Source-Projekten beitragen.</li>
+        </ul>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">Preise in NRW (2025)</h2>
+        <p>
+          Stundensätze für Frontend-Entwickler in NRW liegen typischerweise zwischen 65–120 €/Stunde für Freelancer, je nach Erfahrung. Junior-Entwickler: 45–65 €. Senior-Spezialisten mit Security- oder Performance-Expertise: 100–150 €. Tagessätze: 500–1.200 €.
+        </p>
+        <p>
+          Eine einfache Business-Website: 3.000–8.000 €. Eine individuelle Webanwendung: 15.000–50.000 €. Das sind Richtwerte — die tatsächlichen Kosten hängen von Umfang, Komplexität und Entwickler ab.
+        </p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">Die wichtigste Frage überhaupt</h2>
+        <p>Nach all der technischen Bewertung, fragen Sie sich diese eine Frage:</p>
+        <p class="text-xl font-medium text-[var(--white)] italic">„Würde ich dieser Person vertrauen, dass sie mich anruft, wenn etwas schiefläuft?"</p>
+        <p>Software ist nie fertig. Bugs passieren. Server gehen down. Kunden brauchen Dinge, die sie nicht angefragt haben. Sie wollen einen Entwickler, der rangeht — nicht einen, der verschwindet.</p>
+        <p>Wenn Sie in NRW sind und einen Frontend-Entwickler mit Cybersicherheits-Expertise suchen, <a href={`${base}/contact`} class="text-[var(--sec)] hover:underline">lassen Sie uns sprechen</a>.</p>
+      </div>
+    </div>
+  </article>
+
+  <Footer />
+</Layout>

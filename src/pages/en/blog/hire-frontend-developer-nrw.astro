@@ -1,0 +1,83 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Nav from "@/components/nav.astro";
+import Footer from "@/components/footer.astro";
+import T from "@/components/T.astro";
+
+const locale = Astro.currentLocale === "de" ? "de" : "en";
+const base = `/${locale}`;
+---
+
+<Layout title="How to Hire a Frontend Developer in NRW (Without Getting Burned) | Abdalrahman Midani" description="What to look for, what questions to ask, and how to evaluate frontend developers for your next project in North Rhine-Westphalia.">
+  <Nav />
+
+  <article class="text-[var(--white)] py-16">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-sm text-[var(--sec)] mb-4">
+        <a href={`${base}/`} class="hover:underline"><T key="nav.home" /></a>
+        <span class="mx-2">/</span>
+        <a href={`${base}/blog`} class="hover:underline"><T key="nav.blog" /></a>
+        <span class="mx-2">/</span>
+        How to Hire a Frontend Developer in NRW
+      </p>
+      <h1 class="text-3xl md:text-5xl font-medium mb-4">How to Hire a Frontend Developer in NRW (Without Getting Burned)</h1>
+      <p class="text-sm text-[var(--white-icon)] mb-12">October 10, 2025 · 7 min read</p>
+
+      <div class="prose prose-invert max-w-none text-[var(--white-icon)] space-y-6">
+        <p class="text-lg">
+          Hiring a frontend developer is harder than it looks. The market is full of people who can write code, but far fewer who can build a product that actually works for your business. Here's a practical guide for non-technical founders in North Rhine-Westphalia.
+        </p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">What "Frontend Developer" Actually Means</h2>
+        <p>
+          The frontend is what your users see and interact with — the buttons, the forms, the animations, the responsive layout. A frontend developer works with HTML, CSS, JavaScript, and modern frameworks like React, Vue, or Astro. They turn a design (or a vague idea) into something that works in the browser.
+        </p>
+        <p>It is different from a "web developer" (which often means full-stack, including backend), and different from a "web designer" (which usually means visual design in Figma, not coding).</p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">The 5-Minute Technical Assessment</h2>
+        <p>You don't need to be technical to filter candidates. Ask for:</p>
+        <ol class="list-decimal list-inside space-y-2 ml-4">
+          <li><strong class="text-[var(--white)]">Three relevant portfolio pieces.</strong> Look for projects that look like what you need.</li>
+          <li><strong class="text-[var(--white)]">A clear code repository (GitHub/GitLab).</strong> Open one file. Is it organized? Readable?</li>
+          <li><strong class="text-[var(--white)]">A live demo URL.</strong> Load it on your phone. Does it work? Does it look good?</li>
+          <li><strong class="text-[var(--white)]">One reference customer.</strong> Email them. Ask if the project was on time, on budget, and what working with the developer was like.</li>
+        </ol>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">Questions That Reveal Real Skill</h2>
+        <p>Ask these in an interview:</p>
+        <ul class="list-disc list-inside space-y-2 ml-4">
+          <li>"Walk me through a project you're proud of. What was hard about it?"</li>
+          <li>"How do you decide which framework or tool to use for a new project?"</li>
+          <li>"If the design isn't pixel-perfect, what do you do?"</li>
+          <li>"How do you handle browser compatibility issues?"</li>
+          <li>"Tell me about a time you had to debug a problem you couldn't solve. What happened?"</li>
+        </ul>
+        <p>The answers don't need to be perfect — what you want to see is honesty, structure, and curiosity.</p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">Where to Find Frontend Developers in NRW</h2>
+        <ul class="list-disc list-inside space-y-2 ml-4">
+          <li><strong class="text-[var(--white)]">Local meetups and tech events</strong> — Düsseldorf, Cologne, and Münster have active frontend communities.</li>
+          <li><strong class="text-[var(--white)]">Referrals</strong> — Ask other business owners in your network. The best devs come through word of mouth.</li>
+          <li><strong class="text-[var(--white)]">Freelance platforms with German talent filters</strong> — Twago, Freelancermap, Gulp.</li>
+          <li><strong class="text-[var(--white)]">GitHub</strong> — Search for developers in your area who contribute to open-source projects.</li>
+        </ul>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">Pricing in NRW (2025)</h2>
+        <p>
+          Hourly rates for frontend developers in NRW typically range from €65–€120/hour for freelancers, depending on experience. Junior developers: €45–€65. Senior specialists with security or performance expertise: €100–€150. Day rates: €500–€1,200.
+        </p>
+        <p>
+          A small business website: €3,000–€8,000. A custom web application: €15,000–€50,000. These are ballpark figures — the actual cost depends on scope, complexity, and the developer.
+        </p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">The Single Most Important Question</h2>
+        <p>After all the technical evaluation, ask yourself this one question:</p>
+        <p class="text-xl font-medium text-[var(--white)] italic">"Would I trust this person to call me when something is going wrong?"</p>
+        <p>Software is never done. Bugs happen. Servers go down. Clients need things they didn't ask for. You want a developer who will pick up the phone, not disappear.</p>
+        <p>If you're in NRW and looking for a frontend developer with cybersecurity expertise, <a href={`${base}/contact`} class="text-[var(--sec)] hover:underline">let's talk</a>.</p>
+      </div>
+    </div>
+  </article>
+
+  <Footer />
+</Layout>

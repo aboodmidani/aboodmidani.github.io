@@ -1,0 +1,72 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Nav from "@/components/nav.astro";
+import Footer from "@/components/footer.astro";
+import BlogCard from "@/components/BlogCard.astro";
+import T from "@/components/T.astro";
+
+const locale = Astro.currentLocale === "de" ? "de" : "en";
+const base = `/${locale}`;
+
+const posts = [
+  {
+    slug: "web-development-services-nrw",
+    title: "Web Development Services in NRW: What to Look For in 2025",
+    description: "A practical guide for businesses in North Rhine-Westphalia looking to hire a web developer. What matters, what doesn't, and how to spot red flags.",
+    date: "2025-11-15",
+  },
+  {
+    slug: "cybersecurity-tips-germany",
+    title: "Cybersecurity Tips for Small Businesses in Germany",
+    description: "Practical, no-jargon security advice for small business owners in Germany — from phishing protection to secure passwords.",
+    date: "2025-10-28",
+  },
+  {
+    slug: "hire-frontend-developer-nrw",
+    title: "How to Hire a Frontend Developer in NRW (Without Getting Burned)",
+    description: "What to look for, what questions to ask, and how to evaluate frontend developers for your next project in North Rhine-Westphalia.",
+    date: "2025-10-10",
+  },
+  {
+    slug: "owasp-top-10-guide",
+    title: "OWASP Top 10 Explained: A Plain-English Guide for Non-Developers",
+    description: "The OWASP Top 10 is the industry standard for web security. Here's what it actually means — explained for founders and product managers.",
+    date: "2025-09-22",
+  },
+  {
+    slug: "freelance-web-developer-germany",
+    title: "Freelance Web Developer vs. Agency in Germany: The Honest Comparison",
+    description: "When does it make sense to hire a freelance web developer in Germany, and when should you go with an agency? An honest breakdown.",
+    date: "2025-09-05",
+  },
+];
+---
+
+<Layout title="Blog — Web Development & Cybersecurity Insights | Abdalrahman Midani" description="Articles on web development, cybersecurity, and building software in Germany. Practical insights for businesses and developers.">
+  <Nav />
+
+  <section class="text-[var(--white)] py-16">
+    <div class="max-w-5xl mx-auto">
+      <p class="text-sm text-[var(--sec)] mb-4">
+        <a href={`${base}/`} class="hover:underline"><T key="nav.home" /></a>
+        <span class="mx-2">/</span>
+        <T key="nav.blog" />
+      </p>
+      <h1 class="text-3xl md:text-5xl font-medium mb-4"><T key="blogPage.title" /></h1>
+      <p class="text-lg text-[var(--white-icon)] mb-12"><T key="blogPage.tagline" /></p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {posts.map((post) => (
+          <BlogCard
+            slug={post.slug}
+            title={post.title}
+            description={post.description}
+            date={post.date}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

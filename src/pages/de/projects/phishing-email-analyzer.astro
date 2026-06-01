@@ -1,0 +1,44 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Nav from "@/components/nav.astro";
+import Footer from "@/components/footer.astro";
+import ProjectDetail from "@/components/ProjectDetail.astro";
+import phishing from "../../../../public/phishing.png";
+import T from "@/components/T.astro";
+const locale = Astro.currentLocale === "de" ? "de" : "en";
+const base = `/${locale}`;
+---
+
+<Layout title="Phishing-E-Mail-Analysator — E-Mail-Sicherheitstool | Abdalrahman Midani" description="Ein Sicherheitstool, das Nutzern hilft, Phishing-E-Mails durch Analyse von Headern, Links und Inhalten zu erkennen. Entwickelt für Awareness-Trainings im deutschen Markt.">
+  <Nav />
+
+  <section class="text-[var(--white)] py-16">
+    <div class="max-w-5xl mx-auto">
+      <p class="text-sm text-[var(--sec)] mb-4">
+        <a href={`${base}/`} class="hover:underline"><T key="nav.home" /></a>
+        <span class="mx-2">/</span>
+        <a href={`${base}/projects`} class="hover:underline"><T key="nav.projects" /></a>
+        <span class="mx-2">/</span>
+        Phishing-E-Mail-Analysator
+      </p>
+      <h1 class="text-3xl md:text-5xl font-medium mb-8">Phishing-E-Mail-Analysator</h1>
+    </div>
+
+    <ProjectDetail
+      title="Phishing-E-Mail-Analysator"
+      image={phishing as import("astro").ImageMetadata}
+      description="Ein Sicherheitstool, das Nutzern hilft, Phishing-Versuche durch die Analyse von E-Mail-Headern, eingebetteten Links und verdächtigen Inhaltsmustern zu erkennen. Der Analysator prüft auf typische Warnzeichen wie gefälschte Absender, nicht übereinstimmende URLs und bekannte Phishing-Indikatoren. Nützlich für Security-Awareness-Trainings sowie für Privatpersonen und kleine Unternehmen in Deutschland, die eine zusätzliche Schutzebene gegen E-Mail-basierte Angriffe wünschen."
+      responsibilities={[
+        "Entwicklung der regelbasierten Erkennungs-Engine für Phishing-Muster",
+        "Implementierung von E-Mail-Header-Parsing und SPF/DKIM/DMARC-Validierung",
+        "Aufbau eines Risiko-Bewertungssystems, das E-Mails auf einer Skala von 0–100 bewertet",
+        "Erstellung einer didaktischen Oberfläche, die erklärt, *warum* eine E-Mail verdächtig ist",
+      ]}
+      techStack={["JavaScript", "Node.js", "Email Parsing", "Sicherheitsanalyse", "HTML/CSS"]}
+      liveUrl="https://phishing-email-analyzer.netlify.app"
+      projectSlug="phishing-email-analyzer"
+    />
+  </section>
+
+  <Footer />
+</Layout>

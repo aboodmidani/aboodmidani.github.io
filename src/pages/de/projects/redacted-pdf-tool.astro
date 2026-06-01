@@ -1,0 +1,45 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Nav from "@/components/nav.astro";
+import Footer from "@/components/footer.astro";
+import ProjectDetail from "@/components/ProjectDetail.astro";
+import redacted from "../../../../public/pdf.jpeg";
+import T from "@/components/T.astro";
+const locale = Astro.currentLocale === "de" ? "de" : "en";
+const base = `/${locale}`;
+---
+
+<Layout title="Redacted PDF Tool — Datenschutzfreundlicher PDF-Editor | Abdalrahman Midani" description="Ein browserbasiertes PDF-Schwärzungstool, das vollständig clientseitig läuft. Keine Server-Uploads, keine Datenlecks. Entwickelt für Journalisten, Anwälte und datenschutzbewusste Nutzer.">
+  <Nav />
+
+  <section class="text-[var(--white)] py-16">
+    <div class="max-w-5xl mx-auto">
+      <p class="text-sm text-[var(--sec)] mb-4">
+        <a href={`${base}/`} class="hover:underline"><T key="nav.home" /></a>
+        <span class="mx-2">/</span>
+        <a href={`${base}/projects`} class="hover:underline"><T key="nav.projects" /></a>
+        <span class="mx-2">/</span>
+        Redacted PDF Tool
+      </p>
+      <h1 class="text-3xl md:text-5xl font-medium mb-8">Redacted PDF Tool</h1>
+    </div>
+
+    <ProjectDetail
+      title="Redacted PDF Tool"
+      image={redacted as import("astro").ImageMetadata}
+      description="Ein datenschutzorientiertes PDF-Schwärzungstool, das vollständig im Browser läuft. Nutzer können sensible Texte, Bilder und Metadaten dauerhaft aus PDF-Dateien entfernen, ohne sie jemals auf einen Server hochzuladen. Entwickelt für Journalisten, Anwälte, HR-Profis und alle, die mit vertraulichen Dokumenten arbeiten. Das Tool hilft auch dabei, versteckte Metadaten zu identifizieren, die selbst nach einer Schwärzung Informationen preisgeben könnten."
+      responsibilities={[
+        "Konzeption der clientseitigen PDF-Verarbeitungspipeline (kein Server)",
+        "Aufbau der Schwärzungs-UI mit Drag-and-Select für Text- und Bildbereiche",
+        "Implementierung von PDF-Metadaten-Inspektion und -Bereinigung",
+        "Sicherstellung, dass die gesamte Verarbeitung lokal stattfindet — keine Daten verlassen den Browser",
+      ]}
+      techStack={["JavaScript", "PDF-lib", "HTML/CSS", "Clientseitige Verarbeitung", "Datenschutz"]}
+      liveUrl="https://redacted-pdf.netlify.app"
+      sourceUrl="https://github.com/aboodmidani/redacted-pdf"
+      projectSlug="redacted-pdf-tool"
+    />
+  </section>
+
+  <Footer />
+</Layout>

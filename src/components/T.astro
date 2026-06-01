@@ -1,5 +1,7 @@
 ---
 import { t } from "@/i18n";
 const { key } = Astro.props;
+const locale = Astro.currentLocale === "de" ? "de" : "en";
+const value = t(locale, key);
 ---
-<span class="en-only">{t("en", key)}</span><span class="de-only">{t("de", key)}</span>
+{value}

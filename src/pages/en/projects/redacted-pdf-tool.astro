@@ -1,0 +1,45 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Nav from "@/components/nav.astro";
+import Footer from "@/components/footer.astro";
+import ProjectDetail from "@/components/ProjectDetail.astro";
+import redacted from "../../../../public/pdf.jpeg";
+import T from "@/components/T.astro";
+const locale = Astro.currentLocale === "de" ? "de" : "en";
+const base = `/${locale}`;
+---
+
+<Layout title="Redacted PDF Tool — Privacy-First PDF Editor | Abdalrahman Midani" description="A browser-based PDF redaction tool that runs entirely client-side. No server uploads, no data leaks. Built for journalists, lawyers, and privacy-conscious users.">
+  <Nav />
+
+  <section class="text-[var(--white)] py-16">
+    <div class="max-w-5xl mx-auto">
+      <p class="text-sm text-[var(--sec)] mb-4">
+        <a href={`${base}/`} class="hover:underline"><T key="nav.home" /></a>
+        <span class="mx-2">/</span>
+        <a href={`${base}/projects`} class="hover:underline"><T key="nav.projects" /></a>
+        <span class="mx-2">/</span>
+        Redacted PDF Tool
+      </p>
+      <h1 class="text-3xl md:text-5xl font-medium mb-8">Redacted PDF Tool</h1>
+    </div>
+
+    <ProjectDetail
+      title="Redacted PDF Tool"
+      image={redacted as import("astro").ImageMetadata}
+      description="A privacy-first PDF redaction tool that runs entirely in the browser. Users can permanently remove sensitive text, images, and metadata from PDF files without ever uploading them to a server. Built for journalists, lawyers, HR professionals, and anyone handling confidential documents. The tool also helps identify hidden metadata that could leak information even after redaction."
+      responsibilities={[
+        "Architected the client-side PDF processing pipeline (no server)",
+        "Built the redaction UI with drag-to-select text and image regions",
+        "Implemented PDF metadata inspection and cleanup",
+        "Ensured all processing happens locally — zero data leaves the browser",
+      ]}
+      techStack={["JavaScript", "PDF-lib", "HTML/CSS", "Client-side Processing", "Privacy"]}
+      liveUrl="https://redacted-pdf.netlify.app"
+      sourceUrl="https://github.com/aboodmidani/redacted-pdf"
+      projectSlug="redacted-pdf-tool"
+    />
+  </section>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,82 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Nav from "@/components/nav.astro";
+import Footer from "@/components/footer.astro";
+import T from "@/components/T.astro";
+
+const locale = Astro.currentLocale === "de" ? "de" : "en";
+const base = `/${locale}`;
+---
+
+<Layout title="Web Development Services in NRW: What to Look For in 2025 | Abdalrahman Midani" description="A practical guide for businesses in North Rhine-Westphalia looking to hire a web developer. What matters, what doesn't, and how to spot red flags.">
+  <Nav />
+
+  <article class="text-[var(--white)] py-16">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-sm text-[var(--sec)] mb-4">
+        <a href={`${base}/`} class="hover:underline"><T key="nav.home" /></a>
+        <span class="mx-2">/</span>
+        <a href={`${base}/blog`} class="hover:underline"><T key="nav.blog" /></a>
+        <span class="mx-2">/</span>
+        Web Development Services in NRW
+      </p>
+      <h1 class="text-3xl md:text-5xl font-medium mb-4">Web Development Services in NRW: What to Look For in 2025</h1>
+      <p class="text-sm text-[var(--white-icon)] mb-12">November 15, 2025 · 8 min read</p>
+
+      <div class="prose prose-invert max-w-none text-[var(--white-icon)] space-y-6">
+        <p class="text-lg">
+          If you're a business owner in North Rhine-Westphalia looking to hire a web developer in 2025, you've got more options than ever — and more ways to get burned. This guide cuts through the noise.
+        </p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">The NRW Web Dev Landscape</h2>
+        <p>
+          NRW is Germany's most populous state and home to a thriving tech scene — Düsseldorf, Cologne, Münster, Dortmund, Essen. You have access to:
+        </p>
+        <ul class="list-disc list-inside space-y-2 ml-4">
+          <li>Large agencies with full teams (€100k+ projects)</li>
+          <li>Boutique studios (3-10 people, mid-budget projects)</li>
+          <li>Freelance developers (single-person, flexible scope)</li>
+          <li>Offshore teams (cheapest, but communication challenges)</li>
+        </ul>
+        <p>
+          Most local businesses — especially in mid-sized cities like Ochtrup, Gronau, Steinfurt — end up hiring a freelance web developer. The price-to-quality ratio is usually best.
+        </p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">What Actually Matters</h2>
+        <p>Forget the buzzwords. Here's what to evaluate:</p>
+        <ol class="list-decimal list-inside space-y-2 ml-4">
+          <li><strong class="text-[var(--white)]">Portfolio relevance</strong> — Have they built something similar to what you need?</li>
+          <li><strong class="text-[var(--white)]">Communication</strong> — Do they reply within 24 hours? Explain technical things in plain language?</li>
+          <li><strong class="text-[var(--white)]">Process</strong> — Do they send a written proposal? A clear timeline? A fixed price?</li>
+          <li><strong class="text-[var(--white)]">Maintenance</strong> — What happens after launch? Will they fix bugs? Update content?</li>
+        </ol>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">Red Flags to Watch For</h2>
+        <ul class="list-disc list-inside space-y-2 ml-4">
+          <li>No written contract or scope of work</li>
+          <li>Vague timelines ("it'll be done in a few weeks")</li>
+          <li>Won't show you the code repository</li>
+          <li>No reference customers you can contact</li>
+          <li>Asks for 100% payment upfront</li>
+        </ul>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">Questions to Ask</h2>
+        <p>Before you sign anything, ask:</p>
+        <ul class="list-disc list-inside space-y-2 ml-4">
+          <li>What's the tech stack, and why did you choose it?</li>
+          <li>Who owns the code after the project?</li>
+          <li>What's included in the price, and what costs extra?</li>
+          <li>How do you handle security — especially for sites handling user data?</li>
+          <li>What's the response time if something breaks?</li>
+        </ul>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">The Bottom Line</h2>
+        <p>
+          For most NRW businesses, a skilled freelance web developer offers the best combination of quality, communication, and cost. Look for someone with relevant portfolio work, clear contracts, and a maintenance plan. If you're in the Münsterland region and want to chat about a project, <a href={`${base}/contact`} class="text-[var(--sec)] hover:underline">get in touch</a>.
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <Footer />
+</Layout>

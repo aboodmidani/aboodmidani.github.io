@@ -6,6 +6,17 @@ import react from "@astrojs/react";
 export default defineConfig({
   site: "https://aboodmidani.github.io",
   base: "/",
+  i18n: {
+    defaultLocale: "de",
+    locales: ["de", "en"],
+    routing: {
+      prefixDefaultLocale: true,
+      redirectToDefaultLocale: true,
+    },
+    fallback: {
+      en: "de",
+    },
+  },
   integrations: [
     tailwind(),
     react({

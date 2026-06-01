@@ -1,0 +1,106 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Nav from "@/components/nav.astro";
+import Footer from "@/components/footer.astro";
+import T from "@/components/T.astro";
+
+const locale = Astro.currentLocale === "de" ? "de" : "en";
+const base = `/${locale}`;
+---
+
+<Layout title="OWASP Top 10 Explained: A Plain-English Guide for Non-Developers | Abdalrahman Midani" description="The OWASP Top 10 is the industry standard for web security. Here's what it actually means — explained for founders and product managers.">
+  <Nav />
+
+  <article class="text-[var(--white)] py-16">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-sm text-[var(--sec)] mb-4">
+        <a href={`${base}/`} class="hover:underline"><T key="nav.home" /></a>
+        <span class="mx-2">/</span>
+        <a href={`${base}/blog`} class="hover:underline"><T key="nav.blog" /></a>
+        <span class="mx-2">/</span>
+        OWASP Top 10 Explained
+      </p>
+      <h1 class="text-3xl md:text-5xl font-medium mb-4">OWASP Top 10 Explained: A Plain-English Guide for Non-Developers</h1>
+      <p class="text-sm text-[var(--white-icon)] mb-12">September 22, 2025 · 10 min read</p>
+
+      <div class="prose prose-invert max-w-none text-[var(--white-icon)] space-y-6">
+        <p class="text-lg">
+          If you've ever hired a developer, you might have heard the term "OWASP Top 10" thrown around. It's the most widely recognized security standard for web applications — but most non-developers don't know what it actually means. Here's a plain-English breakdown.
+        </p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">What Is OWASP?</h2>
+        <p>
+          OWASP stands for Open Worldwide Application Security Project. It's a non-profit foundation that produces freely-available articles, tools, and standards for web security. The OWASP Top 10 is a regularly-updated list of the most critical web application security risks — basically, the "biggest things that go wrong" on the web.
+        </p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">The 2021 OWASP Top 10 (Latest Version)</h2>
+
+        <h3 class="text-xl font-semibold text-[var(--white)] mt-6 mb-3">1. Broken Access Control</h3>
+        <p>
+          When a website doesn't properly check who is allowed to do what. Example: A user can access another user's account just by changing a number in the URL. <strong class="text-[var(--white)]">What it means for you:</strong> Make sure your developers test that users can only see their own data, not anyone else's.
+        </p>
+
+        <h3 class="text-xl font-semibold text-[var(--white)] mt-6 mb-3">2. Cryptographic Failures</h3>
+        <p>
+          When sensitive data isn't properly encrypted. Example: User passwords stored as plain text, or credit card numbers sent over unencrypted connections. <strong class="text-[var(--white)]">What it means for you:</strong> Make sure your site uses HTTPS (the padlock in the browser bar) and that passwords are hashed, not stored as plain text.
+        </p>
+
+        <h3 class="text-xl font-semibold text-[var(--white)] mt-6 mb-3">3. Injection (SQL, NoSQL, OS command)</h3>
+        <p>
+          When an attacker sends malicious code to your site disguised as normal input. Example: Typing SQL code into a login form to bypass authentication. <strong class="text-[var(--white)]">What it means for you:</strong> This is one of the oldest and most dangerous vulnerabilities. Any site that takes user input needs proper sanitization.
+        </p>
+
+        <h3 class="text-xl font-semibold text-[var(--white)] mt-6 mb-3">4. Insecure Design</h3>
+        <p>
+          A relatively new category — about flaws in the design itself, not the code. Example: A password reset flow that allows unlimited guesses, with no rate limit. <strong class="text-[var(--white)]">What it means for you:</strong> Security needs to be thought about from day one, not bolted on at the end.
+        </p>
+
+        <h3 class="text-xl font-semibold text-[var(--white)] mt-6 mb-3">5. Security Misconfiguration</h3>
+        <p>
+          When the server, database, or application is set up insecurely. Example: Default passwords still in use, or admin panels open to the internet. <strong class="text-[var(--white)]">What it means for you:</strong> After launch, someone should review the configuration — not just the code.
+        </p>
+
+        <h3 class="text-xl font-semibold text-[var(--white)] mt-6 mb-3">6. Vulnerable and Outdated Components</h3>
+        <p>
+          When the site uses libraries or frameworks with known security flaws. Example: An old version of WordPress with a public exploit. <strong class="text-[var(--white)]">What it means for you:</strong> Keep everything updated. Subscribe to security advisories for your tech stack.
+        </p>
+
+        <h3 class="text-xl font-semibold text-[var(--white)] mt-6 mb-3">7. Identification and Authentication Failures</h3>
+        <p>
+          When login systems are weak. Example: Allowing simple passwords, no 2FA, exposing session tokens in URLs. <strong class="text-[var(--white)]">What it means for you:</strong> Strong password policies, 2FA, and proper session management are non-negotiable.
+        </p>
+
+        <h3 class="text-xl font-semibold text-[var(--white)] mt-6 mb-3">8. Software and Data Integrity Failures</h3>
+        <p>
+          When code or data is updated without proper verification. Example: Auto-updating software that doesn't check signatures. <strong class="text-[var(--white)]">What it means for you:</strong> Use signed packages, verify updates, and use CI/CD pipelines with proper access controls.
+        </p>
+
+        <h3 class="text-xl font-semibold text-[var(--white)] mt-6 mb-3">9. Security Logging and Monitoring Failures</h3>
+        <p>
+          When attacks happen but no one notices. Example: No logs, no alerts, no incident response plan. <strong class="text-[var(--white)]">What it means for you:</strong> Have a plan for what happens when (not if) something goes wrong.
+        </p>
+
+        <h3 class="text-xl font-semibold text-[var(--white)] mt-6 mb-3">10. Server-Side Request Forgery (SSRF)</h3>
+        <p>
+          When an attacker tricks your server into making requests to internal systems. Example: A feature that fetches a URL, which an attacker points to internal services. <strong class="text-[var(--white)]">What it means for you:</strong> Be careful with any feature that fetches external URLs.
+        </p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">What to Do With This Information</h2>
+        <p>
+          You don't need to be a security expert. But you should:
+        </p>
+        <ol class="list-decimal list-inside space-y-2 ml-4">
+          <li>Ask your developer how they handle each of these categories.</li>
+          <li>Make sure security is part of the project scope from the start, not an afterthought.</li>
+          <li>Schedule a security review at least once a year, especially if you handle user data.</li>
+          <li>Have an incident response plan — know who to call, what to do, how to communicate.</li>
+        </ol>
+        <p>
+          I help small businesses in NRW build secure web applications from the ground up, and audit existing ones. <a href={`${base}/contact`} class="text-[var(--sec)] hover:underline">Reach out</a> if you'd like to talk about a security review.
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,44 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Nav from "@/components/nav.astro";
+import Footer from "@/components/footer.astro";
+import ProjectDetail from "@/components/ProjectDetail.astro";
+import eptico from "../../../../public/eptico.png";
+import T from "@/components/T.astro";
+const locale = Astro.currentLocale === "de" ? "de" : "en";
+const base = `/${locale}`;
+---
+
+<Layout title="Eptico Platform — B2B SaaS Dashboard | Abdalrahman Midani" description="A B2B SaaS platform frontend for an email outreach and sales tool. Modern dashboard, real-time analytics, and team collaboration features.">
+  <Nav />
+
+  <section class="text-[var(--white)] py-16">
+    <div class="max-w-5xl mx-auto">
+      <p class="text-sm text-[var(--sec)] mb-4">
+        <a href={`${base}/`} class="hover:underline"><T key="nav.home" /></a>
+        <span class="mx-2">/</span>
+        <a href={`${base}/projects`} class="hover:underline"><T key="nav.projects" /></a>
+        <span class="mx-2">/</span>
+        Eptico Platform
+      </p>
+      <h1 class="text-3xl md:text-5xl font-medium mb-8">Eptico Platform</h1>
+    </div>
+
+    <ProjectDetail
+      title="Eptico Platform"
+      image={eptico as import("astro").ImageMetadata}
+      description="Eptico is a B2B SaaS platform for email outreach and sales automation. I built the marketing site and contributed to the platform's frontend — including dashboard layouts, real-time analytics, and team collaboration features. The challenge: make a complex product feel approachable. The result: a clean, data-dense interface that doesn't overwhelm."
+      responsibilities={[
+        "Built the marketing site and key product landing pages",
+        "Designed dashboard layouts for sales analytics and pipeline tracking",
+        "Implemented real-time data visualization with charts and KPIs",
+        "Collaborated with backend engineers on API contracts and data flows",
+      ]}
+      techStack={["React", "TypeScript", "Tailwind CSS", "REST API", "Chart.js"]}
+      liveUrl="https://eptico.com"
+      projectSlug="eptico-platform"
+    />
+  </section>
+
+  <Footer />
+</Layout>

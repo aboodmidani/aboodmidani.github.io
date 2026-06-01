@@ -1,93 +1,244 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://aboodmidani.github.io/</loc>
+    <loc>https://aboodmidani.github.io/de/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://aboodmidani.github.io/de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aboodmidani.github.io/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aboodmidani.github.io/de/"/>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://aboodmidani.github.io/services</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://aboodmidani.github.io/about</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://aboodmidani.github.io/blog</loc>
+    <loc>https://aboodmidani.github.io/en/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aboodmidani.github.io/en/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://aboodmidani.github.io/de/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aboodmidani.github.io/de/"/>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://aboodmidani.github.io/projects</loc>
+    <loc>https://aboodmidani.github.io/de/about/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://aboodmidani.github.io/de/about/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aboodmidani.github.io/en/about/"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aboodmidani.github.io/contact</loc>
+    <loc>https://aboodmidani.github.io/en/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aboodmidani.github.io/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://aboodmidani.github.io/de/about/"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aboodmidani.github.io/blog/web-development-services-nrw</loc>
+    <loc>https://aboodmidani.github.io/de/services/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://aboodmidani.github.io/de/services/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aboodmidani.github.io/en/services/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aboodmidani.github.io/en/services/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aboodmidani.github.io/en/services/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://aboodmidani.github.io/de/services/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aboodmidani.github.io/de/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://aboodmidani.github.io/de/contact/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aboodmidani.github.io/en/contact/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aboodmidani.github.io/en/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aboodmidani.github.io/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://aboodmidani.github.io/de/contact/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aboodmidani.github.io/de/projects/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://aboodmidani.github.io/de/projects/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aboodmidani.github.io/en/projects/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aboodmidani.github.io/en/projects/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aboodmidani.github.io/en/projects/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://aboodmidani.github.io/de/projects/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aboodmidani.github.io/de/projects/matrix-web-audit/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://aboodmidani.github.io/de/projects/matrix-web-audit/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aboodmidani.github.io/en/projects/matrix-web-audit/"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://aboodmidani.github.io/blog/cybersecurity-tips-germany</loc>
+    <loc>https://aboodmidani.github.io/en/projects/matrix-web-audit/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aboodmidani.github.io/en/projects/matrix-web-audit/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://aboodmidani.github.io/de/projects/matrix-web-audit/"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://aboodmidani.github.io/blog/hire-frontend-developer-nrw</loc>
+    <loc>https://aboodmidani.github.io/de/projects/phishing-email-analyzer/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://aboodmidani.github.io/de/projects/phishing-email-analyzer/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aboodmidani.github.io/en/projects/phishing-email-analyzer/"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://aboodmidani.github.io/blog/owasp-top-10-guide</loc>
+    <loc>https://aboodmidani.github.io/en/projects/phishing-email-analyzer/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aboodmidani.github.io/en/projects/phishing-email-analyzer/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://aboodmidani.github.io/de/projects/phishing-email-analyzer/"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://aboodmidani.github.io/blog/freelance-web-developer-germany</loc>
+    <loc>https://aboodmidani.github.io/de/projects/tonb-blockchain/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://aboodmidani.github.io/de/projects/tonb-blockchain/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aboodmidani.github.io/en/projects/tonb-blockchain/"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://aboodmidani.github.io/projects/matrix-web-audit</loc>
+    <loc>https://aboodmidani.github.io/en/projects/tonb-blockchain/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aboodmidani.github.io/en/projects/tonb-blockchain/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://aboodmidani.github.io/de/projects/tonb-blockchain/"/>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://aboodmidani.github.io/projects/phishing-email-analyzer</loc>
+    <loc>https://aboodmidani.github.io/de/projects/codiay-agency/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://aboodmidani.github.io/de/projects/codiay-agency/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aboodmidani.github.io/en/projects/codiay-agency/"/>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://aboodmidani.github.io/projects/tonb-blockchain</loc>
+    <loc>https://aboodmidani.github.io/en/projects/codiay-agency/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aboodmidani.github.io/en/projects/codiay-agency/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://aboodmidani.github.io/de/projects/codiay-agency/"/>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://aboodmidani.github.io/projects/codiay-agency</loc>
+    <loc>https://aboodmidani.github.io/de/projects/eptico-platform/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://aboodmidani.github.io/de/projects/eptico-platform/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aboodmidani.github.io/en/projects/eptico-platform/"/>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://aboodmidani.github.io/projects/eptico-platform</loc>
+    <loc>https://aboodmidani.github.io/en/projects/eptico-platform/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aboodmidani.github.io/en/projects/eptico-platform/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://aboodmidani.github.io/de/projects/eptico-platform/"/>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://aboodmidani.github.io/projects/redacted-pdf-tool</loc>
+    <loc>https://aboodmidani.github.io/de/projects/redacted-pdf-tool/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://aboodmidani.github.io/de/projects/redacted-pdf-tool/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aboodmidani.github.io/en/projects/redacted-pdf-tool/"/>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://aboodmidani.github.io/thanks</loc>
-    <changefreq>never</changefreq>
-    <priority>0.1</priority>
+    <loc>https://aboodmidani.github.io/en/projects/redacted-pdf-tool/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aboodmidani.github.io/en/projects/redacted-pdf-tool/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://aboodmidani.github.io/de/projects/redacted-pdf-tool/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aboodmidani.github.io/de/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://aboodmidani.github.io/de/blog/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aboodmidani.github.io/en/blog/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aboodmidani.github.io/en/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aboodmidani.github.io/en/blog/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://aboodmidani.github.io/de/blog/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aboodmidani.github.io/de/blog/web-development-services-nrw/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://aboodmidani.github.io/de/blog/web-development-services-nrw/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aboodmidani.github.io/en/blog/web-development-services-nrw/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aboodmidani.github.io/en/blog/web-development-services-nrw/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aboodmidani.github.io/en/blog/web-development-services-nrw/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://aboodmidani.github.io/de/blog/web-development-services-nrw/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aboodmidani.github.io/de/blog/cybersecurity-tips-germany/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://aboodmidani.github.io/de/blog/cybersecurity-tips-germany/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aboodmidani.github.io/en/blog/cybersecurity-tips-germany/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aboodmidani.github.io/en/blog/cybersecurity-tips-germany/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aboodmidani.github.io/en/blog/cybersecurity-tips-germany/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://aboodmidani.github.io/de/blog/cybersecurity-tips-germany/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aboodmidani.github.io/de/blog/hire-frontend-developer-nrw/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://aboodmidani.github.io/de/blog/hire-frontend-developer-nrw/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aboodmidani.github.io/en/blog/hire-frontend-developer-nrw/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aboodmidani.github.io/en/blog/hire-frontend-developer-nrw/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aboodmidani.github.io/en/blog/hire-frontend-developer-nrw/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://aboodmidani.github.io/de/blog/hire-frontend-developer-nrw/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aboodmidani.github.io/de/blog/owasp-top-10-guide/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://aboodmidani.github.io/de/blog/owasp-top-10-guide/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aboodmidani.github.io/en/blog/owasp-top-10-guide/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aboodmidani.github.io/en/blog/owasp-top-10-guide/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aboodmidani.github.io/en/blog/owasp-top-10-guide/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://aboodmidani.github.io/de/blog/owasp-top-10-guide/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aboodmidani.github.io/de/blog/freelance-web-developer-germany/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://aboodmidani.github.io/de/blog/freelance-web-developer-germany/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aboodmidani.github.io/en/blog/freelance-web-developer-germany/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aboodmidani.github.io/en/blog/freelance-web-developer-germany/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aboodmidani.github.io/en/blog/freelance-web-developer-germany/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://aboodmidani.github.io/de/blog/freelance-web-developer-germany/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>

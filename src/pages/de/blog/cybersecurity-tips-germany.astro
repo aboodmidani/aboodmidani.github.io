@@ -1,0 +1,82 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Nav from "@/components/nav.astro";
+import Footer from "@/components/footer.astro";
+import T from "@/components/T.astro";
+
+const locale = Astro.currentLocale === "de" ? "de" : "en";
+const base = `/${locale}`;
+---
+
+<Layout title="Cybersicherheit-Tipps für kleine Unternehmen in Deutschland | Abdalrahman Midani" description="Praktische, jargonfreie Sicherheitshinweise für kleine Unternehmer in Deutschland — von Phishing-Schutz bis zu sicheren Passwörtern.">
+  <Nav />
+
+  <article class="text-[var(--white)] py-16">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-sm text-[var(--sec)] mb-4">
+        <a href={`${base}/`} class="hover:underline"><T key="nav.home" /></a>
+        <span class="mx-2">/</span>
+        <a href={`${base}/blog`} class="hover:underline"><T key="nav.blog" /></a>
+        <span class="mx-2">/</span>
+        Cybersicherheit-Tipps für kleine Unternehmen
+      </p>
+      <h1 class="text-3xl md:text-5xl font-medium mb-4">Cybersicherheit-Tipps für kleine Unternehmen in Deutschland</h1>
+      <p class="text-sm text-[var(--white-icon)] mb-12">28. Oktober 2025 · 6 Min. Lesedauer</p>
+
+      <div class="prose prose-invert max-w-none text-[var(--white-icon)] space-y-6">
+        <p class="text-lg">
+          Cyberangriffe zielen nicht nur auf große Konzerne. Kleine Unternehmen sind oft leichtere Ziele — sie haben wertvolle Daten, aber weniger Schutz. Hier sind praktische, jargonfreie Sicherheitstipps für kleine Unternehmer in Deutschland.
+        </p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">1. Passwort-Manager nutzen</h2>
+        <p>
+          Hören Sie auf, Passwörter mehrfach zu verwenden. Hören Sie auf, sie in Excel zu speichern. Hören Sie auf, den Namen Ihres Hundes gefolgt vom Jahr zu nehmen. Ein Passwort-Manager (Bitwarden, 1Password, KeePass) generiert und speichert eindeutige Passwörter für jeden Account. Ein Master-Passwort merken — alles andere ist sicher verwahrt.
+        </p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">2. Zwei-Faktor-Authentifizierung (2FA) aktivieren</h2>
+        <p>
+          2FA fügt einen zweiten Schritt beim Login hinzu — meistens einen Code vom Smartphone. Selbst wenn jemand Ihr Passwort stiehlt, kommt er nicht rein. Aktivieren Sie 2FA für E-Mail, Banking, Cloud-Speicher und geschäftskritische Accounts. Nutzen Sie eine Authenticator-App (Aegis, Google Authenticator), nicht SMS — SMS-basierte 2FA kann abgefangen werden.
+        </p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">3. Phishing erkennen</h2>
+        <p>
+          Phishing-E-Mails werden erschreckend realistisch. Sie sehen aus wie Rechnungen echter Lieferanten oder Nachrichten von „Ihrer Bank". Warnzeichen:
+        </p>
+        <ul class="list-disc list-inside space-y-2 ml-4">
+          <li>Dringlichkeit („Ihr Konto wird in 24 Stunden geschlossen")</li>
+          <li>Unpassende Absenderadresse (Anzeigename sagt „PayPal", aber E-Mail ist random@irgendwo.de)</li>
+          <li>Links, die zu seltsamen URLs führen — vor dem Klicken mit der Maus drüberfahren</li>
+          <li>Unerwartete Anhänge, besonders .zip oder .exe</li>
+        </ul>
+        <p>Im Zweifel rufen Sie den Absender unter einer bekannten Nummer an — antworten Sie nicht auf die E-Mail.</p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">4. Software aktuell halten</h2>
+        <p>
+          Diese Windows-Update-Benachrichtigungen? Ignorieren Sie sie nicht ewig. Die meisten Sicherheitsvorfälle nutzen bekannte Schwachstellen, die seit Monaten oder Jahren gepatcht wurden. Aktivieren Sie automatische Updates für Betriebssystem, Browser und wichtige Software. Für Ihre Website: Halten Sie CMS und Plugins aktuell.
+        </p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">5. Alles sichern (3-2-1-Regel)</h2>
+        <p>
+          Ransomware ist real. Wenn Ihre Dateien verschlüsselt werden, ist ein aktuelles Backup der Unterschied zwischen einem schlechten Tag und einem geschäftsbedrohenden Desaster. Die 3-2-1-Regel: 3 Kopien Ihrer Daten, auf 2 verschiedenen Medientypen, 1 davon offsite (Cloud-Backup). Testen Sie Ihre Backups regelmäßig — Backups, die sich nicht wiederherstellen lassen, sind wertlos.
+        </p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">6. Mitarbeiter schulen</h2>
+        <p>
+          Ihr Team ist Ihre erste Verteidigungslinie — und Ihre größte Schwachstelle. Halten Sie einmal im Jahr ein kurzes Sicherheitstraining ab. Themen: Phishing, Passworthygiene, was im Ernstfall zu tun ist. Machen Sie es okay, Fehler zu melden; die schlimmsten Vorfälle passieren, wenn jemand schweigt, weil er/sie Angst vor Konsequenzen hat.
+        </p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">7. DSGVO ist nicht optional</h2>
+        <p>
+          Als deutsches Unternehmen verarbeiten Sie personenbezogene Daten gemäß DSGVO. Das bedeutet: Sie brauchen eine Datenschutzerklärung, Auftragsverarbeitungsverträge mit Dienstleistern und einen Prozess für Auskunftsanfragen. Das BSI (Bundesamt für Sicherheit in der Informationstechnik) bietet kostenlose Ressourcen für kleine Unternehmen.
+        </p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">Brauchen Sie ein Sicherheitsaudit?</h2>
+        <p>
+          Wenn Ihr Unternehmen Kundendaten verarbeitet, lohnt sich ein jährlicher Sicherheits-Check. Ich biete Schwachstellenanalysen und Sicherheitsaudits für kleine Unternehmen in NRW. <a href={`${base}/contact`} class="text-[var(--sec)] hover:underline">Melden Sie sich gerne</a> für ein Gespräch.
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <Footer />
+</Layout>

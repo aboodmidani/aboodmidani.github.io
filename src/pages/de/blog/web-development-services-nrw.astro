@@ -1,0 +1,82 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Nav from "@/components/nav.astro";
+import Footer from "@/components/footer.astro";
+import T from "@/components/T.astro";
+
+const locale = Astro.currentLocale === "de" ? "de" : "en";
+const base = `/${locale}`;
+---
+
+<Layout title="Webentwicklungs-Leistungen in NRW: Worauf Sie 2025 achten sollten | Abdalrahman Midani" description="Ein praxisnaher Leitfaden für Unternehmen in Nordrhein-Westfalen, die einen Webentwickler beauftragen möchten. Was zählt, was nicht, und wie Sie rote Flaggen erkennen.">
+  <Nav />
+
+  <article class="text-[var(--white)] py-16">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-sm text-[var(--sec)] mb-4">
+        <a href={`${base}/`} class="hover:underline"><T key="nav.home" /></a>
+        <span class="mx-2">/</span>
+        <a href={`${base}/blog`} class="hover:underline"><T key="nav.blog" /></a>
+        <span class="mx-2">/</span>
+        Webentwicklungs-Leistungen in NRW
+      </p>
+      <h1 class="text-3xl md:text-5xl font-medium mb-4">Webentwicklungs-Leistungen in NRW: Worauf Sie 2025 achten sollten</h1>
+      <p class="text-sm text-[var(--white-icon)] mb-12">15. November 2025 · 8 Min. Lesedauer</p>
+
+      <div class="prose prose-invert max-w-none text-[var(--white-icon)] space-y-6">
+        <p class="text-lg">
+          Wenn Sie als Unternehmer in Nordrhein-Westfalen 2025 einen Webentwickler beauftragen möchten, haben Sie mehr Optionen als je zuvor — und mehr Möglichkeiten, auf die Nase zu fallen. Dieser Leitfaden räumt mit dem Marketing-Rauschen auf.
+        </p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">Die NRW-Webentwickler-Landschaft</h2>
+        <p>
+          NRW ist das bevölkerungsreichste Bundesland Deutschlands und Heimat einer florierenden Tech-Szene — Düsseldorf, Köln, Münster, Dortmund, Essen. Sie haben Zugang zu:
+        </p>
+        <ul class="list-disc list-inside space-y-2 ml-4">
+          <li>Großen Agenturen mit kompletten Teams (Projekte ab 100.000 €)</li>
+          <li>Boutique-Studios (3–10 Personen, mittlere Budgets)</li>
+          <li>Freiberuflichen Entwicklern (Einzelpersonen, flexibler Umfang)</li>
+          <li>Offshore-Teams (am günstigsten, aber Kommunikationsprobleme)</li>
+        </ul>
+        <p>
+          Die meisten lokalen Unternehmen — besonders in mittelgroßen Städten wie Ochtrup, Gronau, Steinfurt — beauftragen am Ende einen freiberuflichen Webentwickler. Das Preis-Leistungs-Verhältnis ist meistens am besten.
+        </p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">Was wirklich zählt</h2>
+        <p>Vergessen Sie die Buzzwords. Hier ist, was Sie bewerten sollten:</p>
+        <ol class="list-decimal list-inside space-y-2 ml-4">
+          <li><strong class="text-[var(--white)]">Relevanz des Portfolios</strong> — Haben sie etwas Ähnliches gebaut wie das, was Sie brauchen?</li>
+          <li><strong class="text-[var(--white)]">Kommunikation</strong> — Antworten sie innerhalb von 24 Stunden? Erklären sie technische Dinge in einfacher Sprache?</li>
+          <li><strong class="text-[var(--white)]">Prozess</strong> — Schicken sie ein schriftliches Angebot? Einen klaren Zeitplan? Einen Festpreis?</li>
+          <li><strong class="text-[var(--white)]">Wartung</strong> — Was passiert nach dem Launch? Beheben sie Bugs? Aktualisieren sie Inhalte?</li>
+        </ol>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">Rote Flaggen</h2>
+        <ul class="list-disc list-inside space-y-2 ml-4">
+          <li>Kein schriftlicher Vertrag oder Leistungsbeschreibung</li>
+          <li>Vage Zeitpläne („es ist in ein paar Wochen fertig")</li>
+          <li>Will Ihnen das Code-Repository nicht zeigen</li>
+          <li>Keine Referenzkunden, die Sie kontaktieren können</li>
+          <li>Verlangt 100 % Vorauszahlung</li>
+        </ul>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">Fragen, die Sie stellen sollten</h2>
+        <p>Bevor Sie unterschreiben, fragen Sie:</p>
+        <ul class="list-disc list-inside space-y-2 ml-4">
+          <li>Welcher Tech-Stack wird eingesetzt und warum?</li>
+          <li>Wem gehört der Code nach Projektende?</li>
+          <li>Was ist im Preis enthalten und was kostet extra?</li>
+          <li>Wie gehen Sie mit Sicherheit um — besonders bei Seiten mit Nutzerdaten?</li>
+          <li>Wie schnell wird reagiert, wenn etwas kaputt geht?</li>
+        </ul>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">Das Fazit</h2>
+        <p>
+          Für die meisten NRW-Unternehmen bietet ein erfahrener freiberuflicher Webentwickler die beste Kombination aus Qualität, Kommunikation und Kosten. Suchen Sie jemanden mit relevantem Portfolio, klaren Verträgen und einem Wartungsplan. Wenn Sie in der Region Münsterland sind und über ein Projekt sprechen möchten, <a href={`${base}/contact`} class="text-[var(--sec)] hover:underline">melden Sie sich gerne</a>.
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <Footer />
+</Layout>

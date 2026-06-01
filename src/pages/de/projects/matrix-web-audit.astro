@@ -1,0 +1,45 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Nav from "@/components/nav.astro";
+import Footer from "@/components/footer.astro";
+import ProjectDetail from "@/components/ProjectDetail.astro";
+import webscan from "../../../../public/webscan.png";
+import T from "@/components/T.astro";
+const locale = Astro.currentLocale === "de" ? "de" : "en";
+const base = `/${locale}`;
+---
+
+<Layout title="Matrix Web Audit — Web-Sicherheitsscanner | Abdalrahman Midani" description="Ein Tool zur Erkennung von Web-Sicherheitsschwachstellen, entwickelt von Abdalrahman Midani. OWASP-basiertes Scannen, XSS-Erkennung und automatisierte Berichte.">
+  <Nav />
+
+  <section class="text-[var(--white)] py-16">
+    <div class="max-w-5xl mx-auto">
+      <p class="text-sm text-[var(--sec)] mb-4">
+        <a href={`${base}/`} class="hover:underline"><T key="nav.home" /></a>
+        <span class="mx-2">/</span>
+        <a href={`${base}/projects`} class="hover:underline"><T key="nav.projects" /></a>
+        <span class="mx-2">/</span>
+        Matrix Web Audit
+      </p>
+      <h1 class="text-3xl md:text-5xl font-medium mb-8">Matrix Web Audit</h1>
+    </div>
+
+    <ProjectDetail
+      title="Matrix Web Audit"
+      image={webscan as import("astro").ImageMetadata}
+      description="Ein umfassendes Web-Sicherheitsaudit-Tool mit automatischer Schwachstellenerkennung. Matrix scannt Webanwendungen auf häufige Sicherheitsprobleme wie XSS, SQL-Injection, Sicherheitsfehlkonfigurationen und mehr. Als Teil meines Cybersicherheits-Toolkits optimiert es die Identifizierung von OWASP-Top-10-Schwachstellen und die Erstellung detaillierter Berichte für Kunden in Nordrhein-Westfalen und Deutschland."
+      responsibilities={[
+        "Entwicklung der Scan-Engine und Schwachstellenerkennungsmodule",
+        "Implementierung von XSS-, SQL-Injection- und CSRF-Erkennungsalgorithmen",
+        "Erstellung eines übersichtlichen Dashboards zum Anzeigen und Exportieren von Scan-Ergebnissen",
+        "Integration der OWASP-Top-10-Testmethodik in automatisierte Prüfungen",
+      ]}
+      techStack={["JavaScript", "HTML/CSS", "Netlify", "OWASP Methodology", "REST API"]}
+      liveUrl="https://matrix-audit.netlify.app"
+      sourceUrl="https://github.com/aboodmidani/matrix"
+      projectSlug="matrix-web-audit"
+    />
+  </section>
+
+  <Footer />
+</Layout>

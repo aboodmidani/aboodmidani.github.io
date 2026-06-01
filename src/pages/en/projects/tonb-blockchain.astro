@@ -1,0 +1,44 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Nav from "@/components/nav.astro";
+import Footer from "@/components/footer.astro";
+import ProjectDetail from "@/components/ProjectDetail.astro";
+import tonb from "../../../../public/tonb.png";
+import T from "@/components/T.astro";
+const locale = Astro.currentLocale === "de" ? "de" : "en";
+const base = `/${locale}`;
+---
+
+<Layout title="TONB Blockchain — Web3 Wallet & DApp | Abdalrahman Midani" description="A blockchain-based web application for the TON ecosystem. Wallet connectivity, smart contract interaction, and a clean UX for decentralized apps.">
+  <Nav />
+
+  <section class="text-[var(--white)] py-16">
+    <div class="max-w-5xl mx-auto">
+      <p class="text-sm text-[var(--sec)] mb-4">
+        <a href={`${base}/`} class="hover:underline"><T key="nav.home" /></a>
+        <span class="mx-2">/</span>
+        <a href={`${base}/projects`} class="hover:underline"><T key="nav.projects" /></a>
+        <span class="mx-2">/</span>
+        TONB Blockchain
+      </p>
+      <h1 class="text-3xl md:text-5xl font-medium mb-8">TONB Blockchain</h1>
+    </div>
+
+    <ProjectDetail
+      title="TONB Blockchain"
+      image={tonb as import("astro").ImageMetadata}
+      description="A blockchain-based web application built for The Open Network (TON) ecosystem. TONB provides wallet connectivity, smart contract interaction, and a smooth user experience for decentralized applications. The project explores Web3 UX patterns and makes blockchain interactions accessible to non-technical users — relevant for any DApp launch in the European market."
+      responsibilities={[
+        "Integrated TON wallet connection flows (Tonkeeper, MyTonWallet)",
+        "Built smart contract interaction layer with TypeScript bindings",
+        "Designed responsive UI/UX for on-chain transactions",
+        "Implemented transaction status tracking and error handling",
+      ]}
+      techStack={["JavaScript", "TypeScript", "TON SDK", "Web3", "React"]}
+      liveUrl="https://tonb.netlify.app"
+      projectSlug="tonb-blockchain"
+    />
+  </section>
+
+  <Footer />
+</Layout>

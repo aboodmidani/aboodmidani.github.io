@@ -1,23 +1,79 @@
 ---
 import PageLoader from "@/components/PageLoader.astro";
 import { ViewTransitions } from "astro:transitions";
+import { t } from "@/i18n";
+
 interface Props {
   title: string;
   description?: string;
   noindex?: boolean;
 }
 
-const { title, description = "Abdalrahman Midani — senior front-end developer and cybersecurity specialist in Ochtrup, North Rhine-Westphalia. Building secure, high-performance web applications for businesses in Germany.", noindex = false } = Astro.props;
+const { title, description, noindex = false } = Astro.props;
 
-const locale = "en";
+const locale = Astro.currentLocale === "de" ? "de" : "en";
+const otherLocale = locale === "de" ? "en" : "de";
+
+const defaults: Record<string, { description: string; keywords: string; language: string; ogLocale: string }> = {
+  en: {
+    description: "Abdalrahman Midani — senior front-end developer and cybersecurity specialist in Ochtrup, North Rhine-Westphalia. Building secure, high-performance web applications for businesses in Germany.",
+    keywords: "web developer north rhine westphalia, cybersecurity specialist germany, front-end developer NRW, cybersecurity ochtrup, web security expert nordrhein-westfalen, senior front-end developer germany, vulnerability analysis, web application security, abdalrahman midani",
+    language: "English",
+    ogLocale: "en",
+  },
+  de: {
+    description: "Abdalrahman Midani — Senior Front-End-Entwickler und Cybersecurity-Spezialist in Ochtrup, Nordrhein-Westfalen. Ich baue sichere, schnelle Webanwendungen für Unternehmen in Deutschland.",
+    keywords: "Webentwickler Nordrhein-Westfalen, Cybersecurity-Spezialist Deutschland, Front-End-Entwickler NRW, Cybersicherheit Ochtrup, Web-Sicherheitsexperte, Senior Front-End-Entwickler Deutschland, Schwachstellenanalyse, Webanwendungssicherheit, abdalrahman midani",
+    language: "Deutsch",
+    ogLocale: "de",
+  },
+};
+
+const finalDescription = description ?? defaults[locale].description;
+const finalKeywords = defaults[locale].keywords;
+const languageLabel = defaults[locale].language;
+const ogLocale = defaults[locale].ogLocale;
+
 const siteUrl = "https://aboodmidani.github.io";
 const imageUrl = "https://aboodmidani.github.io/og-image.svg";
-const currentUrl = new URL(Astro.url.pathname, siteUrl);
-const keywords = "web developer north rhine westphalia, cybersecurity specialist germany, front-end developer NRW, cybersecurity ochtrup, web security expert nordrhein-westfalen, senior front-end developer germany, vulnerability analysis, web application security, abdalrahman midani";
+const currentPath = Astro.url.pathname;
+const currentUrl = new URL(currentPath, siteUrl).toString();
+const enUrl = new URL(currentPath.replace(/^\/de\/?/, "/en/") || "/en/", siteUrl).toString();
+const deUrl = new URL(currentPath.replace(/^\/en\/?/, "/de/") || "/de/", siteUrl).toString();
+
+const siteNames: Record<string, string> = {
+  en: "Abdalrahman Midani - Web Developer & Cybersecurity Specialist",
+  de: "Abdalrahman Midani - Webentwickler & Cybersecurity-Spezialist",
+};
+const siteDescs: Record<string, string> = {
+  en: "Senior front-end developer and cybersecurity specialist serving clients in North Rhine-Westphalia and across Germany.",
+  de: "Senior Front-End-Entwickler und Cybersecurity-Spezialist für Kunden in Nordrhein-Westfalen und ganz Deutschland.",
+};
+const knowsAbout: Record<string, string[]> = {
+  en: ["Cybersecurity", "Web Security", "OWASP Top 10", "Vue.js", "JavaScript", "React"],
+  de: ["Cybersicherheit", "Web-Sicherheit", "OWASP Top 10", "Vue.js", "JavaScript", "React"],
+};
+const aboutTopics: Record<string, string[]> = {
+  en: ["Web Development", "Cybersecurity", "Front-end Development", "Web Security"],
+  de: ["Webentwicklung", "Cybersicherheit", "Front-End-Entwicklung", "Web-Sicherheit"],
+};
+const localBusinessDesc: Record<string, string> = {
+  en: "Senior front-end developer and cybersecurity specialist based in Ochtrup, NRW, Germany.",
+  de: "Senior Front-End-Entwickler und Cybersecurity-Spezialist mit Sitz in Ochtrup, NRW, Deutschland.",
+};
+const breadcrumbHome: Record<string, string> = { en: "Home", de: "Startseite" };
+const jobTitle: Record<string, string> = {
+  en: "Junior Cybersecurity Specialist & Senior Front-end Developer",
+  de: "Junior Cybersicherheits-Spezialist & Senior Front-End-Entwickler",
+};
+const personDesc: Record<string, string> = {
+  en: "Senior front-end developer and cybersecurity specialist based in Ochtrup, Germany. Specializing in secure web applications and vulnerability analysis.",
+  de: "Senior Front-End-Entwickler und Cybersecurity-Spezialist mit Sitz in Ochtrup, Deutschland. Spezialisiert auf sichere Webanwendungen und Schwachstellenanalyse.",
+};
 ---
 
 <!doctype html>
-<html lang="en" data-lang="en">
+<html lang={locale}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -26,13 +82,18 @@ const keywords = "web developer north rhine westphalia, cybersecurity specialist
     <!-- Primary Meta Tags -->
     <title>{title}</title>
     <meta name="title" content={title} />
-    <meta name="description" content={description} />
-    <meta name="keywords" content={keywords} />
+    <meta name="description" content={finalDescription} />
+    <meta name="keywords" content={finalKeywords} />
     <meta name="author" content="Abdalrahman Midani" />
     <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
-    <meta name="language" content="English" />
+    <meta name="language" content={languageLabel} />
     <meta name="revisit-after" content="7 days" />
     <link rel="canonical" href={currentUrl} />
+
+    <!-- Hreflang for SEO -->
+    <link rel="alternate" hreflang="en" href={enUrl} />
+    <link rel="alternate" hreflang="de" href={deUrl} />
+    <link rel="alternate" hreflang="x-default" href={deUrl} />
 
     <!-- Geo Tags -->
     <meta name="geo.region" content="DE-NW" />
@@ -44,18 +105,19 @@ const keywords = "web developer north rhine westphalia, cybersecurity specialist
     <meta property="og:type" content="website" />
     <meta property="og:url" content={currentUrl} />
     <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
+    <meta property="og:description" content={finalDescription} />
     <meta property="og:image" content={imageUrl} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:site_name" content="Abdalrahman Midani" />
-    <meta property="og:locale" content="en" />
+    <meta property="og:locale" content={ogLocale} />
+    <meta property="og:locale:alternate" content={ogLocale === "en" ? "de" : "en"} />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content={currentUrl} />
     <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
+    <meta name="twitter:description" content={finalDescription} />
     <meta name="twitter:image" content={imageUrl} />
     <meta name="twitter:creator" content="@aboodmidani" />
 
@@ -116,7 +178,7 @@ const keywords = "web developer north rhine westphalia, cybersecurity specialist
         {
           "@type": "Person",
           "name": "Abdalrahman Midani",
-          "url": siteUrl,
+          "url": siteUrl + "/" + locale + "/",
           "image": imageUrl,
           "sameAs": [
             "https://gitlab.com/abdmidani",
@@ -124,16 +186,16 @@ const keywords = "web developer north rhine westphalia, cybersecurity specialist
             "https://www.linkedin.com/in/abdalrahman-midani/",
             "https://tryhackme.com/p/Jbril"
           ],
-          "jobTitle": "Junior Cybersecurity Specialist & Senior Front-end Developer",
+          "jobTitle": jobTitle[locale],
           "email": "aboodmidani0@gmail.com",
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Ochtrup",
-            "addressRegion": "North Rhine-Westphalia",
+            "addressRegion": locale === "de" ? "Nordrhein-Westfalen" : "North Rhine-Westphalia",
             "addressCountry": "DE"
           },
-          "knowsAbout": ["Cybersecurity", "Web Security", "OWASP Top 10", "Vue.js", "JavaScript", "React"],
-          "description": "Senior front-end developer and cybersecurity specialist based in Ochtrup, Germany. Specializing in secure web applications and vulnerability analysis.",
+          "knowsAbout": knowsAbout[locale],
+          "description": personDesc[locale],
           "alumniOf": [
             {
               "@type": "CollegeOrUniversity",
@@ -144,19 +206,19 @@ const keywords = "web developer north rhine westphalia, cybersecurity specialist
         },
         {
           "@type": "WebSite",
-          "url": siteUrl,
-          "name": "Abdalrahman Midani - Web Developer & Cybersecurity Specialist",
-          "description": "Senior front-end developer and cybersecurity specialist serving clients in North Rhine-Westphalia and across Germany.",
-          "inLanguage": "en",
-          "about": ["Web Development", "Cybersecurity", "Front-end Development", "Web Security"],
+          "url": siteUrl + "/" + locale + "/",
+          "name": siteNames[locale],
+          "description": siteDescs[locale],
+          "inLanguage": locale,
+          "about": aboutTopics[locale],
           "isAccessibleForFree": true
         },
         {
           "@type": "LocalBusiness",
-          "@id": siteUrl,
+          "@id": siteUrl + "/" + locale + "/#business",
           "name": "Abdalrahman Midani",
-          "description": "Senior front-end developer and cybersecurity specialist based in Ochtrup, NRW, Germany.",
-          "url": siteUrl,
+          "description": localBusinessDesc[locale],
+          "url": siteUrl + "/" + locale + "/",
           "email": "aboodmidani0@gmail.com",
           "telephone": "+4915771454456",
           "areaServed": ["DE-NW", "DE", "EU"],
@@ -164,7 +226,7 @@ const keywords = "web developer north rhine westphalia, cybersecurity specialist
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Ochtrup",
-            "addressRegion": "North Rhine-Westphalia",
+            "addressRegion": locale === "de" ? "Nordrhein-Westfalen" : "North Rhine-Westphalia",
             "addressCountry": "DE"
           },
           "images": [imageUrl]
@@ -175,8 +237,8 @@ const keywords = "web developer north rhine westphalia, cybersecurity specialist
             {
               "@type": "ListItem",
               "position": 1,
-              "name": "Home",
-              "item": siteUrl
+              "name": breadcrumbHome[locale],
+              "item": siteUrl + "/" + locale + "/"
             }
           ]
         }
@@ -195,7 +257,7 @@ const keywords = "web developer north rhine westphalia, cybersecurity specialist
       href="#main-content"
       class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-[var(--sec)] focus:text-[var(--background)] focus:rounded-lg focus:font-medium"
     >
-      Skip to main content
+      {locale === "de" ? "Zum Hauptinhalt springen" : "Skip to main content"}
     </a>
 
     <PageLoader />
@@ -431,12 +493,6 @@ const keywords = "web developer north rhine westphalia, cybersecurity specialist
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border: 0;
-  }
-
-  /* Dual-language toggling */
-  html[data-lang="en"] .de-only,
-  html[data-lang="de"] .en-only {
-    display: none;
   }
 
   /* Reduced motion preference */

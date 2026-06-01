@@ -1,0 +1,72 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Nav from "@/components/nav.astro";
+import Footer from "@/components/footer.astro";
+import BlogCard from "@/components/BlogCard.astro";
+import T from "@/components/T.astro";
+
+const locale = Astro.currentLocale === "de" ? "de" : "en";
+const base = `/${locale}`;
+
+const posts = [
+  {
+    slug: "web-development-services-nrw",
+    title: "Webentwicklungs-Leistungen in NRW: Worauf Sie 2025 achten sollten",
+    description: "Ein praxisnaher Leitfaden für Unternehmen in Nordrhein-Westfalen, die einen Webentwickler beauftragen möchten. Was zählt, was nicht, und wie Sie rote Flaggen erkennen.",
+    date: "2025-11-15",
+  },
+  {
+    slug: "cybersecurity-tips-germany",
+    title: "Cybersicherheit-Tipps für kleine Unternehmen in Deutschland",
+    description: "Praktische, jargonfreie Sicherheitshinweise für kleine Unternehmer in Deutschland — von Phishing-Schutz bis zu sicheren Passwörtern.",
+    date: "2025-10-28",
+  },
+  {
+    slug: "hire-frontend-developer-nrw",
+    title: "Wie Sie einen Frontend-Entwickler in NRW beauftragen (ohne Reinfall)",
+    description: "Worauf Sie achten sollten, welche Fragen Sie stellen und wie Sie Frontend-Entwickler für Ihr nächstes Projekt in Nordrhein-Westfalen bewerten.",
+    date: "2025-10-10",
+  },
+  {
+    slug: "owasp-top-10-guide",
+    title: "OWASP Top 10 erklärt: Ein Leitfaden in einfacher Sprache für Nicht-Entwickler",
+    description: "Die OWASP Top 10 sind der Industriestandard für Web-Sicherheit. Hier erfahren Sie, was sie tatsächlich bedeuten — erklärt für Gründer und Produktmanager.",
+    date: "2025-09-22",
+  },
+  {
+    slug: "freelance-web-developer-germany",
+    title: "Freelance Webentwickler vs. Agentur in Deutschland: Der ehrliche Vergleich",
+    description: "Wann lohnt es sich, einen freiberuflichen Webentwickler in Deutschland zu beauftragen, und wann sollten Sie eine Agentur wählen? Eine ehrliche Gegenüberstellung.",
+    date: "2025-09-05",
+  },
+];
+---
+
+<Layout title="Blog — Webentwicklung & Cybersicherheit Einblicke | Abdalrahman Midani" description="Artikel über Webentwicklung, Cybersicherheit und Softwareentwicklung in Deutschland. Praxisnahe Einblicke für Unternehmen und Entwickler.">
+  <Nav />
+
+  <section class="text-[var(--white)] py-16">
+    <div class="max-w-5xl mx-auto">
+      <p class="text-sm text-[var(--sec)] mb-4">
+        <a href={`${base}/`} class="hover:underline"><T key="nav.home" /></a>
+        <span class="mx-2">/</span>
+        <T key="nav.blog" />
+      </p>
+      <h1 class="text-3xl md:text-5xl font-medium mb-4"><T key="blogPage.title" /></h1>
+      <p class="text-lg text-[var(--white-icon)] mb-12"><T key="blogPage.tagline" /></p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {posts.map((post) => (
+          <BlogCard
+            slug={post.slug}
+            title={post.title}
+            description={post.description}
+            date={post.date}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

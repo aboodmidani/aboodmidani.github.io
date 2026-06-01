@@ -8,13 +8,16 @@ interface NavItem {
   icon: string;
 }
 
+const locale = Astro.currentLocale === "de" ? "de" : "en";
+const base = `/${locale}`;
+
 const navItems: NavItem[] = [
-  { labelKey: "nav.home", href: "/", icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M21 20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V9.48907C3 9.18048 3.14247 8.88917 3.38606 8.69972L11.3861 2.47749C11.7472 2.19663 12.2528 2.19663 12.6139 2.47749L20.6139 8.69972C20.8575 8.88917 21 9.18048 21 9.48907V20ZM19 19V9.97815L12 4.53371L5 9.97815V19H19Z"></path></svg>` },
-  { labelKey: "nav.about", href: "/about", icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>` },
-  { labelKey: "nav.services", href: "/services", icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V6h16v12zM6 10h2v2H6v-2zm0 4h8v2H6v-2zm10 0h2v2h-2v-2zm-6-4h8v2h-8v-2z"/></svg>` },
-  { labelKey: "nav.projects", href: "/projects", icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M4 5V19H20V7H11.5858L9.58579 5H4ZM12.4142 5H21C21.5523 5 22 5.44772 22 6V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H10.4142L12.4142 5Z"></path></svg>` },
-  { labelKey: "nav.contact", href: "/contact", icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M21.7267 2.95694L16.2734 22.0432C16.1225 22.5716 15.7979 22.5956 15.5563 22.1126L11 13L1.9229 9.36919C1.41322 9.16532 1.41953 8.86022 1.95695 8.68108L21.0432 2.31901C21.5716 2.14285 21.8747 2.43866 21.7267 2.95694ZM19.0353 5.09647L6.81221 9.17085L12.4488 11.4255L15.4895 17.5068L19.0353 5.09647Z"></path></svg>` },
-  { labelKey: "nav.blog", href: "/blog", icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M4 22C3.44772 22 3 21.5523 3 21V3C3 2.44772 3 2.44772 4 2H20C20.5523 2 21 2.44772 21 3V21C21 21.5523 20.5523 22 20 22H4ZM5 5V7H19V5H5ZM5 9V11H11V9H5ZM5 13V15H11V13H5ZM5 17V19H11V17H5ZM13 9V11H19V9H13ZM13 13V15H19V13H13ZM13 17V19H19V17H13Z"/></svg>` },
+  { labelKey: "nav.home", href: `${base}/`, icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M21 20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V9.48907C3 9.18048 3.14247 8.88917 3.38606 8.69972L11.3861 2.47749C11.7472 2.19663 12.2528 2.19663 12.6139 2.47749L20.6139 8.69972C20.8575 8.88917 21 9.18048 21 9.48907V20ZM19 19V9.97815L12 4.53371L5 9.97815V19H19Z"></path></svg>` },
+  { labelKey: "nav.about", href: `${base}/about`, icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>` },
+  { labelKey: "nav.services", href: `${base}/services`, icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V6h16v12zM6 10h2v2H6v-2zm0 4h8v2H6v-2zm10 0h2v2h-2v-2zm-6-4h8v2h-8v-2z"/></svg>` },
+  { labelKey: "nav.projects", href: `${base}/projects`, icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M4 5V19H20V7H11.5858L9.58579 5H4ZM12.4142 5H21C21.5523 5 22 5.44772 22 6V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H10.4142L12.4142 5Z"></path></svg>` },
+  { labelKey: "nav.contact", href: `${base}/contact`, icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M21.7267 2.95694L16.2734 22.0432C16.1225 22.5716 15.7979 22.5956 15.5563 22.1126L11 13L1.9229 9.36919C1.41322 9.16532 1.41953 8.86022 1.95695 8.68108L21.0432 2.31901C21.5716 2.14285 21.8747 2.43866 21.7267 2.95694ZM19.0353 5.09647L6.81221 9.17085L12.4488 11.4255L15.4895 17.5068L19.0353 5.09647Z"></path></svg>` },
+  { labelKey: "nav.blog", href: `${base}/blog`, icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M4 22C3.44772 22 3 21.5523 3 21V3C3 2.44772 3 2.44772 4 2H20C20.5523 2 21 2.44772 21 3V21C21 21.5523 20.5523 22 20 22H4ZM5 5V7H19V5H5ZM5 9V11H11V9H5ZM5 13V15H11V13H5ZM5 17V19H11V17H5ZM13 9V11H19V9H13ZM13 13V15H19V13H13ZM13 17V19H19V17H13Z"/></svg>` },
 ];
 ---
 
@@ -27,7 +30,7 @@ const navItems: NavItem[] = [
       navItems.map((item) => (
         <li>
           <a
-            id={`nav-${item.href.replace("#", "")}`}
+            id={`nav-${item.href.replace(/[/#]/g, "")}`}
             href={item.href}
             class="nav-link flex flex-col md:flex-row items-center gap-0 md:gap-2 text-[var(--white-icon)] hover:text-[var(--sec)] transition-colors text-xs sm:text-sm md:text-base px-2 sm:px-3 py-1 whitespace-nowrap"
           >
@@ -64,11 +67,13 @@ const navItems: NavItem[] = [
 <script is:inline>
   (function() {
     function setActiveLink() {
-      var currentPath = window.location.pathname;
+      var currentPath = window.location.pathname.replace(/\/$/, "") || "/";
       var links = document.querySelectorAll('.nav-link');
       for (var i = 0; i < links.length; i++) {
         var href = links[i].getAttribute('href');
-        if (href === currentPath || (href !== '/' && currentPath.startsWith(href))) {
+        if (!href) continue;
+        var normalizedHref = href.replace(/\/$/, "") || "/";
+        if (normalizedHref === currentPath || (normalizedHref !== '/' && currentPath.startsWith(normalizedHref + '/')) || (normalizedHref !== '/' && currentPath === normalizedHref)) {
           links[i].classList.add('active');
         } else {
           links[i].classList.remove('active');

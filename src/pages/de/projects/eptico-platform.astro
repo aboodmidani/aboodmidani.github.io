@@ -1,0 +1,44 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Nav from "@/components/nav.astro";
+import Footer from "@/components/footer.astro";
+import ProjectDetail from "@/components/ProjectDetail.astro";
+import eptico from "../../../../public/eptico.png";
+import T from "@/components/T.astro";
+const locale = Astro.currentLocale === "de" ? "de" : "en";
+const base = `/${locale}`;
+---
+
+<Layout title="Eptico Platform — B2B-SaaS-Dashboard | Abdalrahman Midani" description="Eine B2B-SaaS-Plattform-Frontend für ein E-Mail-Outreach- und Vertriebstool. Modernes Dashboard, Echtzeit-Analysen und Team-Kollaborationsfunktionen.">
+  <Nav />
+
+  <section class="text-[var(--white)] py-16">
+    <div class="max-w-5xl mx-auto">
+      <p class="text-sm text-[var(--sec)] mb-4">
+        <a href={`${base}/`} class="hover:underline"><T key="nav.home" /></a>
+        <span class="mx-2">/</span>
+        <a href={`${base}/projects`} class="hover:underline"><T key="nav.projects" /></a>
+        <span class="mx-2">/</span>
+        Eptico Platform
+      </p>
+      <h1 class="text-3xl md:text-5xl font-medium mb-8">Eptico Platform</h1>
+    </div>
+
+    <ProjectDetail
+      title="Eptico Platform"
+      image={eptico as import("astro").ImageMetadata}
+      description="Eptico ist eine B2B-SaaS-Plattform für E-Mail-Outreach und Vertriebsautomatisierung. Ich habe die Marketing-Website gebaut und zum Frontend der Plattform beigetragen — inklusive Dashboard-Layouts, Echtzeit-Analysen und Team-Kollaborationsfunktionen. Die Herausforderung: ein komplexes Produkt zugänglich wirken lassen. Das Ergebnis: eine saubere, datendichte Oberfläche, die nicht überfordert."
+      responsibilities={[
+        "Erstellung der Marketing-Website und zentraler Produkt-Landing-Pages",
+        "Gestaltung von Dashboard-Layouts für Vertriebsanalysen und Pipeline-Tracking",
+        "Implementierung von Echtzeit-Datenvisualisierung mit Diagrammen und KPIs",
+        "Zusammenarbeit mit Backend-Entwicklern an API-Verträgen und Datenflüssen",
+      ]}
+      techStack={["React", "TypeScript", "Tailwind CSS", "REST API", "Chart.js"]}
+      liveUrl="https://eptico.com"
+      projectSlug="eptico-platform"
+    />
+  </section>
+
+  <Footer />
+</Layout>

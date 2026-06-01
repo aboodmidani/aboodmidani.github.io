@@ -1,0 +1,90 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Nav from "@/components/nav.astro";
+import Footer from "@/components/footer.astro";
+import T from "@/components/T.astro";
+
+const locale = Astro.currentLocale === "de" ? "de" : "en";
+const base = `/${locale}`;
+---
+
+<Layout title="Freelance Web Developer vs. Agency in Germany: The Honest Comparison | Abdalrahman Midani" description="When does it make sense to hire a freelance web developer in Germany, and when should you go with an agency? An honest breakdown.">
+  <Nav />
+
+  <article class="text-[var(--white)] py-16">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-sm text-[var(--sec)] mb-4">
+        <a href={`${base}/`} class="hover:underline"><T key="nav.home" /></a>
+        <span class="mx-2">/</span>
+        <a href={`${base}/blog`} class="hover:underline"><T key="nav.blog" /></a>
+        <span class="mx-2">/</span>
+        Freelance vs. Agency
+      </p>
+      <h1 class="text-3xl md:text-5xl font-medium mb-4">Freelance Web Developer vs. Agency in Germany: The Honest Comparison</h1>
+      <p class="text-sm text-[var(--white-icon)] mb-12">September 5, 2025 · 6 min read</p>
+
+      <div class="prose prose-invert max-w-none text-[var(--white-icon)] space-y-6">
+        <p class="text-lg">
+          One of the first decisions you'll make when starting a web project: hire a freelance developer, or go with an agency? Both have their place. Here's an honest breakdown — including when each option makes sense, and the hidden costs of each.
+        </p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">The Quick Summary</h2>
+        <ul class="list-disc list-inside space-y-2 ml-4">
+          <li><strong class="text-[var(--white)]">Freelancer:</strong> Lower cost, direct communication, flexible scope. Best for small to medium projects.</li>
+          <li><strong class="text-[var(--white)]">Agency:</strong> Higher cost, full team, established process. Best for large, complex projects.</li>
+        </ul>
+        <p>That's the simple version. Now the nuance.</p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">When to Hire a Freelance Web Developer in Germany</h2>
+        <p>Freelancers shine when:</p>
+        <ul class="list-disc list-inside space-y-2 ml-4">
+          <li>You have a clear scope (a marketing site, a small web app, a specific feature)</li>
+          <li>Your budget is under €20,000</li>
+          <li>You want direct communication with the person writing the code</li>
+          <li>The project is time-sensitive and needs flexibility</li>
+          <li>You value a personal relationship and ongoing support</li>
+        </ul>
+        <p>For a typical NRW small business — restaurant website, professional services site, small e-commerce store, internal tool — a freelancer is usually the right choice. The price-to-quality ratio is hard to beat.</p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">When to Hire an Agency</h2>
+        <p>Agencies make sense when:</p>
+        <ul class="list-disc list-inside space-y-2 ml-4">
+          <li>You need a full team: design, frontend, backend, devops, QA, project management</li>
+          <li>Your project is complex (custom ERP, multi-platform integration, large-scale platform)</li>
+          <li>You need 24/7 support or guaranteed SLAs</li>
+          <li>Your budget is €50,000+ and timeline is 6+ months</li>
+          <li>You need contractual guarantees that one person can't provide</li>
+        </ul>
+        <p>If you're a Mittelstand company launching a major digital product, or a startup building a complex platform, an agency gives you the team depth that no single freelancer can.</p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">The Hidden Costs of Agencies</h2>
+        <p>What agencies don't always advertise:</p>
+        <ul class="list-disc list-inside space-y-2 ml-4">
+          <li><strong class="text-[var(--white)]">Account management overhead.</strong> You're paying for a project manager between you and the developers.</li>
+          <li><strong class="text-[var(--white)]">Slower iteration.</strong> Decisions go through layers, not directly to the person building.</li>
+          <li><strong class="text-[var(--white)]">Junior staff.</strong> Agencies often assign junior developers to small projects to maximize billable hours.</li>
+          <li><strong class="text-[var(--white)]">Lock-in.</strong> Their CMS choices and tech stack might be hard to maintain after you part ways.</li>
+        </ul>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">The Hidden Risks of Freelancers</h2>
+        <p>On the other side, freelancers can be risky when:</p>
+        <ul class="list-disc list-inside space-y-2 ml-4">
+          <li><strong class="text-[var(--white)]">Capacity.</strong> One person can only do so much. If they get sick, the project stalls.</li>
+          <li><strong class="text-[var(--white)]">Skill gaps.</strong> A freelance frontend dev might not know backend or security deeply.</li>
+          <li><strong class="text-[var(--white)]">No safety net.</strong> No team to step in if they leave mid-project.</li>
+          <li><strong class="text-[var(--white)]">Variable quality.</strong> The range is wide — from world-class to "I learned JavaScript last month."</li>
+        </ul>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8 mb-4">A Middle Path: Hybrid</h2>
+        <p>
+          Some of the best projects I see use a hybrid: a freelance developer (or small team) for the build, with periodic support from a specialist (security audit, performance review, design feedback). You get the cost savings and direct communication of freelancing, with the safety net of expert review when it matters.
+        </p>
+        <p>
+          For businesses in NRW and across Germany, this is often the best of both worlds. If you want to talk about your project, <a href={`${base}/contact`} class="text-[var(--sec)] hover:underline">let's chat</a>.
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <Footer />
+</Layout>
