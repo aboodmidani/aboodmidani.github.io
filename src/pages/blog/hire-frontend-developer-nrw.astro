@@ -2,6 +2,7 @@
 import Layout from "@/layouts/Layout.astro";
 import Nav from "@/components/nav.astro";
 import Footer from "@/components/footer.astro";
+import T from "@/components/T.astro";
 ---
 
 <Layout title="How to Hire a Front-End Developer in NRW | Abdalrahman Midani" description="A practical guide to hiring a front-end developer in North Rhine-Westphalia — skills to look for, where to find talent, and why security expertise matters.">
@@ -10,16 +11,20 @@ import Footer from "@/components/footer.astro";
   <article class="text-[var(--white)] py-16">
     <div class="max-w-3xl mx-auto">
       <p class="text-sm text-[var(--sec)] mb-4">
-        <a href="/" class="hover:underline">Home</a>
+        <a href="/" class="hover:underline"><T key="nav.home" /></a>
         <span class="mx-2">/</span>
-        <a href="/blog" class="hover:underline">Blog</a>
+        <a href="/blog" class="hover:underline"><T key="nav.blog" /></a>
         <span class="mx-2">/</span>
-        How to Hire the Best Front-End Developer in NRW
+        <span class="en-only">How to Hire the Best Front-End Developer in NRW</span>
+        <span class="de-only">So findest du den besten Front-End-Entwickler in NRW</span>
       </p>
       <p class="text-sm text-[var(--sec)] mb-2">May 18, 2025 · <span class="reading-time"></span> min read</p>
-      <h1 class="text-3xl md:text-5xl font-medium mb-6">How to Hire the Best Front-End Developer in NRW</h1>
+      <h1 class="text-3xl md:text-5xl font-medium mb-6">
+        <span class="en-only">How to Hire the Best Front-End Developer in NRW</span>
+        <span class="de-only">So findest du den besten Front-End-Entwickler in NRW</span>
+      </h1>
 
-      <div class="prose prose-invert max-w-none text-[var(--white-icon)] leading-relaxed space-y-4">
+      <div class="en-only prose prose-invert max-w-none text-[var(--white-icon)] leading-relaxed space-y-4">
         <p>Finding the right <strong>front-end developer in North Rhine-Westphalia</strong> can be challenging. The market in Germany is competitive, and the difference between a good developer and a great one often comes down to security awareness, architectural thinking, and communication skills.</p>
 
         <h2 class="text-2xl font-semibold text-[var(--white)] mt-8">What to look for</h2>
@@ -45,6 +50,33 @@ import Footer from "@/components/footer.astro";
         </ul>
 
         <p class="mt-8">I'm a <strong>senior front-end developer and cybersecurity specialist</strong> based in Ochtrup, NRW, available for projects throughout Germany. <a href="/contact" class="text-[var(--sec)] hover:underline">Let's talk about your next project</a>.</p>
+      </div>
+      <div class="de-only prose prose-invert max-w-none text-[var(--white-icon)] leading-relaxed space-y-4">
+        <p>Den richtigen <strong>Front-End-Entwickler in Nordrhein-Westfalen</strong> zu finden, kann eine Herausforderung sein. Der Markt in Deutschland ist wettbewerbsintensiv, und der Unterschied zwischen einem guten und einem großartigen Entwickler liegt oft in Sicherheitsbewusstsein, architektonischem Denken und Kommunikationsfähigkeiten.</p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8">Worauf du achten solltest</h2>
+
+        <h3 class="text-xl font-semibold text-[var(--white)] mt-6">Technische Fähigkeiten</h3>
+        <p>Ein starker Front-End-Entwickler sollte Kenntnisse in HTML, CSS und JavaScript auf fundamentalem Niveau sowie Erfahrung in mindestens einem modernen Framework (Vue.js, React oder Angular) nachweisen. TypeScript-Kenntnisse werden zunehmend wichtiger. Achte auf Erfahrung mit responsive Design, Barrierefreiheit (a11y) und Leistungsoptimierung.</p>
+
+        <h3 class="text-xl font-semibold text-[var(--white)] mt-6">Sicherheitsbewusstsein</h3>
+        <p>Das zeichnet außergewöhnliche Entwickler aus. Ein <strong>Front-End-Entwickler, der Cybersicherheit versteht</strong>, schreibt Code, der gegen XSS, CSRF und andere häufige Schwachstellen resistent ist. Er weiß, wie man Authentifizierungstoken behandelt, Benutzereingaben bereinigt und Content Security Policy-Header implementiert.</p>
+
+        <h3 class="text-xl font-semibold text-[var(--white)] mt-6">Portfolio und Code-Qualität</h3>
+        <p>Überprüfe ihr GitHub- oder GitLab-Profil. Achte auf sauberen Code, aussagekräftige Commit-Nachrichten und Projekte, die reale Problemlösungen zeigen. Ein Entwickler, der zu Open Source beiträgt, zeigt Eigeninitiative und Leidenschaft.</p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8">Wo man Entwickler in NRW findet</h2>
+        <p>Nordrhein-Westfalen hat eine lebendige Tech-Szene. Städte wie Köln, Düsseldorf, Bonn und Münster sind Zentren für digitale Innovation. LinkedIn, lokale Tech-Treffen und Plattformen wie Stepstone sind gute Anlaufstellen. Aber wenn du jemanden suchst, der Entwicklung mit Sicherheitsexpertise verbindet, achte auf Cybersicherheitszertifikate und TryHackMe-Profile neben dem üblichen Portfolio.</p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8">Warnsignale vermeiden</h2>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Kein Verständnis für Web-Sicherheitsgrundlagen</li>
+          <li>Kann Tech-Stack-Entscheidungen nicht erklären</li>
+          <li>Kein Portfolio oder nur Tutorial-Projekte</li>
+          <li>Abwertend gegenüber Barrierefreiheitsanforderungen</li>
+        </ul>
+
+        <p class="mt-8">Ich bin ein <strong>Senior Front-End-Entwickler und Cybersicherheitsspezialist</strong> mit Sitz in Ochtrup, NRW, und stehe für Projekte in ganz Deutschland zur Verfügung. <a href="/contact" class="text-[var(--sec)] hover:underline">Lass uns über dein nächstes Projekt sprechen</a>.</p>
       </div>
     </div>
   </article>

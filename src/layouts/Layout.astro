@@ -1,5 +1,6 @@
 ---
 import PageLoader from "@/components/PageLoader.astro";
+import { ViewTransitions } from "astro:transitions";
 interface Props {
   title: string;
   description?: string;
@@ -8,6 +9,7 @@ interface Props {
 
 const { title, description = "Abdalrahman Midani — senior front-end developer and cybersecurity specialist in Ochtrup, North Rhine-Westphalia. Building secure, high-performance web applications for businesses in Germany.", noindex = false } = Astro.props;
 
+const locale = "en";
 const siteUrl = "https://aboodmidani.github.io";
 const imageUrl = "https://aboodmidani.github.io/og-image.svg";
 const currentUrl = new URL(Astro.url.pathname, siteUrl);
@@ -15,7 +17,7 @@ const keywords = "web developer north rhine westphalia, cybersecurity specialist
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" data-lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -37,10 +39,6 @@ const keywords = "web developer north rhine westphalia, cybersecurity specialist
     <meta name="geo.placename" content="Ochtrup" />
     <meta name="geo.position" content="52.2079;7.1894" />
     <meta name="ICBM" content="52.2079, 7.1894" />
-
-    <!-- Hreflang -->
-    <link rel="alternate" href={`${siteUrl}/`} hreflang="en" />
-    <link rel="alternate" href={`${siteUrl}/`} hreflang="de" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -78,28 +76,31 @@ const keywords = "web developer north rhine westphalia, cybersecurity specialist
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <link rel="dns-prefetch" href="https://www.google-analytics.com" />
 
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-833KX5000V"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
+      gtag('config', 'G-833KX5000V');
     </script>
 
     <!-- Fonts: Non-render-blocking -->
     <link
       rel="preload"
       as="style"
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
       onload="this.onload=null;this.rel='stylesheet'"
     />
     <noscript>
       <link
         rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
       />
     </noscript>
+
+    <!-- View Transitions -->
+    <ViewTransitions />
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify({
@@ -176,6 +177,12 @@ const keywords = "web developer north rhine westphalia, cybersecurity specialist
     })} />
   </head>
   <body class="bg-[--background] md:px-48 lg:px-20 px-9">
+    <!-- Cinematic overlays -->
+    <div class="cinematic-grain" aria-hidden="true"></div>
+    <div class="cinematic-vignette" aria-hidden="true"></div>
+    <div class="cinematic-glow" aria-hidden="true"></div>
+    <div class="cinematic-glow cinematic-glow-2" aria-hidden="true"></div>
+
     <!-- Skip to main content for accessibility -->
     <a
       href="#main-content"
@@ -212,18 +219,20 @@ const keywords = "web developer north rhine westphalia, cybersecurity specialist
     margin: 0;
   }
 
+  h1, h2, h3, .font-display {
+    font-family: "Space Grotesk", "Montserrat", sans-serif;
+  }
+
   *::selection {
     background-color: var(--sec);
     color: var(--background);
   }
 
-  /* Improved focus styles for accessibility */
   :focus-visible {
     outline: 2px solid var(--sec);
     outline-offset: 2px;
   }
 
-  /* Scrollbar styles */
   ::-webkit-scrollbar {
     width: 10px;
   }
@@ -246,27 +255,109 @@ const keywords = "web developer north rhine westphalia, cybersecurity specialist
     scrollbar-color: #333 var(--background);
   }
 
-  /* Page transitions */
-  .page-content {
-    animation: pageIn 0.6s ease-out forwards;
+  /* === CINEMATIC OVERLAYS === */
+
+  /* Film grain */
+  .cinematic-grain {
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    pointer-events: none;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 256px 256px;
+    mix-blend-mode: overlay;
   }
 
-  @keyframes pageIn {
+  /* Vignette */
+  .cinematic-vignette {
+    position: fixed;
+    inset: 0;
+    z-index: 9997;
+    pointer-events: none;
+    background: radial-gradient(ellipse at center, transparent 50%, rgba(0, 0, 0, 0.5) 100%);
+  }
+
+  /* Ambient glow blobs */
+  .cinematic-glow {
+    position: fixed;
+    top: -20%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(143, 255, 159, 0.06) 0%, transparent 70%);
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: -1;
+    animation: glowDrift 20s ease-in-out infinite alternate;
+  }
+
+  .cinematic-glow-2 {
+    top: auto;
+    right: auto;
+    bottom: -20%;
+    left: -10%;
+    background: radial-gradient(circle, rgba(143, 255, 159, 0.04) 0%, transparent 70%);
+    animation: glowDrift2 25s ease-in-out infinite alternate;
+  }
+
+  @keyframes glowDrift {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-40px, 30px) scale(1.1); }
+    100% { transform: translate(20px, -20px) scale(0.95); }
+  }
+
+  @keyframes glowDrift2 {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(30px, -40px) scale(1.15); }
+    100% { transform: translate(-20px, 20px) scale(0.9); }
+  }
+
+  /* === PAGE TRANSITIONS === */
+
+  .page-content {
+    animation: pageReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes pageReveal {
     from {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(30px);
+      filter: blur(4px);
     }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+  }
+
+  /* Staggered hero reveal */
+  .hero-reveal > * {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: heroRevealItem 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .hero-reveal > *:nth-child(1) { animation-delay: 0.1s; }
+  .hero-reveal > *:nth-child(2) { animation-delay: 0.25s; }
+  .hero-reveal > *:nth-child(3) { animation-delay: 0.4s; }
+  .hero-reveal > *:nth-child(4) { animation-delay: 0.55s; }
+
+  @keyframes heroRevealItem {
     to {
       opacity: 1;
       transform: translateY(0);
     }
   }
 
-  /* Fade in up animation for sections */
+  /* Section fade-in with cinematic feel */
   .fade-in-up {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .fade-in-up.visible {
@@ -274,10 +365,52 @@ const keywords = "web developer north rhine westphalia, cybersecurity specialist
     transform: translateY(0);
   }
 
-  /* Make first section visible immediately */
   section:first-of-type {
     opacity: 1 !important;
     transform: none !important;
+  }
+
+  /* === CINEMATIC CARDS === */
+
+  .card-cinematic {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 1rem;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .card-cinematic:hover {
+    border-color: rgba(143, 255, 159, 0.3);
+    box-shadow: 0 0 40px rgba(143, 255, 159, 0.08), inset 0 0 40px rgba(143, 255, 159, 0.02);
+    transform: translateY(-2px);
+  }
+
+  /* Cinematic image overlay */
+  .img-cinematic {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .img-cinematic::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(16, 16, 16, 0.7) 0%, transparent 50%);
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .img-cinematic:hover::after {
+    opacity: 0.5;
+  }
+
+  /* Cinematic divider line */
+  .divider-cinematic {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(143, 255, 159, 0.3), transparent);
+    border: none;
   }
 
   /* Screen reader only class */
@@ -293,6 +426,12 @@ const keywords = "web developer north rhine westphalia, cybersecurity specialist
     border: 0;
   }
 
+  /* Dual-language toggling */
+  html[data-lang="en"] .de-only,
+  html[data-lang="de"] .en-only {
+    display: none;
+  }
+
   /* Reduced motion preference */
   @media (prefers-reduced-motion: reduce) {
     *,
@@ -302,6 +441,11 @@ const keywords = "web developer north rhine westphalia, cybersecurity specialist
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
       scroll-behavior: auto !important;
+    }
+    .cinematic-grain,
+    .cinematic-glow,
+    .cinematic-glow-2 {
+      display: none;
     }
   }
 </style>

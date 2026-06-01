@@ -1,0 +1,107 @@
+{
+  "site": {
+    "name": "Abdalrahman Midani"
+  },
+  "nav": {
+    "home": "Startseite",
+    "about": "Über mich",
+    "services": "Leistungen",
+    "projects": "Projekte",
+    "blog": "Blog",
+    "contact": "Kontakt"
+  },
+  "footer": {
+    "featuredOn": "Gefunden auf",
+    "copyright": "Alle Rechte vorbehalten."
+  },
+  "home": {
+    "hero": {
+      "greeting": "Hallo, ich bin Abdalrahman Midani",
+      "title1": "Webentwickler & Cybersecurity-Spezialist",
+      "title2": "in Nordrhein-Westfalen",
+      "subtitle": "Ich baue sichere, schnelle Webanwendungen und mache Sicherheitsanalysen für Unternehmen in ganz Deutschland.",
+      "ctaServices": "Meine Leistungen",
+      "ctaContact": "Kontakt aufnehmen"
+    },
+    "services": {
+      "title": "Was ich mache",
+      "heading": "Leistungen",
+      "webDevTitle": "Webentwicklung",
+      "webDevDesc": "Vue.js, React, Astro, Tailwind — Front-End-Entwicklung für moderne Unternehmen in NRW.",
+      "securityTitle": "Cybersicherheit",
+      "securityDesc": "OWASP-Audits, Penetrationstests, Schwachstellenanalysen für deutsche Unternehmen.",
+      "consultingTitle": "Beratung",
+      "consultingDesc": "Technische Führung, Code-Reviews, Architekturdesign für Teams in Düsseldorf, Münster und Berlin."
+    },
+    "projects": {
+      "title": "Ausgezeichnete Projekte",
+      "heading": "Projekte",
+      "viewAll": "Alle Projekte ansehen"
+    },
+    "contact": {
+      "title": "Lass uns reden",
+      "heading": "Brauchst du einen Webentwickler in NRW?",
+      "subtitle": "Ich wohne in Ochtrup und arbeite mit Kunden in ganz Nordrhein-Westfalen. Ob du ein sicheres Front-End brauchst oder eine Sicherheitsanalyse — lass uns über dein Projekt sprechen.",
+      "sendEmail": "E-Mail senden",
+      "openGmail": "Gmail öffnen"
+    }
+  },
+  "about": {
+    "title": "Über mich",
+    "quickInfoTitle": "Kurzinfo",
+    "location": "Standort",
+    "languages": "Sprachen",
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "focus": "Schwerpunkte",
+    "findMe": "Finde mich auf"
+  },
+  "servicesPage": {
+    "title": "Was ich anbiete",
+    "heading": "Leistungen",
+    "subtitle": "Front-End-Entwicklung und Cybersicherheitsdienste für Unternehmen in Nordrhein-Westfalen, Deutschland. Ich wohne in Ochtrup und arbeite für Kunden in ganz NRW und darüber hinaus.",
+    "ctaTitle": "Bereit für eine Zusammenarbeit?",
+    "ctaSubtitle": "Ich wohne in Ochtrup, NRW — verfügbar für Projekte in ganz Deutschland und remote in ganz Europa.",
+    "ctaButton": "Kontakt aufnehmen"
+  },
+  "contactPage": {
+    "title": "Lass uns reden",
+    "heading": "Kontakt",
+    "subtitle": "Hast du ein Projekt oder eine Frage? Schick mir eine Nachricht und ich melde mich bei dir.",
+    "formName": "Name",
+    "formEmail": "E-Mail",
+    "formMessage": "Nachricht",
+    "formSend": "Nachricht senden",
+    "formSending": "Wird gesendet..."
+  },
+  "thanksPage": {
+    "title": "Vielen Dank!",
+    "heading": "Nachricht gesendet!",
+    "subtitle": "Danke für deine Nachricht. Ich melde mich so schnell wie möglich bei dir.",
+    "backHome": "Zurück zur Startseite",
+    "or": "oder",
+    "sendEmail": "Eine weitere E-Mail senden"
+  },
+  "blogPage": {
+    "title": "Artikel",
+    "heading": "Blog",
+    "subtitle": "Einblicke in Webentwicklung, Cybersicherheit und sichere Anwendungen. Geschrieben in Ochtrup, Nordrhein-Westfalen — von einem Entwickler, der programmiert und schützt."
+  },
+  "projectsPage": {
+    "title": "Meine Arbeit",
+    "heading": "Projekte",
+    "subtitle": "Web-Sicherheitstools, Blockchain-Plattformen und Front-End-Anwendungen von einem Entwickler aus Nordrhein-Westfalen.",
+    "moreOn": "Mehr Projekte auf"
+  },
+  "projectDetail": {
+    "responsibilities": "Hauptaufgaben",
+    "techStack": "Technologien",
+    "livePreview": "Live-Vorschau",
+    "sourceCode": "Quellcode"
+  },
+  "breadcrumb": {
+    "home": "Startseite",
+    "blog": "Blog",
+    "projects": "Projekte"
+  }
+}

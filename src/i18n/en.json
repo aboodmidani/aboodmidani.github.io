@@ -1,0 +1,107 @@
+{
+  "site": {
+    "name": "Abdalrahman Midani"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "projects": "Projects",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "footer": {
+    "featuredOn": "Featured On",
+    "copyright": "All rights reserved."
+  },
+  "home": {
+    "hero": {
+      "greeting": "Hi, I'm Abdalrahman Midani",
+      "title1": "Web Developer & Cybersecurity Specialist",
+      "title2": "in North Rhine-Westphalia",
+      "subtitle": "I build secure, high-performance web applications and conduct vulnerability analysis for businesses across Germany.",
+      "ctaServices": "My Services",
+      "ctaContact": "Get in Touch"
+    },
+    "services": {
+      "title": "What I Do",
+      "heading": "Services",
+      "webDevTitle": "Web Development",
+      "webDevDesc": "Vue.js, React, Astro, Tailwind — front-end engineering for modern businesses in NRW.",
+      "securityTitle": "Cybersecurity",
+      "securityDesc": "OWASP audits, penetration testing, vulnerability assessments for German businesses.",
+      "consultingTitle": "Consulting",
+      "consultingDesc": "Technical leadership, code reviews, architecture design for teams in Düsseldorf, Münster & Berlin."
+    },
+    "projects": {
+      "title": "Featured Work",
+      "heading": "Projects",
+      "viewAll": "View all projects"
+    },
+    "contact": {
+      "title": "Let's Talk",
+      "heading": "Need a Web Developer in NRW?",
+      "subtitle": "I'm based in Ochtrup and serve clients across North Rhine-Westphalia. Whether you need a secure front-end or a vulnerability assessment, let's discuss your project.",
+      "sendEmail": "Send an Email",
+      "openGmail": "Open Gmail"
+    }
+  },
+  "about": {
+    "title": "About me",
+    "quickInfoTitle": "Quick info",
+    "location": "Location",
+    "languages": "Languages",
+    "email": "Email",
+    "phone": "Phone",
+    "focus": "Focus areas",
+    "findMe": "Find me on"
+  },
+  "servicesPage": {
+    "title": "What I offer",
+    "heading": "Services",
+    "subtitle": "Senior front-end development and cybersecurity services for businesses across North Rhine-Westphalia, Germany. Based in Ochtrup, serving clients throughout NRW and beyond.",
+    "ctaTitle": "Ready to work together?",
+    "ctaSubtitle": "Based in Ochtrup, NRW — available for projects throughout Germany and remotely across Europe.",
+    "ctaButton": "Get in touch"
+  },
+  "contactPage": {
+    "title": "Let's talk",
+    "heading": "Contact",
+    "subtitle": "Have a project in mind or a question? Send me a message and I'll get back to you.",
+    "formName": "Name",
+    "formEmail": "Email",
+    "formMessage": "Message",
+    "formSend": "Send Message",
+    "formSending": "Sending..."
+  },
+  "thanksPage": {
+    "title": "Thank You!",
+    "heading": "Message Sent!",
+    "subtitle": "Thank you for reaching out. I'll get back to you as soon as possible.",
+    "backHome": "Back to Home",
+    "or": "or",
+    "sendEmail": "Send another email"
+  },
+  "blogPage": {
+    "title": "Articles",
+    "heading": "Blog",
+    "subtitle": "Insights on web development, cybersecurity, and building secure applications. Written from Ochtrup, North Rhine-Westphalia — by a developer who codes and secures."
+  },
+  "projectsPage": {
+    "title": "My work",
+    "heading": "Projects",
+    "subtitle": "Web security tools, blockchain platforms, and front-end applications built by a developer from North Rhine-Westphalia.",
+    "moreOn": "More projects on"
+  },
+  "projectDetail": {
+    "responsibilities": "Key responsibilities",
+    "techStack": "Tech stack",
+    "livePreview": "Live preview",
+    "sourceCode": "Source code"
+  },
+  "breadcrumb": {
+    "home": "Home",
+    "blog": "Blog",
+    "projects": "Projects"
+  }
+}

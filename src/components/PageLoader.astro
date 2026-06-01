@@ -1,25 +1,40 @@
 ---
 ---
 
-<div id="page-loader" class="fixed inset-0 z-[9999] bg-[--background] flex items-center justify-center transition-opacity duration-500">
+<div id="page-loader" class="fixed inset-0 z-[9999] bg-[var(--background)] flex items-center justify-center transition-opacity duration-700">
   <div class="text-center">
-    <div class="relative w-16 h-16 mx-auto mb-4">
-      <div class="absolute inset-0 border-4 border-[var(--white-icon-tr)] rounded-full"></div>
-      <div class="absolute inset-0 border-4 border-t-[var(--sec)] border-r-transparent border-b-transparent border-l-transparent rounded-full animate-spin"></div>
+    <div class="relative w-20 h-20 mx-auto mb-6">
+      <div class="absolute inset-0 border border-[var(--white-icon-tr)] rounded-full"></div>
+      <div class="absolute inset-0 border-2 border-transparent border-t-[var(--sec)] rounded-full animate-spin"></div>
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div class="w-1.5 h-1.5 bg-[var(--sec)] rounded-full animate-pulse"></div>
+      </div>
     </div>
-    <p class="text-[var(--white-icon)] text-sm animate-pulse">Loading...</p>
+    <p class="text-[var(--white-icon)] text-xs uppercase tracking-[0.3em] font-medium animate-pulse">Loading</p>
+    <div class="absolute top-0 left-0 right-0 h-6 bg-black"></div>
+    <div class="absolute bottom-0 left-0 right-0 h-6 bg-black"></div>
   </div>
 </div>
 
-<script>
-  window.addEventListener("load", () => {
-    const loader = document.getElementById("page-loader");
+<script is:inline>
+  function dismissLoader() {
+    var loader = document.getElementById("page-loader");
     if (loader) {
-      loader.classList.add("opacity-0");
-      setTimeout(() => {
+      loader.style.opacity = "0";
+      setTimeout(function () {
         loader.style.display = "none";
         document.body.classList.add("loaded");
-      }, 500);
+      }, 700);
     }
-  });
+  }
+
+  if (document.readyState === "complete") {
+    dismissLoader();
+  } else {
+    window.addEventListener("load", dismissLoader);
+  }
+
+  document.addEventListener("astro:page-load", dismissLoader);
+
+  setTimeout(dismissLoader, 3000);
 </script>

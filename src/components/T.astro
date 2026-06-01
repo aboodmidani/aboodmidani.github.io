@@ -1,0 +1,5 @@
+---
+import { t } from "@/i18n";
+const { key } = Astro.props;
+---
+<span class="en-only">{t("en", key)}</span><span class="de-only">{t("de", key)}</span>

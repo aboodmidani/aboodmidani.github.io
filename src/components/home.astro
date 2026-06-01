@@ -1,4 +1,5 @@
 ---
+import T from "@/components/T.astro";
 import { Image } from "astro:assets";
 import codiay from "../../public/codiay.png";
 import tonb from "../../public/tonb.png";
@@ -9,87 +10,88 @@ import webscan from "../../public/webscan.png";
   <div class="max-w-5xl mx-auto space-y-20">
 
     <!-- Hero -->
-    <div class="text-left space-y-6">
-      <p class="text-md text-[var(--sec)] shiny-sec">Abdalrahman Midani</p>
-      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium leading-tight">
-        Web Developer &amp; Cybersecurity Specialist<br class="hidden sm:block" />
-        <span class="text-[var(--sec)]">in North Rhine-Westphalia</span>
+    <div class="text-left space-y-6 hero-reveal">
+      <p class="text-md text-[var(--sec)] shiny-sec"><T key="site.name" /></p>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[0.95] tracking-tighter">
+        <T key="home.hero.title1" /><br class="hidden sm:block" />
+        <span class="text-[var(--sec)]"><T key="home.hero.title2" /></span>
       </h1>
-      <p class="text-lg text-[var(--white-icon)] max-w-2xl">
-        I build secure, high-performance web applications and conduct vulnerability analysis for businesses across Germany.
+      <p class="text-lg text-[var(--white-icon)] max-w-2xl leading-relaxed">
+        <T key="home.hero.subtitle" />
       </p>
       <div class="flex flex-wrap gap-3 pt-2">
-        <a href="/services" class="px-6 py-3 bg-[var(--sec)] text-black font-medium rounded-xl hover:opacity-90 transition-opacity">My Services</a>
-        <a href="/contact" class="px-6 py-3 border border-[var(--white-icon-tr)] rounded-xl text-[var(--white-icon)] hover:text-white hover:bg-[var(--white-icon-tr)] transition-all">Get in Touch</a>
+        <a href="/services" class="px-6 py-3 bg-[var(--sec)] text-black font-medium rounded-xl hover:opacity-90 transition-all hover:shadow-[0_0_30px_rgba(143,255,159,0.3)]"><T key="home.hero.ctaServices" /></a>
+        <a href="/contact" class="px-6 py-3 border border-[var(--white-icon-tr)] rounded-xl text-[var(--white-icon)] hover:text-white hover:bg-[var(--white-icon-tr)] hover:border-white/10 transition-all"><T key="home.hero.ctaContact" /></a>
       </div>
     </div>
 
     <!-- What I Do -->
     <div>
-      <p class="text-sm text-[var(--sec)] uppercase tracking-widest mb-2">What I Do</p>
-      <h2 class="text-3xl md:text-4xl font-medium mb-8">Services</h2>
+      <p class="text-xs text-[var(--sec)] uppercase tracking-[0.3em] mb-3 font-medium"><T key="home.services.title" /></p>
+      <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-8"><T key="home.services.heading" /></h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <a href="/services#web" class="block p-6 rounded-2xl bg-[#1414149c] border border-[var(--white-icon-tr)] hover:border-[var(--sec)] transition-colors">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-10 text-[var(--sec)] mb-4"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-          <h3 class="text-xl font-semibold mb-2">Web Development</h3>
-          <p class="text-sm text-[var(--white-icon)]">Vue.js, React, Astro, Tailwind — front-end engineering for modern businesses in NRW.</p>
+        <a href="/services" class="block p-6 card-cinematic group">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-10 text-[var(--sec)] mb-4 transition-transform duration-300 group-hover:scale-110"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          <h3 class="text-xl font-semibold mb-2"><T key="home.services.webDevTitle" /></h3>
+          <p class="text-sm text-[var(--white-icon)]"><T key="home.services.webDevDesc" /></p>
         </a>
-        <a href="/services#security" class="block p-6 rounded-2xl bg-[#1414149c] border border-[var(--white-icon-tr)] hover:border-[var(--sec)] transition-colors">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-10 text-[var(--sec)] mb-4"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
-          <h3 class="text-xl font-semibold mb-2">Cybersecurity</h3>
-          <p class="text-sm text-[var(--white-icon)]">OWASP audits, penetration testing, vulnerability assessments for German businesses.</p>
+        <a href="/services" class="block p-6 card-cinematic group">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-10 text-[var(--sec)] mb-4 transition-transform duration-300 group-hover:scale-110"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+          <h3 class="text-xl font-semibold mb-2"><T key="home.services.securityTitle" /></h3>
+          <p class="text-sm text-[var(--white-icon)]"><T key="home.services.securityDesc" /></p>
         </a>
-        <a href="/services#consulting" class="block p-6 rounded-2xl bg-[#1414149c] border border-[var(--white-icon-tr)] hover:border-[var(--sec)] transition-colors">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-10 text-[var(--sec)] mb-4"><path d="M21 8C19.5 8 18.7 9.4 19.1 10.5L15.5 14.1C15.2 14 14.8 14 14.5 14.1L11.1 10.7C11.4 9.6 10.6 8.2 9 8.2C7.5 8.2 6.7 9.6 7.1 10.7L3.5 14.3C3.4 14.2 3.2 14.2 3 14.2C1.5 14.2.7 15.6 1.1 16.7L3.1 20.7C3.5 21.6 4.5 22 5.4 21.7L7.5 20.9C8.4 20.5 8.8 19.5 8.4 18.6L10.3 16.8C10.6 16.9 11 16.9 11.3 16.8L14.7 20.1C14.4 21.2 15.2 22.6 16.7 22.6C18.2 22.6 19 21.2 18.6 20.1L22.2 16.5C22.4 16.6 22.6 16.6 22.8 16.6C24.3 16.6 25.1 15.2 24.7 14.1L22.7 10.1C22.3 9.2 21.3 8.8 20.4 9.1L18.3 9.9C17.8 9.6 17.4 9.4 17 9.4L17.1 9.3L20.7 5.7C21.3 5.9 22 5.7 22.4 5.2C23 4.4 22.8 3.2 22 2.6C21.2 2 20 2.2 19.4 3C19 3.5 18.9 4.2 19.1 4.8L15.5 8.4C15.2 8.3 14.8 8.3 14.5 8.4L11.1 5C11.4 3.9 10.6 2.5 9.1 2.5C7.6 2.5 6.8 3.9 7.2 5L3.6 8.6C3.5 8.5 3.3 8.5 3.1 8.5C1.6 8.5.8 9.9 1.2 11L3.2 15C3.4 15.4 3.8 15.6 4.2 15.6L6.1 14.8L6.1 14.8C6 14.5 6 14.2 6.1 13.9L9.5 10.5C9.8 10.6 10.2 10.6 10.5 10.5L13.9 13.9C13.8 14.2 13.8 14.6 13.9 14.9L12 16.8C11.7 16.7 11.4 16.7 11.1 16.8L7.7 13.4C7.5 13.2 7.2 13.1 7 13.1L5.1 13.9L3.1 9.9C2.9 9.5 3.1 9 3.5 8.8C3.9 8.6 4.5 8.8 4.7 9.2L5.5 10L9.1 6.4C8.9 5.8 9.1 5.1 9.7 4.7C10.5 4.1 11.7 4.3 12.3 5.1C12.7 5.7 12.6 6.5 12.1 6.9L15.7 10.5C16.3 10.3 17 10.5 17.4 11.1L19.5 10.3L21.5 14.3C21.7 14.7 21.5 15.3 21.1 15.5C20.7 15.7 20.1 15.5 19.9 15.1L19.1 14.3L15.5 17.9C15.7 18.5 15.5 19.2 14.9 19.6C14.1 20.2 12.9 20 12.3 19.2C11.9 18.6 12 17.8 12.5 17.4L9.1 14C8.8 14.1 8.4 14.1 8.1 14L6.2 15.9C6.4 16.5 6.2 17.2 5.6 17.6L3.5 18.4L1.5 14.4C1.3 14 1.5 13.4 1.9 13.2C2.3 13 2.9 13.2 3.1 13.6L3.9 14.4L7.5 10.8C7.3 10.2 7.5 9.5 8.1 9.1C8.9 8.5 10.1 8.7 10.7 9.5L14.1 12.9C14.4 12.8 14.8 12.8 15.1 12.9L18.5 9.5C18.3 8.9 18.5 8.2 19.1 7.8C19.9 7.2 21.1 7.4 21.7 8.2C22.1 8.8 22 9.6 21.5 10L21.5 10Z"/></svg>
-          <h3 class="text-xl font-semibold mb-2">Consulting</h3>
-          <p class="text-sm text-[var(--white-icon)]">Technical leadership, code reviews, architecture design for teams in Düsseldorf, Münster & Berlin.</p>
+        <a href="/services" class="block p-6 card-cinematic group">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-10 text-[var(--sec)] mb-4 transition-transform duration-300 group-hover:scale-110"><path d="M21 8C19.5 8 18.7 9.4 19.1 10.5L15.5 14.1C15.2 14 14.8 14 14.5 14.1L11.1 10.7C11.4 9.6 10.6 8.2 9 8.2C7.5 8.2 6.7 9.6 7.1 10.7L3.5 14.3C3.4 14.2 3.2 14.2 3 14.2C1.5 14.2.7 15.6 1.1 16.7L3.1 20.7C3.5 21.6 4.5 22 5.4 21.7L7.5 20.9C8.4 20.5 8.8 19.5 8.4 18.6L10.3 16.8C10.6 16.9 11 16.9 11.3 16.8L14.7 20.1C14.4 21.2 15.2 22.6 16.7 22.6C18.2 22.6 19 21.2 18.6 20.1L22.2 16.5C22.4 16.6 22.6 16.6 22.8 16.6C24.3 16.6 25.1 15.2 24.7 14.1L22.7 10.1C22.3 9.2 21.3 8.8 20.4 9.1L18.3 9.9C17.8 9.6 17.4 9.4 17 9.4L17.1 9.3L20.7 5.7C21.3 5.9 22 5.7 22.4 5.2C23 4.4 22.8 3.2 22 2.6C21.2 2 20 2.2 19.4 3C19 3.5 18.9 4.2 19.1 4.8L15.5 8.4C15.2 8.3 14.8 8.3 14.5 8.4L11.1 5C11.4 3.9 10.6 2.5 9.1 2.5C7.6 2.5 6.8 3.9 7.2 5L3.6 8.6C3.5 8.5 3.3 8.5 3.1 8.5C1.6 8.5.8 9.9 1.2 11L3.2 15C3.4 15.4 3.8 15.6 4.2 15.6L6.1 14.8L6.1 14.8C6 14.5 6 14.2 6.1 13.9L9.5 10.5C9.8 10.6 10.2 10.6 10.5 10.5L13.9 13.9C13.8 14.2 13.8 14.6 13.9 14.9L12 16.8C11.7 16.7 11.4 16.7 11.1 16.8L7.7 13.4C7.5 13.2 7.2 13.1 7 13.1L5.1 13.9L3.1 9.9C2.9 9.5 3.1 9 3.5 8.8C3.9 8.6 4.5 8.8 4.7 9.2L5.5 10L9.1 6.4C8.9 5.8 9.1 5.1 9.7 4.7C10.5 4.1 11.7 4.3 12.3 5.1C12.7 5.7 12.6 6.5 12.1 6.9L15.7 10.5C16.3 10.3 17 10.5 17.4 11.1L19.5 10.3L21.5 14.3C21.7 14.7 21.5 15.3 21.1 15.5C20.7 15.7 20.1 15.5 19.9 15.1L19.1 14.3L15.5 17.9C15.7 18.5 15.5 19.2 14.9 19.6C14.1 20.2 12.9 20 12.3 19.2C11.9 18.6 12 17.8 12.5 17.4L9.1 14C8.8 14.1 8.4 14.1 8.1 14L6.2 15.9C6.4 16.5 6.2 17.2 5.6 17.6L3.5 18.4L1.5 14.4C1.3 14 1.5 13.4 1.9 13.2C2.3 13 2.9 13.2 3.1 13.6L3.9 14.4L7.5 10.8C7.3 10.2 7.5 9.5 8.1 9.1C8.9 8.5 10.1 8.7 10.7 9.5L14.1 12.9C14.4 12.8 14.8 12.8 15.1 12.9L18.5 9.5C18.3 8.9 18.5 8.2 19.1 7.8C19.9 7.2 21.1 7.4 21.7 8.2C22.1 8.8 22 9.6 21.5 10L21.5 10Z"/></svg>
+          <h3 class="text-xl font-semibold mb-2"><T key="home.services.consultingTitle" /></h3>
+          <p class="text-sm text-[var(--white-icon)]"><T key="home.services.consultingDesc" /></p>
         </a>
       </div>
     </div>
 
     <!-- Featured Work -->
     <div>
-      <p class="text-sm text-[var(--sec)] uppercase tracking-widest mb-2">Featured Work</p>
-      <h2 class="text-3xl md:text-4xl font-medium mb-8">Projects</h2>
+      <p class="text-xs text-[var(--sec)] uppercase tracking-[0.3em] mb-3 font-medium"><T key="home.projects.title" /></p>
+      <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-8"><T key="home.projects.heading" /></h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <a href="/projects/matrix-web-audit" class="group block">
-          <div class="rounded-2xl overflow-hidden mb-3">
-            <Image src={webscan} alt="Matrix Web Audit" class="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-300" />
+          <div class="rounded-2xl overflow-hidden mb-3 img-cinematic">
+            <Image src={webscan} alt="Matrix Web Audit" class="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-500" />
           </div>
-          <h3 class="text-lg font-semibold">Matrix Web Audit</h3>
+          <h3 class="text-lg font-semibold group-hover:text-[var(--sec)] transition-colors">Matrix Web Audit</h3>
           <p class="text-sm text-[var(--white-icon)]">Web security audit &amp; vulnerability detection tool</p>
         </a>
         <a href="/projects/tonb-blockchain" class="group block">
-          <div class="rounded-2xl overflow-hidden mb-3">
-            <Image src={tonb} alt="Tonb" class="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-300" />
+          <div class="rounded-2xl overflow-hidden mb-3 img-cinematic">
+            <Image src={tonb} alt="Tonb" class="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-500" />
           </div>
-          <h3 class="text-lg font-semibold">Tonb</h3>
+          <h3 class="text-lg font-semibold group-hover:text-[var(--sec)] transition-colors">Tonb</h3>
           <p class="text-sm text-[var(--white-icon)]">Blockchain banking platform (Technical Lead)</p>
         </a>
         <a href="/projects/codiay-agency" class="group block">
-          <div class="rounded-2xl overflow-hidden mb-3">
-            <Image src={codiay} alt="Codiay" class="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-300" />
+          <div class="rounded-2xl overflow-hidden mb-3 img-cinematic">
+            <Image src={codiay} alt="Codiay" class="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-500" />
           </div>
-          <h3 class="text-lg font-semibold">Codiay</h3>
+          <h3 class="text-lg font-semibold group-hover:text-[var(--sec)] transition-colors">Codiay</h3>
           <p class="text-sm text-[var(--white-icon)]">Digital agency front-end from NRW</p>
         </a>
       </div>
       <a href="/projects" class="inline-flex items-center gap-2 mt-6 text-[var(--sec)] hover:underline">
-        View all projects
+        <T key="home.projects.viewAll" />
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4"><path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V8H18.0037V17H16.0037V9.41421Z"/></svg>
       </a>
     </div>
 
     <!-- Contact CTA -->
-    <div id="contact" class="p-8 md:p-12 rounded-3xl bg-[#1414149c] border border-[var(--white-icon-tr)] text-center">
-      <p class="text-sm text-[var(--sec)] uppercase tracking-widest mb-2">Let's Talk</p>
-      <h2 class="text-3xl md:text-4xl font-medium mb-4">Need a Web Developer in NRW?</h2>
-      <p class="text-[var(--white-icon)] mb-6 max-w-xl mx-auto">
-        I'm based in Ochtrup and serve clients across North Rhine-Westphalia. Whether you need a secure front-end or a vulnerability assessment, let's discuss your project.
+    <div id="contact" class="p-8 md:p-12 rounded-3xl card-cinematic text-center relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-[var(--sec)]/5 via-transparent to-[var(--sec)]/5 pointer-events-none"></div>
+      <p class="text-sm text-[var(--sec)] uppercase tracking-[0.3em] mb-2 relative"><T key="home.contact.title" /></p>
+      <h2 class="text-3xl md:text-4xl font-medium mb-4 relative"><T key="home.contact.heading" /></h2>
+      <p class="text-[var(--white-icon)] mb-6 max-w-xl mx-auto relative">
+        <T key="home.contact.subtitle" />
       </p>
-      <div class="flex flex-wrap justify-center gap-4">
-        <a href="mailto:aboodmidani0@gmail.com" class="px-6 py-3 bg-[var(--sec)] text-black font-medium rounded-xl hover:opacity-90 transition-opacity">Send an Email</a>
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=aboodmidani0@gmail.com&su=Hey%20AbdAlrahman!" target="_blank" class="px-6 py-3 border border-[var(--white-icon-tr)] rounded-xl text-[var(--white-icon)] hover:text-white hover:bg-[var(--white-icon-tr)] transition-all">Open Gmail</a>
+      <div class="flex flex-wrap justify-center gap-4 relative">
+        <a href="mailto:aboodmidani0@gmail.com" class="px-6 py-3 bg-[var(--sec)] text-black font-medium rounded-xl hover:opacity-90 transition-all hover:shadow-[0_0_30px_rgba(143,255,159,0.3)]"><T key="home.contact.sendEmail" /></a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=aboodmidani0@gmail.com&su=Hey%20AbdAlrahman!" target="_blank" class="px-6 py-3 border border-[var(--white-icon-tr)] rounded-xl text-[var(--white-icon)] hover:text-white hover:bg-[var(--white-icon-tr)] hover:border-white/10 transition-all"><T key="home.contact.openGmail" /></a>
       </div>
     </div>
 

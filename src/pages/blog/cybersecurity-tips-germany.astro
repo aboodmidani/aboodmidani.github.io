@@ -2,6 +2,7 @@
 import Layout from "@/layouts/Layout.astro";
 import Nav from "@/components/nav.astro";
 import Footer from "@/components/footer.astro";
+import T from "@/components/T.astro";
 ---
 
 <Layout title="Cybersecurity Tips for Small Businesses in Germany | Abdalrahman Midani" description="Practical cybersecurity advice for small businesses in Germany. Learn how to protect your web applications from common threats.">
@@ -10,16 +11,20 @@ import Footer from "@/components/footer.astro";
   <article class="text-[var(--white)] py-16">
     <div class="max-w-3xl mx-auto">
       <p class="text-sm text-[var(--sec)] mb-4">
-        <a href="/" class="hover:underline">Home</a>
+        <a href="/" class="hover:underline"><T key="nav.home" /></a>
         <span class="mx-2">/</span>
-        <a href="/blog" class="hover:underline">Blog</a>
+        <a href="/blog" class="hover:underline"><T key="nav.blog" /></a>
         <span class="mx-2">/</span>
-        Top 10 Cybersecurity Tips
+        <span class="en-only">Top 10 Cybersecurity Tips</span>
+        <span class="de-only">Top 10 Cybersicherheitstipps</span>
       </p>
       <p class="text-sm text-[var(--sec)] mb-2">May 25, 2025 · <span class="reading-time"></span> min read</p>
-      <h1 class="text-3xl md:text-5xl font-medium mb-6">Top 10 Cybersecurity Tips for Small Businesses in Germany</h1>
+      <h1 class="text-3xl md:text-5xl font-medium mb-6">
+        <span class="en-only">Top 10 Cybersecurity Tips for Small Businesses in Germany</span>
+        <span class="de-only">Die 10 wichtigsten Cybersicherheitstipps für kleine Unternehmen in Deutschland</span>
+      </h1>
 
-      <div class="prose prose-invert max-w-none text-[var(--white-icon)] leading-relaxed space-y-4">
+      <div class="en-only prose prose-invert max-w-none text-[var(--white-icon)] leading-relaxed space-y-4">
         <p>As a <strong>cybersecurity specialist based in Ochtrup, North Rhine-Westphalia</strong>, I've seen too many small businesses in Germany treat security as an afterthought. The reality is that cyber attacks target small and medium-sized enterprises (SMEs) every day — and the consequences can be devastating.</p>
 
         <p>Here are 10 practical tips to protect your business.</p>
@@ -55,6 +60,43 @@ import Footer from "@/components/footer.astro";
         <p>Assume you will be breached at some point. Know who to contact, how to isolate systems, and how to restore from backups.</p>
 
         <p class="mt-8">Need help securing your web applications? I offer <a href="/services" class="text-[var(--sec)] hover:underline">cybersecurity consulting and web security audits</a> for businesses throughout North Rhine-Westphalia and across Germany.</p>
+      </div>
+      <div class="de-only prose prose-invert max-w-none text-[var(--white-icon)] leading-relaxed space-y-4">
+        <p>Als <strong>Cybersicherheitsspezialist mit Sitz in Ochtrup, Nordrhein-Westfalen</strong>, habe ich gesehen, dass zu viele kleine Unternehmen in Deutschland Sicherheit als nebensächlich betrachten. Die Realität ist, dass Cyberangriffe täglich kleine und mittlere Unternehmen (KMU) treffen – und die Folgen können verheerend sein.</p>
+
+        <p>Hier sind 10 praktische Tipps, um dein Unternehmen zu schützen.</p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8">1. Software aktuell halten</h2>
+        <p>Veraltete CMS-Plattformen, Plugins und Serversoftware sind der häufigste Einstiegspunkt für Angreifer. Aktiviere automatische Updates, wo immer möglich.</p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8">2. HTTPS überall verwenden</h2>
+        <p>Jede Website braucht SSL/TLS-Verschlüsselung. Das ist nicht mehr optional – Google bewertet HTTPS-Seiten höher und Browser warnen Nutzer auf HTTP-Seiten.</p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8">3. Starke Authentifizierung einführen</h2>
+        <p>Nutze Multi-Faktor-Authentifizierung (MFA) für alle Admin-Konten. Schwache Passwörter sind immer noch die häufigste Schwachstelle, die ich bei Sicherheitsaudits finde.</p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8">4. Benutzereingaben validieren</h2>
+        <p>Cross-Site-Scripting (XSS) und SQL-Injection stehen immer noch in den OWASP Top 10, weil Entwickler Eingaben nicht bereinigen. Validiere und kodiere alle benutzergelieferten Daten.</p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8">5. Regelmäßige Backups</h2>
+        <p>Sichere deine Daten täglich und speichere sie getrennt. Ransomware-Angriffe können dich von allem aussperren – Backups sind deine Rettungsleine.</p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8">6. Protokolle überwachen</h2>
+        <p>Richte Protokollierung ein und überprüfe sie regelmäßig. Verdächtige Muster – wiederholte Anmeldefehler, ungewöhnliche Traffic-Spitzen – sind frühe Warnsignale.</p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8">7. Benutzerberechtigungen einschränken</h2>
+        <p>Befolge das Prinzip der geringsten Privilegien. Niemand sollte mehr Zugriff haben als nötig.</p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8">8. Team schulen</h2>
+        <p>Phishing-Angriffe zielen auf Menschen, nicht auf Systeme. Regelmäßiges Sicherheitsbewusstseinstraining reduziert dein Risiko erheblich.</p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8">9. Regelmäßige Sicherheitsaudits durchführen</h2>
+        <p>Beauftrage einen <strong>Cybersicherheitsberater in Deutschland</strong>, um deine Webanwendungen jährlich zu überprüfen. Tools wie mein <a href="https://matrix-audit.netlify.app" target="_blank" class="text-[var(--sec)] hover:underline">Matrix Web Audit</a> können Schwachstellen identifizieren, bevor Angreifer es tun.</p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8">10. Einen Incident-Response-Plan haben</h2>
+        <p>Geh davon aus, dass du irgendwann angegriffen wirst. Wisse, wen du kontaktieren musst, wie du Systeme isolierst und wie du aus Backups wiederherstellst.</p>
+
+        <p class="mt-8">Brauchst du Hilfe bei der Sicherung deiner Webanwendungen? Ich biete <a href="/services" class="text-[var(--sec)] hover:underline">Cybersicherheitsberatung und Web-Sicherheitsaudits</a> für Unternehmen in ganz Nordrhein-Westfalen und Deutschland.</p>
       </div>
     </div>
   </article>

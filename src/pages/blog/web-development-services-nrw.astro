@@ -2,6 +2,7 @@
 import Layout from "@/layouts/Layout.astro";
 import Nav from "@/components/nav.astro";
 import Footer from "@/components/footer.astro";
+import T from "@/components/T.astro";
 ---
 
 <Layout title="Web Development Services in NRW — What to Expect | Abdalrahman Midani" description="What to expect when hiring a web developer in North Rhine-Westphalia. From requirements to deployment — a guide to professional web development services.">
@@ -10,16 +11,20 @@ import Footer from "@/components/footer.astro";
   <article class="text-[var(--white)] py-16">
     <div class="max-w-3xl mx-auto">
       <p class="text-sm text-[var(--sec)] mb-4">
-        <a href="/" class="hover:underline">Home</a>
+        <a href="/" class="hover:underline"><T key="nav.home" /></a>
         <span class="mx-2">/</span>
-        <a href="/blog" class="hover:underline">Blog</a>
+        <a href="/blog" class="hover:underline"><T key="nav.blog" /></a>
         <span class="mx-2">/</span>
-        Web Development Services in NRW
+        <span class="en-only">Web Development Services in NRW</span>
+        <span class="de-only">Webentwicklung in NRW</span>
       </p>
       <p class="text-sm text-[var(--sec)] mb-2">June 1, 2025 · <span class="reading-time"></span> min read</p>
-      <h1 class="text-3xl md:text-5xl font-medium mb-6">Web Development Services in North Rhine-Westphalia – What to Expect</h1>
+      <h1 class="text-3xl md:text-5xl font-medium mb-6">
+        <span class="en-only">Web Development Services in North Rhine-Westphalia – What to Expect</span>
+        <span class="de-only">Webentwicklung in Nordrhein-Westfalen – Was dich erwartet</span>
+      </h1>
 
-      <div class="prose prose-invert max-w-none text-[var(--white-icon)] leading-relaxed space-y-4">
+      <div class="en-only prose prose-invert max-w-none text-[var(--white-icon)] leading-relaxed space-y-4">
         <p>If you're searching for a <strong>web developer in North Rhine-Westphalia</strong>, you're likely building or improving a digital product. Whether you're a startup in Münster, a mid-sized company in Düsseldorf, or an agency in Cologne, the process of hiring and working with a developer follows a similar pattern.</p>
 
         <h2 class="text-2xl font-semibold text-[var(--white)] mt-8">What a professional web development engagement looks like</h2>
@@ -45,6 +50,33 @@ import Footer from "@/components/footer.astro";
         <p>Hiring a <strong>web developer in North Rhine-Westphalia</strong> means working with someone who understands the local market, data privacy regulations (GDPR), and can meet in person when needed. Being based in Ochtrup, I serve clients throughout NRW — from the Ruhr region to the Rhine valley.</p>
 
         <p>Looking for a <strong>front-end developer in NRW</strong>? <a href="/contact" class="text-[var(--sec)] hover:underline">Get in touch</a> and let's discuss your project.</p>
+      </div>
+      <div class="de-only prose prose-invert max-w-none text-[var(--white-icon)] leading-relaxed space-y-4">
+        <p>Wenn du nach einem <strong>Webentwickler in Nordrhein-Westfalen</strong> suchst, baust oder verbesserst du wahrscheinlich ein digitales Produkt. Ob du ein Startup in Münster, ein mittelständisches Unternehmen in Düsseldorf oder eine Agentur in Köln bist – der Prozess der Zusammenarbeit mit einem Entwickler folgt einem ähnlichen Muster.</p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8">Wie eine professionelle Webentwicklung abläuft</h2>
+
+        <p>Als <strong>Senior Front-End-Entwickler mit Sitz in Ochtrup, NRW</strong>, habe ich mit Unternehmen von Blockchain-Startups bis zu Digitalagenturen gearbeitet. Hier erfährst du, was dich erwartet, wenn du einen professionellen Webentwickler in Deutschland beauftragst.</p>
+
+        <h3 class="text-xl font-semibold text-[var(--white)] mt-6">1. Analyse und Anforderungen</h3>
+        <p>Jedes Projekt beginnt mit dem Verständnis deiner Ziele. Welches Problem löst du? Wer sind deine Nutzer? Wie ist dein Zeitplan? Diese Phase definiert den Umfang, den Tech-Stack und die Ergebnisse.</p>
+
+        <h3 class="text-xl font-semibold text-[var(--white)] mt-6">2. Architektur und Design</h3>
+        <p>Mit klaren Anforderungen entwerfe ich die Anwendungsarchitektur. Dazu gehören Komponentenstruktur, State-Management, API-Integration und Sicherheitsaspekte von Anfang an – besonders wichtig für DSGVO-konforme Anwendungen in Deutschland.</p>
+
+        <h3 class="text-xl font-semibold text-[var(--white)] mt-6">3. Entwicklung und Iteration</h3>
+        <p>Ich entwickle mit modernen Frameworks wie Vue.js und React, mit TypeScript für Typsicherheit. Du erhältst regelmäßige Updates, eine Live-Vorschau und die Möglichkeit, während des gesamten Prozesses Feedback zu geben.</p>
+
+        <h3 class="text-xl font-semibold text-[var(--white)] mt-6">4. Sicherheitsprüfung</h3>
+        <p>Vor dem Start erhält jede Anwendung ein Sicherheitsaudit. Ich prüfe auf OWASP-Top-10-Schwachstellen, teste Authentifizierungsabläufe und überprüfe die Datenverarbeitung. Hier bringt mein <strong>Cybersicherheits-Hintergrund</strong> Mehrwert über die Standardentwicklung hinaus.</p>
+
+        <h3 class="text-xl font-semibold text-[var(--white)] mt-6">5. Deployment und Support</h3>
+        <p>Ich kümmere mich um das Deployment, richte Monitoring ein und biete Support nach dem Start. Deine Anwendung ist live, sicher und wartbar.</p>
+
+        <h2 class="text-2xl font-semibold text-[var(--white)] mt-8">Warum der Standort wichtig ist</h2>
+        <p>Die Beauftragung eines <strong>Webentwicklers in Nordrhein-Westfalen</strong> bedeutet, mit jemandem zusammenzuarbeiten, der den lokalen Markt, die Datenschutzbestimmungen (DSGVO) versteht und sich bei Bedarf persönlich treffen kann. Mit Sitz in Ochtrup betreue ich Kunden in ganz NRW – vom Ruhrgebiet bis zum Rheintal.</p>
+
+        <p>Du suchst einen <strong>Front-End-Entwickler in NRW</strong>? <a href="/contact" class="text-[var(--sec)] hover:underline">Kontaktiere mich</a> und lass uns über dein Projekt sprechen.</p>
       </div>
     </div>
   </article>
