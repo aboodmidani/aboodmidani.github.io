@@ -9,7 +9,15 @@ const locale = Astro.currentLocale === "de" ? "de" : "en";
 const base = `/${locale}`;
 ---
 
-<Layout title="Codiay Agency — Marketing-Agentur-Website | Abdalrahman Midani" description="Eine moderne Marketing-Agentur-Website mit flüssigen Animationen, Projektpräsentationen und Kontakt-Funnel. Auf Performance und Conversion optimiert.">
+<Layout
+  title="Codiay Agency — Marketing-Agentur-Website | Abdalrahman Midani"
+  description="Eine moderne Marketing-Agentur-Website mit flüssigen Animationen, Projektpräsentationen und Kontakt-Funnel. Auf Performance und Conversion optimiert."
+  ogType="project"
+  breadcrumbs={[
+    { name: "Projekte", url: "https://aboodmidani.github.io/de/projects/" },
+    { name: "Codiay Agency", url: "https://aboodmidani.github.io/de/projects/codiay-agency/" }
+  ]}
+>
   <Nav />
 
   <section class="text-[var(--white)] py-16">

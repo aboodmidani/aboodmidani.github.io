@@ -2,6 +2,7 @@
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
+import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
   site: "https://aboodmidani.github.io",
@@ -21,6 +22,16 @@ export default defineConfig({
     tailwind(),
     react({
       jsxImportSource: "react",
+    }),
+    sitemap({
+      filter: (page) => !page.includes('/thanks/'),
+      i18n: {
+        defaultLocale: "de",
+        locales: {
+          de: "de",
+          en: "en",
+        },
+      },
     }),
   ],
   vite: {

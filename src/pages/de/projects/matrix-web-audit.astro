@@ -9,7 +9,15 @@ const locale = Astro.currentLocale === "de" ? "de" : "en";
 const base = `/${locale}`;
 ---
 
-<Layout title="Matrix Web Audit — Web-Sicherheitsscanner | Abdalrahman Midani" description="Ein Tool zur Erkennung von Web-Sicherheitsschwachstellen, entwickelt von Abdalrahman Midani. OWASP-basiertes Scannen, XSS-Erkennung und automatisierte Berichte.">
+<Layout
+  title="Matrix Web Audit — Web-Sicherheitsscanner | Abdalrahman Midani"
+  description="Ein Tool zur Erkennung von Web-Sicherheitsschwachstellen, entwickelt von Abdalrahman Midani. OWASP-basiertes Scannen, XSS-Erkennung und automatisierte Berichte."
+  ogType="project"
+  breadcrumbs={[
+    { name: "Projekte", url: "https://aboodmidani.github.io/de/projects/" },
+    { name: "Matrix Web Audit", url: "https://aboodmidani.github.io/de/projects/matrix-web-audit/" }
+  ]}
+>
   <Nav />
 
   <section class="text-[var(--white)] py-16">

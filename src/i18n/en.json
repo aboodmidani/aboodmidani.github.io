@@ -16,7 +16,6 @@
   },
   "home": {
     "hero": {
-      "greeting": "Hi, I'm Abdalrahman Midani",
       "title1": "Web Developer & Cybersecurity Specialist",
       "title2": "in North Rhine-Westphalia",
       "subtitle": "I build secure, high-performance web applications and conduct vulnerability analysis for businesses across Germany.",
@@ -65,38 +64,26 @@
     "ctaButton": "Get in touch"
   },
   "contactPage": {
-    "title": "Let's talk",
     "tagline": "Get in touch",
     "heading": "Contact",
     "subtitle": "Have a project in mind or a question? Send me a message and I'll get back to you.",
-    "formName": "Name",
-    "formEmail": "Email",
-    "formMessage": "Message",
-    "formSend": "Send Message",
-    "formSending": "Sending..."
+    "formSend": "Send Message"
   },
   "thanksPage": {
-    "title": "Thank You!",
     "heading": "Message Sent!",
     "message": "Thank you for reaching out. I'll get back to you as soon as possible.",
-    "subtitle": "Thank you for reaching out. I'll get back to you as soon as possible.",
     "backHome": "Back to Home",
-    "reachDirectly": "Or reach me directly:",
-    "or": "or",
-    "sendEmail": "Send another email"
+    "reachDirectly": "Or reach me directly:"
   },
   "blogPage": {
-    "tagline": "Articles",
-    "heading": "Blog",
-    "subtitle": "Insights on web development, cybersecurity, and secure applications. Written in Ochtrup, North Rhine-Westphalia — by a developer who codes and protects.",
+    "title": "Articles",
+    "tagline": "Insights on web development, cybersecurity, and secure applications.",
     "readMore": "Read more"
   },
   "projectsPage": {
-    "title": "My work",
     "tagline": "My work",
     "heading": "Projects",
     "subtitle": "Web security tools, blockchain platforms, and front-end applications built by a developer from North Rhine-Westphalia.",
-    "moreOn": "More projects on",
     "moreProjects": "More projects on GitLab"
   },
   "projectDetail": {
@@ -104,10 +91,5 @@
     "techStack": "Tech stack",
     "livePreview": "Live preview",
     "sourceCode": "Source code"
-  },
-  "breadcrumb": {
-    "home": "Home",
-    "blog": "Blog",
-    "projects": "Projects"
   }
 }

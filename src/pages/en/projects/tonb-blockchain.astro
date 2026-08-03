@@ -9,7 +9,15 @@ const locale = Astro.currentLocale === "de" ? "de" : "en";
 const base = `/${locale}`;
 ---
 
-<Layout title="TONB Blockchain — Web3 Wallet & DApp | Abdalrahman Midani" description="A blockchain-based web application for the TON ecosystem. Wallet connectivity, smart contract interaction, and a clean UX for decentralized apps.">
+<Layout
+  title="TONB Blockchain — Web3 Wallet & DApp | Abdalrahman Midani"
+  description="A blockchain-based web application for the TON ecosystem. Wallet connectivity, smart contract interaction, and a clean UX for decentralized apps."
+  ogType="project"
+  breadcrumbs={[
+    { name: "Projects", url: "https://aboodmidani.github.io/en/projects/" },
+    { name: "TONB Blockchain", url: "https://aboodmidani.github.io/en/projects/tonb-blockchain/" }
+  ]}
+>
   <Nav />
 
   <section class="text-[var(--white)] py-16">

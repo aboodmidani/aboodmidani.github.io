@@ -8,7 +8,17 @@ const locale = Astro.currentLocale === "de" ? "de" : "en";
 const base = `/${locale}`;
 ---
 
-<Layout title="Web Development Services in NRW: What to Look For in 2025 | Abdalrahman Midani" description="A practical guide for businesses in North Rhine-Westphalia looking to hire a web developer. What matters, what doesn't, and how to spot red flags.">
+<Layout
+  title="Web Development Services in NRW: What to Look For in 2025 | Abdalrahman Midani"
+  description="A practical guide for businesses in North Rhine-Westphalia looking to hire a web developer. What matters, what doesn't, and how to spot red flags."
+  ogType="article"
+  datePublished="2025-09-01"
+  dateModified="2025-09-01"
+  breadcrumbs={[
+    { name: "Blog", url: "https://aboodmidani.github.io/en/blog/" },
+    { name: "Web Development Services", url: "https://aboodmidani.github.io/en/blog/web-development-services-nrw/" }
+  ]}
+>
   <Nav />
 
   <article class="text-[var(--white)] py-16">

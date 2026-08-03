@@ -9,7 +9,15 @@ const locale = Astro.currentLocale === "de" ? "de" : "en";
 const base = `/${locale}`;
 ---
 
-<Layout title="Eptico Platform — B2B-SaaS-Dashboard | Abdalrahman Midani" description="Eine B2B-SaaS-Plattform-Frontend für ein E-Mail-Outreach- und Vertriebstool. Modernes Dashboard, Echtzeit-Analysen und Team-Kollaborationsfunktionen.">
+<Layout
+  title="Eptico Platform — B2B-SaaS-Dashboard | Abdalrahman Midani"
+  description="Eine B2B-SaaS-Plattform-Frontend für ein E-Mail-Outreach- und Vertriebstool. Modernes Dashboard, Echtzeit-Analysen und Team-Kollaborationsfunktionen."
+  ogType="project"
+  breadcrumbs={[
+    { name: "Projekte", url: "https://aboodmidani.github.io/de/projects/" },
+    { name: "Eptico Platform", url: "https://aboodmidani.github.io/de/projects/eptico-platform/" }
+  ]}
+>
   <Nav />
 
   <section class="text-[var(--white)] py-16">

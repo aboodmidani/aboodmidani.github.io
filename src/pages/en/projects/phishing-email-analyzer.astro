@@ -9,7 +9,15 @@ const locale = Astro.currentLocale === "de" ? "de" : "en";
 const base = `/${locale}`;
 ---
 
-<Layout title="Phishing Email Analyzer — Email Security Tool | Abdalrahman Midani" description="A security tool that helps users identify phishing emails by analyzing headers, links, and content. Built for awareness training in the German market.">
+<Layout
+  title="Phishing Email Analyzer — Email Security Tool | Abdalrahman Midani"
+  description="A security tool that helps users identify phishing emails by analyzing headers, links, and content. Built for awareness training in the German market."
+  ogType="project"
+  breadcrumbs={[
+    { name: "Projects", url: "https://aboodmidani.github.io/en/projects/" },
+    { name: "Phishing Email Analyzer", url: "https://aboodmidani.github.io/en/projects/phishing-email-analyzer/" }
+  ]}
+>
   <Nav />
 
   <section class="text-[var(--white)] py-16">

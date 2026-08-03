@@ -8,7 +8,17 @@ const locale = Astro.currentLocale === "de" ? "de" : "en";
 const base = `/${locale}`;
 ---
 
-<Layout title="Freelance Web Developer vs. Agency in Germany: The Honest Comparison | Abdalrahman Midani" description="When does it make sense to hire a freelance web developer in Germany, and when should you go with an agency? An honest breakdown.">
+<Layout
+  title="Freelance Web Developer vs. Agency in Germany: The Honest Comparison | Abdalrahman Midani"
+  description="When does it make sense to hire a freelance web developer in Germany, and when should you go with an agency? An honest breakdown."
+  ogType="article"
+  datePublished="2025-09-10"
+  dateModified="2025-09-10"
+  breadcrumbs={[
+    { name: "Blog", url: "https://aboodmidani.github.io/en/blog/" },
+    { name: "Freelance vs Agency", url: "https://aboodmidani.github.io/en/blog/freelance-web-developer-germany/" }
+  ]}
+>
   <Nav />
 
   <article class="text-[var(--white)] py-16">

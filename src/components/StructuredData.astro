@@ -1,0 +1,182 @@
+---
+export interface Props {
+  type: 'website' | 'article' | 'project' | 'service' | 'contact';
+  title: string;
+  description: string;
+  image?: string;
+  datePublished?: string;
+  dateModified?: string;
+  author?: string;
+  breadcrumbs?: Array<{ name: string; url: string }>;
+}
+
+const {
+  type,
+  title,
+  description,
+  image = "https://aboodmidani.github.io/og-image.png",
+  datePublished,
+  dateModified,
+  author = "Abdalrahman Midani",
+  breadcrumbs = []
+} = Astro.props;
+
+const siteUrl = "https://aboodmidani.github.io";
+const locale = Astro.currentLocale === "de" ? "de" : "en";
+const currentUrl = new URL(Astro.url.pathname, siteUrl).toString();
+
+const breadcrumbHome = locale === "de" ? "Startseite" : "Home";
+
+const defaultBreadcrumbs = [
+  { name: breadcrumbHome, url: `${siteUrl}/${locale}/` },
+  ...breadcrumbs
+];
+
+const graph: any[] = [];
+
+// Person schema (always included)
+graph.push({
+  "@type": "Person",
+  "name": "Abdalrahman Midani",
+  "url": `${siteUrl}/${locale}/`,
+  "image": image,
+  "sameAs": [
+    "https://gitlab.com/abdmidani",
+    "https://github.com/aboodmidani",
+    "https://www.linkedin.com/in/abdalrahman-midani/",
+    "https://tryhackme.com/p/Jbril"
+  ],
+  "jobTitle": locale === "de" ? "Junior Cybersicherheits-Spezialist & Senior Front-End-Entwickler" : "Junior Cybersecurity Specialist & Senior Front-end Developer",
+  "email": "aboodmidani0@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Ochtrup",
+    "addressRegion": locale === "de" ? "Nordrhein-Westfalen" : "North Rhine-Westphalia",
+    "addressCountry": "DE"
+  }
+});
+
+// WebSite schema (always included)
+graph.push({
+  "@type": "WebSite",
+  "url": `${siteUrl}/${locale}/`,
+  "name": locale === "de" ? "Abdalrahman Midani - Webentwickler & Cybersecurity-Spezialist" : "Abdalrahman Midani - Web Developer & Cybersecurity Specialist",
+  "description": description,
+  "inLanguage": locale
+});
+
+// Page-specific schemas
+if (type === 'article' && datePublished) {
+  graph.push({
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "image": image,
+    "url": currentUrl,
+    "datePublished": datePublished,
+    "dateModified": dateModified || datePublished,
+    "author": {
+      "@type": "Person",
+      "name": author,
+      "url": `${siteUrl}/${locale}/`
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": author,
+      "url": `${siteUrl}/${locale}/`
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": currentUrl
+    }
+  });
+}
+
+if (type === 'project') {
+  graph.push({
+    "@type": "SoftwareSourceCode",
+    "name": title,
+    "description": description,
+    "url": currentUrl,
+    "image": image,
+    "author": {
+      "@type": "Person",
+      "name": author,
+      "url": `${siteUrl}/${locale}/`
+    },
+    "programmingLanguage": ["JavaScript", "HTML", "CSS"],
+    "runtimePlatform": "Web Browser",
+    "codeRepository": "https://github.com/aboodmidani"
+  });
+}
+
+if (type === 'service') {
+  graph.push({
+    "@type": "Service",
+    "name": title,
+    "description": description,
+    "url": currentUrl,
+    "provider": {
+      "@type": "Person",
+      "name": author,
+      "url": `${siteUrl}/${locale}/`
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Germany"
+    },
+    "serviceType": "Web Development"
+  });
+}
+
+if (type === 'contact') {
+  graph.push({
+    "@type": "ContactPage",
+    "name": title,
+    "description": description,
+    "url": currentUrl,
+    "mainEntity": {
+      "@type": "Person",
+      "name": author,
+      "email": "aboodmidani0@gmail.com",
+      "telephone": "+4915771454456",
+      "url": `${siteUrl}/${locale}/`
+    }
+  });
+}
+
+// LocalBusiness schema (always included)
+graph.push({
+  "@type": "LocalBusiness",
+  "@id": `${siteUrl}/${locale}/#business`,
+  "name": "Abdalrahman Midani",
+  "description": locale === "de" ? "Senior Front-End-Entwickler und Cybersecurity-Spezialist mit Sitz in Ochtrup, NRW, Deutschland." : "Senior front-end developer and cybersecurity specialist based in Ochtrup, NRW, Germany.",
+  "url": `${siteUrl}/${locale}/`,
+  "email": "aboodmidani0@gmail.com",
+  "telephone": "+4915771454456",
+  "areaServed": ["DE-NW", "DE", "EU"],
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Ochtrup",
+    "addressRegion": locale === "de" ? "Nordrhein-Westfalen" : "North Rhine-Westphalia",
+    "addressCountry": "DE"
+  }
+});
+
+// BreadcrumbList schema
+graph.push({
+  "@type": "BreadcrumbList",
+  "itemListElement": defaultBreadcrumbs.map((crumb, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": crumb.name,
+    "item": crumb.url
+  }))
+});
+---
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": graph
+})} />

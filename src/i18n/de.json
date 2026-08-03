@@ -16,7 +16,6 @@
   },
   "home": {
     "hero": {
-      "greeting": "Hallo, ich bin Abdalrahman Midani",
       "title1": "Webentwickler & Cybersecurity-Spezialist",
       "title2": "in Nordrhein-Westfalen",
       "subtitle": "Ich baue sichere, schnelle Webanwendungen und mache Sicherheitsanalysen für Unternehmen in ganz Deutschland.",
@@ -65,38 +64,26 @@
     "ctaButton": "Kontakt aufnehmen"
   },
   "contactPage": {
-    "title": "Lass uns reden",
     "tagline": "Kontakt aufnehmen",
     "heading": "Kontakt",
     "subtitle": "Hast du ein Projekt oder eine Frage? Schick mir eine Nachricht und ich melde mich bei dir.",
-    "formName": "Name",
-    "formEmail": "E-Mail",
-    "formMessage": "Nachricht",
-    "formSend": "Nachricht senden",
-    "formSending": "Wird gesendet..."
+    "formSend": "Nachricht senden"
   },
   "thanksPage": {
-    "title": "Vielen Dank!",
     "heading": "Nachricht gesendet!",
     "message": "Danke für deine Nachricht. Ich melde mich so schnell wie möglich bei dir.",
-    "subtitle": "Danke für deine Nachricht. Ich melde mich so schnell wie möglich bei dir.",
     "backHome": "Zurück zur Startseite",
-    "reachDirectly": "Oder erreiche mich direkt:",
-    "or": "oder",
-    "sendEmail": "Eine weitere E-Mail senden"
+    "reachDirectly": "Oder erreiche mich direkt:"
   },
   "blogPage": {
     "title": "Artikel",
-    "heading": "Blog",
-    "subtitle": "Einblicke in Webentwicklung, Cybersicherheit und sichere Anwendungen. Geschrieben in Ochtrup, Nordrhein-Westfalen — von einem Entwickler, der programmiert und schützt.",
+    "tagline": "Einblicke in Webentwicklung, Cybersicherheit und sichere Anwendungen.",
     "readMore": "Weiterlesen"
   },
   "projectsPage": {
-    "title": "Meine Arbeit",
     "tagline": "Meine Arbeit",
     "heading": "Projekte",
     "subtitle": "Web-Sicherheitstools, Blockchain-Plattformen und Front-End-Anwendungen von einem Entwickler aus Nordrhein-Westfalen.",
-    "moreOn": "Mehr Projekte auf",
     "moreProjects": "Mehr Projekte auf GitLab"
   },
   "projectDetail": {
@@ -104,10 +91,5 @@
     "techStack": "Technologien",
     "livePreview": "Live-Vorschau",
     "sourceCode": "Quellcode"
-  },
-  "breadcrumb": {
-    "home": "Startseite",
-    "blog": "Blog",
-    "projects": "Projekte"
   }
 }

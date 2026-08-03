@@ -1,5 +1,6 @@
 ---
 import PageLoader from "@/components/PageLoader.astro";
+import StructuredData from "@/components/StructuredData.astro";
 import { ViewTransitions } from "astro:transitions";
 import { t } from "@/i18n";
 
@@ -7,9 +8,21 @@ interface Props {
   title: string;
   description?: string;
   noindex?: boolean;
+  ogType?: 'website' | 'article' | 'project' | 'service' | 'contact';
+  datePublished?: string;
+  dateModified?: string;
+  breadcrumbs?: Array<{ name: string; url: string }>;
 }
 
-const { title, description, noindex = false } = Astro.props;
+const {
+  title,
+  description,
+  noindex = false,
+  ogType = 'website',
+  datePublished,
+  dateModified,
+  breadcrumbs
+} = Astro.props;
 
 const locale = Astro.currentLocale === "de" ? "de" : "en";
 const otherLocale = locale === "de" ? "en" : "de";
@@ -35,41 +48,11 @@ const languageLabel = defaults[locale].language;
 const ogLocale = defaults[locale].ogLocale;
 
 const siteUrl = "https://aboodmidani.github.io";
-const imageUrl = "https://aboodmidani.github.io/og-image.svg";
+const imageUrl = "https://aboodmidani.github.io/og-image.png";
 const currentPath = Astro.url.pathname;
 const currentUrl = new URL(currentPath, siteUrl).toString();
 const enUrl = new URL(currentPath.replace(/^\/de\/?/, "/en/") || "/en/", siteUrl).toString();
 const deUrl = new URL(currentPath.replace(/^\/en\/?/, "/de/") || "/de/", siteUrl).toString();
-
-const siteNames: Record<string, string> = {
-  en: "Abdalrahman Midani - Web Developer & Cybersecurity Specialist",
-  de: "Abdalrahman Midani - Webentwickler & Cybersecurity-Spezialist",
-};
-const siteDescs: Record<string, string> = {
-  en: "Senior front-end developer and cybersecurity specialist serving clients in North Rhine-Westphalia and across Germany.",
-  de: "Senior Front-End-Entwickler und Cybersecurity-Spezialist für Kunden in Nordrhein-Westfalen und ganz Deutschland.",
-};
-const knowsAbout: Record<string, string[]> = {
-  en: ["Cybersecurity", "Web Security", "OWASP Top 10", "Vue.js", "JavaScript", "React"],
-  de: ["Cybersicherheit", "Web-Sicherheit", "OWASP Top 10", "Vue.js", "JavaScript", "React"],
-};
-const aboutTopics: Record<string, string[]> = {
-  en: ["Web Development", "Cybersecurity", "Front-end Development", "Web Security"],
-  de: ["Webentwicklung", "Cybersicherheit", "Front-End-Entwicklung", "Web-Sicherheit"],
-};
-const localBusinessDesc: Record<string, string> = {
-  en: "Senior front-end developer and cybersecurity specialist based in Ochtrup, NRW, Germany.",
-  de: "Senior Front-End-Entwickler und Cybersecurity-Spezialist mit Sitz in Ochtrup, NRW, Deutschland.",
-};
-const breadcrumbHome: Record<string, string> = { en: "Home", de: "Startseite" };
-const jobTitle: Record<string, string> = {
-  en: "Junior Cybersecurity Specialist & Senior Front-end Developer",
-  de: "Junior Cybersicherheits-Spezialist & Senior Front-End-Entwickler",
-};
-const personDesc: Record<string, string> = {
-  en: "Senior front-end developer and cybersecurity specialist based in Ochtrup, Germany. Specializing in secure web applications and vulnerability analysis.",
-  de: "Senior Front-End-Entwickler und Cybersecurity-Spezialist mit Sitz in Ochtrup, Deutschland. Spezialisiert auf sichere Webanwendungen und Schwachstellenanalyse.",
-};
 ---
 
 <!doctype html>
@@ -102,13 +85,14 @@ const personDesc: Record<string, string> = {
     <meta name="ICBM" content="52.2079, 7.1894" />
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:url" content={currentUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={finalDescription} />
     <meta property="og:image" content={imageUrl} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Abdalrahman Midani - Web Developer & Cybersecurity Specialist" />
     <meta property="og:site_name" content="Abdalrahman Midani" />
     <meta property="og:locale" content={ogLocale} />
     <meta property="og:locale:alternate" content={ogLocale === "en" ? "de" : "en"} />
@@ -120,6 +104,7 @@ const personDesc: Record<string, string> = {
     <meta name="twitter:description" content={finalDescription} />
     <meta name="twitter:image" content={imageUrl} />
     <meta name="twitter:creator" content="@aboodmidani" />
+    <meta name="twitter:site" content="@aboodmidani" />
 
     <!-- Theme Color -->
     <meta name="theme-color" content="#101010" />
@@ -130,7 +115,7 @@ const personDesc: Record<string, string> = {
     <link rel="apple-touch-icon" href="/favicon.png" />
 
     <!-- Google Search Console Verification -->
-    <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" />
+    <meta name="google-site-verification" content="S1Sb_zVosbwYnqVjEtJGsd7BDy357vB0IaDJxxHPooA" />
 
     <!-- Performance: Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -171,79 +156,19 @@ const personDesc: Record<string, string> = {
     <!-- View Transitions -->
     <ViewTransitions />
 
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Person",
-          "name": "Abdalrahman Midani",
-          "url": siteUrl + "/" + locale + "/",
-          "image": imageUrl,
-          "sameAs": [
-            "https://gitlab.com/abdmidani",
-            "https://github.com/aboodmidani",
-            "https://www.linkedin.com/in/abdalrahman-midani/",
-            "https://tryhackme.com/p/Jbril"
-          ],
-          "jobTitle": jobTitle[locale],
-          "email": "aboodmidani0@gmail.com",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Ochtrup",
-            "addressRegion": locale === "de" ? "Nordrhein-Westfalen" : "North Rhine-Westphalia",
-            "addressCountry": "DE"
-          },
-          "knowsAbout": knowsAbout[locale],
-          "description": personDesc[locale],
-          "alumniOf": [
-            {
-              "@type": "CollegeOrUniversity",
-              "name": "Üsküdar Üniversitesi",
-              "sameAs": "https://uskudar.edu.tr"
-            }
-          ]
-        },
-        {
-          "@type": "WebSite",
-          "url": siteUrl + "/" + locale + "/",
-          "name": siteNames[locale],
-          "description": siteDescs[locale],
-          "inLanguage": locale,
-          "about": aboutTopics[locale],
-          "isAccessibleForFree": true
-        },
-        {
-          "@type": "LocalBusiness",
-          "@id": siteUrl + "/" + locale + "/#business",
-          "name": "Abdalrahman Midani",
-          "description": localBusinessDesc[locale],
-          "url": siteUrl + "/" + locale + "/",
-          "email": "aboodmidani0@gmail.com",
-          "telephone": "+4915771454456",
-          "areaServed": ["DE-NW", "DE", "EU"],
-          "priceRange": "$$",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Ochtrup",
-            "addressRegion": locale === "de" ? "Nordrhein-Westfalen" : "North Rhine-Westphalia",
-            "addressCountry": "DE"
-          },
-          "images": [imageUrl]
-        },
-        {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": breadcrumbHome[locale],
-              "item": siteUrl + "/" + locale + "/"
-            }
-          ]
-        }
-      ]
-    })} />
+    <!-- Generator Tag -->
+    <meta name="generator" content="Astro v5" />
+
+    <!-- Structured Data -->
+    <StructuredData
+      type={ogType}
+      title={title}
+      description={finalDescription}
+      image={imageUrl}
+      datePublished={datePublished}
+      dateModified={dateModified}
+      breadcrumbs={breadcrumbs}
+    />
   </head>
   <body class="bg-[--background] md:px-48 lg:px-20 px-9">
     <!-- Cinematic overlays -->
@@ -290,6 +215,37 @@ const personDesc: Record<string, string> = {
 
   h1, h2, h3, .font-display {
     font-family: "Space Grotesk", "Montserrat", sans-serif;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  p {
+    line-height: 1.6;
+    color: var(--white-icon);
+  }
+
+  strong {
+    color: var(--white);
+    font-weight: 600;
   }
 
   *::selection {
@@ -312,7 +268,7 @@ const personDesc: Record<string, string> = {
 
   ::-webkit-scrollbar-thumb {
     background: #333;
-    border-radius: 5px;
+    border-radius: 8px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
@@ -332,7 +288,7 @@ const personDesc: Record<string, string> = {
     inset: 0;
     z-index: 9998;
     pointer-events: none;
-    opacity: 0.04;
+    opacity: 0.02;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
     background-repeat: repeat;
     background-size: 256px 256px;
@@ -345,7 +301,7 @@ const personDesc: Record<string, string> = {
     inset: 0;
     z-index: 9997;
     pointer-events: none;
-    background: radial-gradient(ellipse at center, transparent 50%, rgba(0, 0, 0, 0.5) 100%);
+    background: radial-gradient(ellipse at center, transparent 60%, rgba(0, 0, 0, 0.4) 100%);
   }
 
   /* Ambient glow blobs */
@@ -356,7 +312,7 @@ const personDesc: Record<string, string> = {
     width: 600px;
     height: 600px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(143, 255, 159, 0.06) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(143, 255, 159, 0.03) 0%, transparent 70%);
     filter: blur(80px);
     pointer-events: none;
     z-index: -1;
@@ -368,7 +324,7 @@ const personDesc: Record<string, string> = {
     right: auto;
     bottom: -20%;
     left: -10%;
-    background: radial-gradient(circle, rgba(143, 255, 159, 0.04) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(143, 255, 159, 0.02) 0%, transparent 70%);
     animation: glowDrift2 25s ease-in-out infinite alternate;
   }
 
@@ -447,13 +403,12 @@ const personDesc: Record<string, string> = {
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 1rem;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .card-cinematic:hover {
-    border-color: rgba(143, 255, 159, 0.3);
-    box-shadow: 0 0 40px rgba(143, 255, 159, 0.08), inset 0 0 40px rgba(143, 255, 159, 0.02);
-    transform: translateY(-2px);
+    border-color: rgba(143, 255, 159, 0.2);
+    transform: translateY(-1px);
   }
 
   /* Cinematic image overlay */

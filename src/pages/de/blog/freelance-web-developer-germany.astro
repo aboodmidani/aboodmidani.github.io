@@ -8,7 +8,17 @@ const locale = Astro.currentLocale === "de" ? "de" : "en";
 const base = `/${locale}`;
 ---
 
-<Layout title="Freelance Webentwickler vs. Agentur in Deutschland: Der ehrliche Vergleich | Abdalrahman Midani" description="Wann lohnt es sich, einen freiberuflichen Webentwickler in Deutschland zu beauftragen, und wann sollten Sie eine Agentur wählen? Eine ehrliche Gegenüberstellung.">
+<Layout
+  title="Freelance Webentwickler vs. Agentur in Deutschland: Der ehrliche Vergleich | Abdalrahman Midani"
+  description="Wann lohnt es sich, einen freiberuflichen Webentwickler in Deutschland zu beauftragen, und wann sollten Sie eine Agentur wählen? Eine ehrliche Gegenüberstellung."
+  ogType="article"
+  datePublished="2025-09-10"
+  dateModified="2025-09-10"
+  breadcrumbs={[
+    { name: "Blog", url: "https://aboodmidani.github.io/de/blog/" },
+    { name: "Freelance vs. Agentur", url: "https://aboodmidani.github.io/de/blog/freelance-web-developer-germany/" }
+  ]}
+>
   <Nav />
 
   <article class="text-[var(--white)] py-16">

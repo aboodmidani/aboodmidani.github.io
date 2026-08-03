@@ -9,7 +9,15 @@ const locale = Astro.currentLocale === "de" ? "de" : "en";
 const base = `/${locale}`;
 ---
 
-<Layout title="Redacted PDF Tool — Privacy-First PDF Editor | Abdalrahman Midani" description="A browser-based PDF redaction tool that runs entirely client-side. No server uploads, no data leaks. Built for journalists, lawyers, and privacy-conscious users.">
+<Layout
+  title="Redacted PDF Tool — Privacy-First PDF Editor | Abdalrahman Midani"
+  description="A browser-based PDF redaction tool that runs entirely client-side. No server uploads, no data leaks. Built for journalists, lawyers, and privacy-conscious users."
+  ogType="project"
+  breadcrumbs={[
+    { name: "Projects", url: "https://aboodmidani.github.io/en/projects/" },
+    { name: "Redacted PDF Tool", url: "https://aboodmidani.github.io/en/projects/redacted-pdf-tool/" }
+  ]}
+>
   <Nav />
 
   <section class="text-[var(--white)] py-16">

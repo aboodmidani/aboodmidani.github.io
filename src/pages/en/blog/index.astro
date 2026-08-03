@@ -42,7 +42,13 @@ const posts = [
 ];
 ---
 
-<Layout title="Blog — Web Development & Cybersecurity Insights | Abdalrahman Midani" description="Articles on web development, cybersecurity, and building software in Germany. Practical insights for businesses and developers.">
+<Layout
+  title="Blog — Web Development & Cybersecurity Insights | Abdalrahman Midani"
+  description="Articles on web development, cybersecurity, and building software in Germany. Practical insights for businesses and developers."
+  breadcrumbs={[
+    { name: "Blog", url: "https://aboodmidani.github.io/en/blog/" }
+  ]}
+>
   <Nav />
 
   <section class="text-[var(--white)] py-16">

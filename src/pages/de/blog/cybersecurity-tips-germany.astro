@@ -8,7 +8,17 @@ const locale = Astro.currentLocale === "de" ? "de" : "en";
 const base = `/${locale}`;
 ---
 
-<Layout title="Cybersicherheit-Tipps für kleine Unternehmen in Deutschland | Abdalrahman Midani" description="Praktische, jargonfreie Sicherheitshinweise für kleine Unternehmer in Deutschland — von Phishing-Schutz bis zu sicheren Passwörtern.">
+<Layout
+  title="Cybersicherheit-Tipps für kleine Unternehmen in Deutschland | Abdalrahman Midani"
+  description="Praktische, jargonfreie Sicherheitshinweise für kleine Unternehmer in Deutschland — von Phishing-Schutz bis zu sicheren Passwörtern."
+  ogType="article"
+  datePublished="2025-09-05"
+  dateModified="2025-09-05"
+  breadcrumbs={[
+    { name: "Blog", url: "https://aboodmidani.github.io/de/blog/" },
+    { name: "Cybersicherheit-Tipps", url: "https://aboodmidani.github.io/de/blog/cybersecurity-tips-germany/" }
+  ]}
+>
   <Nav />
 
   <article class="text-[var(--white)] py-16">

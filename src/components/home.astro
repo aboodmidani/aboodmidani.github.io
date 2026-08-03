@@ -41,8 +41,8 @@ const featured = [
 
     <!-- Hero -->
     <div class="text-left space-y-6 hero-reveal">
-      <p class="text-md text-[var(--sec)] shiny-sec"><T key="site.name" /></p>
-      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[0.95] tracking-tighter">
+      <p class="text-sm font-medium tracking-widest uppercase text-[var(--sec)]"><T key="site.name" /></p>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight">
         <T key="home.hero.title1" /><br class="hidden sm:block" />
         <span class="text-[var(--sec)]"><T key="home.hero.title2" /></span>
       </h1>
@@ -50,15 +50,15 @@ const featured = [
         <T key="home.hero.subtitle" />
       </p>
       <div class="flex flex-wrap gap-3 pt-2">
-        <a href={`${base}/services`} class="px-6 py-3 bg-[var(--sec)] text-black font-medium rounded-xl hover:opacity-90 transition-all hover:shadow-[0_0_30px_rgba(143,255,159,0.3)]"><T key="home.hero.ctaServices" /></a>
+        <a href={`${base}/services`} class="px-6 py-3 bg-[var(--sec)] text-black font-medium rounded-xl hover:opacity-90 transition-all"><T key="home.hero.ctaServices" /></a>
         <a href={`${base}/contact`} class="px-6 py-3 border border-[var(--white-icon-tr)] rounded-xl text-[var(--white-icon)] hover:text-white hover:bg-[var(--white-icon-tr)] hover:border-white/10 transition-all"><T key="home.hero.ctaContact" /></a>
       </div>
     </div>
 
     <!-- What I Do -->
     <div>
-      <p class="text-xs text-[var(--sec)] uppercase tracking-[0.3em] mb-3 font-medium"><T key="home.services.title" /></p>
-      <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-8"><T key="home.services.heading" /></h2>
+      <p class="text-xs font-medium tracking-widest uppercase text-[var(--sec)] mb-3"><T key="home.services.title" /></p>
+      <h2 class="text-2xl md:text-4xl font-semibold tracking-tight mb-8"><T key="home.services.heading" /></h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <a href={`${base}/services`} class="block p-6 card-cinematic group">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-10 text-[var(--sec)] mb-4 transition-transform duration-300 group-hover:scale-110"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
@@ -108,7 +108,7 @@ const featured = [
         <T key="home.contact.subtitle" />
       </p>
       <div class="flex flex-wrap justify-center gap-4 relative">
-        <a href="mailto:aboodmidani0@gmail.com" class="px-6 py-3 bg-[var(--sec)] text-black font-medium rounded-xl hover:opacity-90 transition-all hover:shadow-[0_0_30px_rgba(143,255,159,0.3)]"><T key="home.contact.sendEmail" /></a>
+        <a href="mailto:aboodmidani0@gmail.com" class="px-6 py-3 bg-[var(--sec)] text-black font-medium rounded-xl hover:opacity-90 transition-all"><T key="home.contact.sendEmail" /></a>
         <a href="https://mail.google.com/mail/?view=cm&fs=1&to=aboodmidani0@gmail.com&su=Hey%20AbdAlrahman!" target="_blank" class="px-6 py-3 border border-[var(--white-icon-tr)] rounded-xl text-[var(--white-icon)] hover:text-white hover:bg-[var(--white-icon-tr)] hover:border-white/10 transition-all"><T key="home.contact.openGmail" /></a>
       </div>
     </div>
@@ -118,16 +118,6 @@ const featured = [
 
 <style is:global>
   .shiny-sec {
-    background: linear-gradient(135deg, #8fff9f 25%, #eee5ff 50%, #8fff9f 75%);
-    background-size: 400% 100%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    animation: shine 3s linear infinite;
-  }
-
-  @keyframes shine {
-    0% { background-position: 100% 50%; }
-    30%, 70% { background-position: 0% 50%; }
+    color: var(--sec);
   }
 </style>

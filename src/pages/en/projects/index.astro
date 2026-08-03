@@ -24,7 +24,13 @@ const projects = [
 ];
 ---
 
-<Layout title="Projects | Abdalrahman Midani — Web Developer & Cybersecurity Specialist" description="Explore web security tools, blockchain platforms, and front-end applications built by Abdalrahman Midani in Ochtrup, North Rhine-Westphalia.">
+<Layout
+  title="Projects | Abdalrahman Midani — Web Developer & Cybersecurity Specialist"
+  description="Explore web security tools, blockchain platforms, and front-end applications built by Abdalrahman Midani in Ochtrup, North Rhine-Westphalia."
+  breadcrumbs={[
+    { name: "Projects", url: "https://aboodmidani.github.io/en/projects/" }
+  ]}
+>
   <Nav />
 
   <section class="text-[var(--white)] py-16">
@@ -95,16 +101,6 @@ const projects = [
 
 <style is:global>
   .shiny-sec {
-    background: linear-gradient(135deg, #8fff9f 25%, #eee5ff 50%, #8fff9f 75%);
-    background-size: 400% 100%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    animation: shine 3s linear infinite;
-  }
-
-  @keyframes shine {
-    0% { background-position: 100% 50%; }
-    30%, 70% { background-position: 0% 50%; }
+    color: var(--sec);
   }
 </style>

@@ -9,7 +9,15 @@ const locale = Astro.currentLocale === "de" ? "de" : "en";
 const base = `/${locale}`;
 ---
 
-<Layout title="Redacted PDF Tool — Datenschutzfreundlicher PDF-Editor | Abdalrahman Midani" description="Ein browserbasiertes PDF-Schwärzungstool, das vollständig clientseitig läuft. Keine Server-Uploads, keine Datenlecks. Entwickelt für Journalisten, Anwälte und datenschutzbewusste Nutzer.">
+<Layout
+  title="Redacted PDF Tool — Datenschutzfreundlicher PDF-Editor | Abdalrahman Midani"
+  description="Ein browserbasiertes PDF-Schwärzungstool, das vollständig clientseitig läuft. Keine Server-Uploads, keine Datenlecks. Entwickelt für Journalisten, Anwälte und datenschutzbewusste Nutzer."
+  ogType="project"
+  breadcrumbs={[
+    { name: "Projekte", url: "https://aboodmidani.github.io/de/projects/" },
+    { name: "Redacted PDF Tool", url: "https://aboodmidani.github.io/de/projects/redacted-pdf-tool/" }
+  ]}
+>
   <Nav />
 
   <section class="text-[var(--white)] py-16">

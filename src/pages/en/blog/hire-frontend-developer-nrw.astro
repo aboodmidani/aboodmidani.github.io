@@ -8,7 +8,17 @@ const locale = Astro.currentLocale === "de" ? "de" : "en";
 const base = `/${locale}`;
 ---
 
-<Layout title="How to Hire a Frontend Developer in NRW (Without Getting Burned) | Abdalrahman Midani" description="What to look for, what questions to ask, and how to evaluate frontend developers for your next project in North Rhine-Westphalia.">
+<Layout
+  title="How to Hire a Frontend Developer in NRW (Without Getting Burned) | Abdalrahman Midani"
+  description="What to look for, what questions to ask, and how to evaluate frontend developers for your next project in North Rhine-Westphalia."
+  ogType="article"
+  datePublished="2025-09-15"
+  dateModified="2025-09-15"
+  breadcrumbs={[
+    { name: "Blog", url: "https://aboodmidani.github.io/en/blog/" },
+    { name: "Hire Frontend Developer", url: "https://aboodmidani.github.io/en/blog/hire-frontend-developer-nrw/" }
+  ]}
+>
   <Nav />
 
   <article class="text-[var(--white)] py-16">

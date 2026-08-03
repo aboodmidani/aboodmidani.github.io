@@ -14,7 +14,13 @@ const locale = Astro.currentLocale === "de" ? "de" : "en";
 const base = `/${locale}`;
 ---
 
-<Layout title="About | Abdalrahman Midani — Web Developer in Ochtrup, NRW" description="Learn about Abdalrahman Midani — a senior front-end developer and cybersecurity specialist based in Ochtrup, North Rhine-Westphalia. Education, skills, and experience.">
+<Layout
+  title="About | Abdalrahman Midani — Web Developer in Ochtrup, NRW"
+  description="Learn about Abdalrahman Midani — a senior front-end developer and cybersecurity specialist based in Ochtrup, North Rhine-Westphalia. Education, skills, and experience."
+  breadcrumbs={[
+    { name: "About", url: "https://aboodmidani.github.io/en/about/" }
+  ]}
+>
   <Nav />
 
   <!-- Bio -->
@@ -125,16 +131,6 @@ const base = `/${locale}`;
 
 <style is:global>
   .shiny-sec {
-    background: linear-gradient(135deg, #8fff9f 25%, #eee5ff 50%, #8fff9f 75%);
-    background-size: 400% 100%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    animation: shine 3s linear infinite;
-  }
-
-  @keyframes shine {
-    0% { background-position: 100% 50%; }
-    30%, 70% { background-position: 0% 50%; }
+    color: var(--sec);
   }
 </style>

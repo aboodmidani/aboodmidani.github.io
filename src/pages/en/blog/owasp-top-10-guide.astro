@@ -8,7 +8,17 @@ const locale = Astro.currentLocale === "de" ? "de" : "en";
 const base = `/${locale}`;
 ---
 
-<Layout title="OWASP Top 10 Explained: A Plain-English Guide for Non-Developers | Abdalrahman Midani" description="The OWASP Top 10 is the industry standard for web security. Here's what it actually means — explained for founders and product managers.">
+<Layout
+  title="OWASP Top 10 Explained: A Plain-English Guide for Non-Developers | Abdalrahman Midani"
+  description="The OWASP Top 10 is the industry standard for web security. Here's what it actually means — explained for founders and product managers."
+  ogType="article"
+  datePublished="2025-09-22"
+  dateModified="2025-09-22"
+  breadcrumbs={[
+    { name: "Blog", url: "https://aboodmidani.github.io/en/blog/" },
+    { name: "OWASP Top 10 Explained", url: "https://aboodmidani.github.io/en/blog/owasp-top-10-guide/" }
+  ]}
+>
   <Nav />
 
   <article class="text-[var(--white)] py-16">
