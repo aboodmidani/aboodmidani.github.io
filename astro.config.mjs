@@ -24,7 +24,7 @@ export default defineConfig({
       jsxImportSource: "react",
     }),
     sitemap({
-      filter: (page) => !page.includes('/thanks/'),
+      filter: (page) => !page.includes('/thanks/') && page !== 'https://aboodmidani.github.io/',
       i18n: {
         defaultLocale: "de",
         locales: {
